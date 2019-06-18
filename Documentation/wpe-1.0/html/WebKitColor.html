@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>WebKitColor: WPE Reference Manual</title>
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<link rel="home" href="index.html" title="WPE Reference Manual">
+<link rel="up" href="ch01.html" title="Class Overview">
+<link rel="prev" href="WebKitApplicationInfo.html" title="WebKitApplicationInfo">
+<link rel="next" href="ch02.html" title="Utilities">
+<meta name="generator" content="GTK-Doc V1.30 (XML mode)">
+<link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#WebKitColor.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#WebKitColor.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="WebKitApplicationInfo.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="ch02.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
+<div class="refentry">
+<a name="WebKitColor"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
+<h2><span class="refentrytitle"><a name="WebKitColor.top_of_page"></a>WebKitColor</span></h2>
+<p>WebKitColor — A boxed type representing a RGBA color</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="WebKitColor.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="functions_return">
+<col class="functions_name">
+</colgroup>
+<tbody><tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="WebKitColor.html#webkit-color-parse" title="webkit_color_parse ()">webkit_color_parse</a> <span class="c_punctuation">()</span>
+</td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="WebKitColor.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="name">
+<col class="description">
+</colgroup>
+<tbody>
+<tr>
+<td class="define_keyword">#define</td>
+<td class="function_name"><a class="link" href="WebKitColor.html#WEBKIT-TYPE-COLOR:CAPS" title="WEBKIT_TYPE_COLOR">WEBKIT_TYPE_COLOR</a></td>
+</tr>
+<tr>
+<td class="datatype_keyword"> </td>
+<td class="function_name"><a class="link" href="WebKitColor.html#WebKitColor-struct" title="WebKitColor">WebKitColor</a></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect1">
+<a name="WebKitColor.object-hierarchy"></a><h2>Object Hierarchy</h2>
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
+    <span class="lineart">╰──</span> WebKitColor
+</pre>
+</div>
+<div class="refsect1">
+<a name="WebKitColor.description"></a><h2>Description</h2>
+<p>A WebKitColor is a boxed type representing a RGBA color.</p>
+</div>
+<div class="refsect1">
+<a name="WebKitColor.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="webkit-color-parse"></a><h3>webkit_color_parse ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+webkit_color_parse (<em class="parameter"><code><a class="link" href="WebKitColor.html" title="WebKitColor"><span class="type">WebKitColor</span></a> *color</code></em>,
+                    <em class="parameter"><code>const <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *color_string</code></em>);</pre>
+<p>Create a new <a class="link" href="WebKitColor.html" title="WebKitColor"><span class="type">WebKitColor</span></a> for the given <em class="parameter"><code>color_string</code></em>
+
+representation. There are two valid representation types: standard color
+names (see https://htmlcolorcodes.com/color-names/ for instance) or HEX
+values.</p>
+<div class="refsect3">
+<a name="webkit-color-parse.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>color</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WebKitColor.html" title="WebKitColor"><span class="type">WebKitColor</span></a> to fill in</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>color_string</p></td>
+<td class="parameter_description"><p>color representation as color nickname or HEX string</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="webkit-color-parse.returns"></a><h4>Returns</h4>
+<p> a <a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> indicating if the <em class="parameter"><code>color</code></em>
+was correctly filled in or not.</p>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="WebKitColor.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="WEBKIT-TYPE-COLOR:CAPS"></a><h3>WEBKIT_TYPE_COLOR</h3>
+<pre class="programlisting">#define WEBKIT_TYPE_COLOR (webkit_color_get_type())
+</pre>
+</div>
+<hr>
+<div class="refsect2">
+<a name="WebKitColor-struct"></a><h3>WebKitColor</h3>
+<pre class="programlisting">typedef struct {
+    gdouble red;
+    gdouble green;
+    gdouble blue;
+    gdouble alpha;
+} WebKitColor;
+</pre>
+<p>A WebKitColor is a boxed type representing a RGBA color.</p>
+<div class="refsect3">
+<a name="WebKitColor.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="300px" class="struct_members_name">
+<col class="struct_members_description">
+<col width="200px" class="struct_members_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="struct_member_name"><p><a href="../glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="WebKitColor-struct.red"></a>red</code></em>;</p></td>
+<td class="struct_member_description"><p>Red channel, between 0.0 and 1.0 inclusive</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="../glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="WebKitColor-struct.green"></a>green</code></em>;</p></td>
+<td class="struct_member_description"><p>Green channel, between 0.0 and 1.0 inclusive</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="../glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="WebKitColor-struct.blue"></a>blue</code></em>;</p></td>
+<td class="struct_member_description"><p>Blue channel, between 0.0 and 1.0 inclusive</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+<tr>
+<td class="struct_member_name"><p><a href="../glib/glib-Basic-Types.html#gdouble"><span class="type">gdouble</span></a> <em class="structfield"><code><a name="WebKitColor-struct.alpha"></a>alpha</code></em>;</p></td>
+<td class="struct_member_description"><p>Alpha channel, between 0.0 and 1.0 inclusive</p></td>
+<td class="struct_member_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: 2.24</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="WebKitColor.see-also"></a><h2>See Also</h2>
+<p><a class="link" href="WebKitWebView.html" title="The main frame document title of this #WebKitWebView. If the title has not been received yet, it will be %NULL."><span class="type">WebKitWebView</span></a>.</p>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.30</div>
+</body>
+</html>
