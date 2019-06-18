@@ -1,0 +1,5 @@
+wpewebkit (2.24.2-1) UNRELEASED; urgency=medium
+
+  * Initial release (Closes: #930053)
+
+ -- Alberto Garcia <berto@igalia.com>  Tue, 12 Feb 2019 11:51:36 +0200
