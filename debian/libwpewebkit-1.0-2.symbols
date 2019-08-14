@@ -7,17 +7,17 @@ libWPEWebKit-1.0.so.2 libwpewebkit-1.0-2 #MINVER#
  WebProcessMainUnix@Base 2.24.1
  (optional)_ZN6WebKit22WebKitExtensionManager10initializeEPNS_14InjectedBundleEPN3API6ObjectE@Base 2.24.1
  (optional)_ZN6WebKit22WebKitExtensionManager9singletonEv@Base 2.24.1
- (optional)_ZN7bmalloc10PerProcessINS_12IsoTLSLayoutEE6s_dataE@Base 2.24.1
- (optional)_ZN7bmalloc10PerProcessINS_12IsoTLSLayoutEE8s_objectE@Base 2.24.1
- (optional)_ZN7bmalloc10PerProcessINS_22IsoTLSDeallocatorEntryINS_9IsoConfigILj40EEEEEE6s_dataE@Base 2.24.1
- (optional)_ZN7bmalloc10PerProcessINS_22IsoTLSDeallocatorEntryINS_9IsoConfigILj40EEEEEE8s_objectE@Base 2.24.1
- (optional)_ZN7bmalloc10PerProcessINS_6VMHeapEE6s_dataE@Base 2.24.1
- (optional)_ZN7bmalloc10PerProcessINS_6VMHeapEE8s_objectE@Base 2.24.1
- (optional)_ZN7bmalloc10PerProcessINS_9ScavengerEE6s_dataE@Base 2.24.1
- (optional)_ZN7bmalloc10PerProcessINS_9ScavengerEE8s_objectE@Base 2.24.1
- (optional)_ZN7bmalloc16PerThreadStorageINS_11PerHeapKindINS_5CacheEEEE15s_didInitializeE@Base 2.24.1
- (optional)_ZN7bmalloc16PerThreadStorageINS_11PerHeapKindINS_5CacheEEEE5s_keyE@Base 2.24.1
- (optional)_ZZN7bmalloc10vmPageSizeEvE6cached@Base 2.24.1
+ (optional|arch=amd64 arm64 armhf mips mipsel)_ZN7bmalloc10PerProcessINS_12IsoTLSLayoutEE6s_dataE@Base 2.24.1
+ (optional|arch=amd64 arm64 armhf mips mipsel)_ZN7bmalloc10PerProcessINS_12IsoTLSLayoutEE8s_objectE@Base 2.24.1
+ (optional|arch=amd64 arm64 armhf mips mipsel)_ZN7bmalloc10PerProcessINS_22IsoTLSDeallocatorEntryINS_9IsoConfigILj40EEEEEE6s_dataE@Base 2.24.1
+ (optional|arch=amd64 arm64 armhf mips mipsel)_ZN7bmalloc10PerProcessINS_22IsoTLSDeallocatorEntryINS_9IsoConfigILj40EEEEEE8s_objectE@Base 2.24.1
+ (optional|arch=amd64 arm64 armhf mips mipsel)_ZN7bmalloc10PerProcessINS_6VMHeapEE6s_dataE@Base 2.24.1
+ (optional|arch=amd64 arm64 armhf mips mipsel)_ZN7bmalloc10PerProcessINS_6VMHeapEE8s_objectE@Base 2.24.1
+ (optional|arch=amd64 arm64 armhf mips mipsel)_ZN7bmalloc10PerProcessINS_9ScavengerEE6s_dataE@Base 2.24.1
+ (optional|arch=amd64 arm64 armhf mips mipsel)_ZN7bmalloc10PerProcessINS_9ScavengerEE8s_objectE@Base 2.24.1
+ (optional|arch=amd64 arm64 armhf mips mipsel)_ZN7bmalloc16PerThreadStorageINS_11PerHeapKindINS_5CacheEEEE15s_didInitializeE@Base 2.24.1
+ (optional|arch=amd64 arm64 armhf mips mipsel)_ZN7bmalloc16PerThreadStorageINS_11PerHeapKindINS_5CacheEEEE5s_keyE@Base 2.24.1
+ (optional|arch=amd64 arm64 armhf mips mipsel)_ZZN7bmalloc10vmPageSizeEvE6cached@Base 2.24.1
  jsc_class_add_constructor@Base 2.24.1
  jsc_class_add_constructor_variadic@Base 2.24.1
  jsc_class_add_constructorv@Base 2.24.1
