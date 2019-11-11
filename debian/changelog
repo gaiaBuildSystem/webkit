@@ -2,4 +2,4 @@ wpewebkit (2.24.2-1) experimental; urgency=medium
 
   * Initial release (Closes: #930053)
 
- -- Alberto Garcia <berto@igalia.com>  Wed, 14 Aug 2019 18:06:54 +0300
+ -- Alberto Garcia <berto@igalia.com>  Mon, 11 Nov 2019 16:39:51 +0200
