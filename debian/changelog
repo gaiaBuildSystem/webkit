@@ -9,6 +9,7 @@ wpewebkit (2.26.2-1) UNRELEASED; urgency=medium
     + Add build dependencies on bubblewrap, xdg-dbus-proxy and
       libseccomp-dev (for ENABLE_BUBBLEWRAP_SANDBOX) and libatk1.0-dev and
       libatk-bridge2.0-dev (for ENABLE_ACCESSIBILITY).
+    + Update Standards-Version to 4.4.1 (no changes).
 
  -- Alberto Garcia <berto@igalia.com>  Thu, 14 Nov 2019 10:30:27 +0200
 

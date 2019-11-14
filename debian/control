@@ -34,7 +34,7 @@ Build-Depends: debhelper (>= 10),
                ruby:native,
                wayland-protocols,
                xdg-dbus-proxy
-Standards-Version: 4.3.0
+Standards-Version: 4.4.1
 Vcs-Browser: https://salsa.debian.org/webkit-team/webkit
 Vcs-Git: https://salsa.debian.org/webkit-team/webkit.git
 Homepage: https://wpewebkit.org/
