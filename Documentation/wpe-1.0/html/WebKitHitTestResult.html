@@ -8,7 +8,7 @@
 <link rel="up" href="ch01.html" title="Class Overview">
 <link rel="prev" href="WebKitResponsePolicyDecision.html" title="WebKitResponsePolicyDecision">
 <link rel="next" href="WebKitEditorState.html" title="WebKitEditorState">
-<meta name="generator" content="GTK-Doc V1.30 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.31 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -147,37 +147,37 @@
 <tr>
 <td class="property_type"><a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a></td>
 <td class="property_name"><a class="link" href="WebKitHitTestResult.html#WebKitHitTestResult--context" title="The “context” property">context</a></td>
-<td class="property_flags">Read / Write / Construct Only</td>
+<td class="property_flags">Read / Write / Construct Only</td>
 </tr>
 <tr>
 <td class="property_type">
 <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
 <td class="property_name"><a class="link" href="WebKitHitTestResult.html#WebKitHitTestResult--image-uri" title="The “image-uri” property">image-uri</a></td>
-<td class="property_flags">Read / Write / Construct Only</td>
+<td class="property_flags">Read / Write / Construct Only</td>
 </tr>
 <tr>
 <td class="property_type">
 <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
 <td class="property_name"><a class="link" href="WebKitHitTestResult.html#WebKitHitTestResult--link-label" title="The “link-label” property">link-label</a></td>
-<td class="property_flags">Read / Write / Construct Only</td>
+<td class="property_flags">Read / Write / Construct Only</td>
 </tr>
 <tr>
 <td class="property_type">
 <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
 <td class="property_name"><a class="link" href="WebKitHitTestResult.html#WebKitHitTestResult--link-title" title="The “link-title” property">link-title</a></td>
-<td class="property_flags">Read / Write / Construct Only</td>
+<td class="property_flags">Read / Write / Construct Only</td>
 </tr>
 <tr>
 <td class="property_type">
 <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
 <td class="property_name"><a class="link" href="WebKitHitTestResult.html#WebKitHitTestResult--link-uri" title="The “link-uri” property">link-uri</a></td>
-<td class="property_flags">Read / Write / Construct Only</td>
+<td class="property_flags">Read / Write / Construct Only</td>
 </tr>
 <tr>
 <td class="property_type">
 <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</td>
 <td class="property_name"><a class="link" href="WebKitHitTestResult.html#WebKitHitTestResult--media-uri" title="The “media-uri” property">media-uri</a></td>
-<td class="property_flags">Read / Write / Construct Only</td>
+<td class="property_flags">Read / Write / Construct Only</td>
 </tr>
 </tbody>
 </table></div>
@@ -654,7 +654,8 @@ context</p>
 <pre class="programlisting">  “context”                  <a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a></pre>
 <p>Bitmask of <a class="link" href="WebKitHitTestResult.html#WebKitHitTestResultContext" title="enum WebKitHitTestResultContext"><span class="type">WebKitHitTestResultContext</span></a> flags representing
 the context of the <a class="link" href="WebKitHitTestResult.html" title="WebKitHitTestResult"><span class="type">WebKitHitTestResult</span></a>.</p>
-<p>Flags: Read / Write / Construct Only</p>
+<p>Owner: WebKitHitTestResult</p>
+<p>Flags: Read / Write / Construct Only</p>
 <p>Default value: 0</p>
 </div>
 <hr>
@@ -663,7 +664,8 @@ the context of the <a class="link" href="WebKitHitTestResult.html" title="WebKit
 <pre class="programlisting">  “image-uri”                <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
 <p>The URI of the image if flag <a class="link" href="WebKitHitTestResult.html#WEBKIT-HIT-TEST-RESULT-CONTEXT-IMAGE:CAPS"><code class="literal">WEBKIT_HIT_TEST_RESULT_CONTEXT_IMAGE</code></a>
 is present in <a class="link" href="WebKitHitTestResult.html#WebKitHitTestResult--context" title="The “context” property"><span class="type">“context”</span></a></p>
-<p>Flags: Read / Write / Construct Only</p>
+<p>Owner: WebKitHitTestResult</p>
+<p>Flags: Read / Write / Construct Only</p>
 <p>Default value: NULL</p>
 </div>
 <hr>
@@ -672,7 +674,8 @@ is present in <a class="link" href="WebKitHitTestResult.html#WebKitHitTestResult
 <pre class="programlisting">  “link-label”               <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
 <p>The label of the link if flag <a class="link" href="WebKitHitTestResult.html#WEBKIT-HIT-TEST-RESULT-CONTEXT-LINK:CAPS"><code class="literal">WEBKIT_HIT_TEST_RESULT_CONTEXT_LINK</code></a>
 is present in <a class="link" href="WebKitHitTestResult.html#WebKitHitTestResult--context" title="The “context” property"><span class="type">“context”</span></a></p>
-<p>Flags: Read / Write / Construct Only</p>
+<p>Owner: WebKitHitTestResult</p>
+<p>Flags: Read / Write / Construct Only</p>
 <p>Default value: NULL</p>
 </div>
 <hr>
@@ -681,7 +684,8 @@ is present in <a class="link" href="WebKitHitTestResult.html#WebKitHitTestResult
 <pre class="programlisting">  “link-title”               <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
 <p>The title of the link if flag <a class="link" href="WebKitHitTestResult.html#WEBKIT-HIT-TEST-RESULT-CONTEXT-LINK:CAPS"><code class="literal">WEBKIT_HIT_TEST_RESULT_CONTEXT_LINK</code></a>
 is present in <a class="link" href="WebKitHitTestResult.html#WebKitHitTestResult--context" title="The “context” property"><span class="type">“context”</span></a></p>
-<p>Flags: Read / Write / Construct Only</p>
+<p>Owner: WebKitHitTestResult</p>
+<p>Flags: Read / Write / Construct Only</p>
 <p>Default value: NULL</p>
 </div>
 <hr>
@@ -690,7 +694,8 @@ is present in <a class="link" href="WebKitHitTestResult.html#WebKitHitTestResult
 <pre class="programlisting">  “link-uri”                 <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
 <p>The URI of the link if flag <a class="link" href="WebKitHitTestResult.html#WEBKIT-HIT-TEST-RESULT-CONTEXT-LINK:CAPS"><code class="literal">WEBKIT_HIT_TEST_RESULT_CONTEXT_LINK</code></a>
 is present in <a class="link" href="WebKitHitTestResult.html#WebKitHitTestResult--context" title="The “context” property"><span class="type">“context”</span></a></p>
-<p>Flags: Read / Write / Construct Only</p>
+<p>Owner: WebKitHitTestResult</p>
+<p>Flags: Read / Write / Construct Only</p>
 <p>Default value: NULL</p>
 </div>
 <hr>
@@ -699,7 +704,8 @@ is present in <a class="link" href="WebKitHitTestResult.html#WebKitHitTestResult
 <pre class="programlisting">  “media-uri”                <a href="../glib/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *</pre>
 <p>The URI of the media if flag <a class="link" href="WebKitHitTestResult.html#WEBKIT-HIT-TEST-RESULT-CONTEXT-MEDIA:CAPS"><code class="literal">WEBKIT_HIT_TEST_RESULT_CONTEXT_MEDIA</code></a>
 is present in <a class="link" href="WebKitHitTestResult.html#WebKitHitTestResult--context" title="The “context” property"><span class="type">“context”</span></a></p>
-<p>Flags: Read / Write / Construct Only</p>
+<p>Owner: WebKitHitTestResult</p>
+<p>Flags: Read / Write / Construct Only</p>
 <p>Default value: NULL</p>
 </div>
 </div>
@@ -709,6 +715,6 @@ is present in <a class="link" href="WebKitHitTestResult.html#WebKitHitTestResult
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.30</div>
+<hr>Generated by GTK-Doc V1.31</div>
 </body>
 </html>

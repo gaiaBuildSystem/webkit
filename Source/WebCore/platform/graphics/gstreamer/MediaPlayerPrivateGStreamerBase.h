@@ -36,6 +36,28 @@
 #include <wtf/Forward.h>
 #include <wtf/RunLoop.h>
 #include <wtf/WeakPtr.h>
+#include <wtf/threads/BinarySemaphore.h>
+
+#if USE(GSTREAMER_GL)
+#if USE(LIBEPOXY)
+// Include the <epoxy/gl.h> header before <gst/gl/gl.h>.
+#include <epoxy/gl.h>
+
+// Workaround build issue with RPi userland GLESv2 headers and libepoxy <https://webkit.org/b/185639>
+#if !GST_CHECK_VERSION(1, 14, 0)
+#include <gst/gl/gstglconfig.h>
+#if defined(GST_GL_HAVE_WINDOW_DISPMANX) && GST_GL_HAVE_WINDOW_DISPMANX
+#define __gl2_h_
+#undef GST_GL_HAVE_GLSYNC
+#define GST_GL_HAVE_GLSYNC 1
+#endif
+#endif // !GST_CHECK_VERSION(1, 14, 0)
+#endif // USE(LIBEPOXY)
+
+#define GST_USE_UNSTABLE_API
+#include <gst/gl/gl.h>
+#undef GST_USE_UNSTABLE_API
+#endif
 
 #if USE(TEXTURE_MAPPER_GL)
 #include "TextureMapperGL.h"
@@ -67,7 +89,8 @@ class TextureMapperPlatformLayerProxy;
 
 void registerWebKitGStreamerElements();
 
-class MediaPlayerPrivateGStreamerBase : public MediaPlayerPrivateInterface, public CanMakeWeakPtr<MediaPlayerPrivateGStreamerBase>
+// Use eager initialization for the WeakPtrFactory since we call makeWeakPtr() from another thread.
+class MediaPlayerPrivateGStreamerBase : public MediaPlayerPrivateInterface, public CanMakeWeakPtr<MediaPlayerPrivateGStreamerBase, WeakPtrFactoryInitialization::Eager>
 #if USE(TEXTURE_MAPPER_GL)
 #if USE(NICOSIA)
     , public Nicosia::ContentLayerTextureMapperImpl::Client
@@ -76,7 +99,7 @@ class MediaPlayerPrivateGStreamerBase : public MediaPlayerPrivateInterface, publ
 #endif
 #endif
 {
-
+    WTF_MAKE_FAST_ALLOCATED;
 public:
     static void initializeDebugCategory();
 
@@ -91,7 +114,6 @@ public:
     bool ensureGstGLContext();
     GstContext* requestGLContext(const char* contextType);
 #endif
-    bool supportsMuting() const override { return true; }
     void setMuted(bool) override;
     bool muted() const;
 
@@ -165,7 +187,7 @@ public:
     NativeImagePtr nativeImageForCurrentTime() override;
 #endif
 
-    void setVideoSourceOrientation(const ImageOrientation&);
+    void setVideoSourceOrientation(ImageOrientation);
     GstElement* pipeline() const { return m_pipeline.get(); }
 
     virtual bool handleSyncMessage(GstMessage*);
@@ -237,9 +259,7 @@ protected:
         TextChanged = 1 << 5,
 #endif
         SizeChanged = 1 << 6,
-#if GST_CHECK_VERSION(1, 10, 0)
         StreamCollectionChanged = 1 << 7
-#endif
     };
 
     Ref<MainThreadNotifier<MainThreadNotification>> m_notifier;
@@ -282,14 +302,16 @@ protected:
     ImageOrientation m_videoSourceOrientation;
 
 #if ENABLE(ENCRYPTED_MEDIA)
-    Lock m_protectionMutex;
-    Condition m_protectionCondition;
+    BinarySemaphore m_cdmAttachmentSemaphore;
     RefPtr<const CDMInstance> m_cdmInstance;
+
+    Lock m_protectionMutex; // Guards access to m_handledProtectionEvents.
     HashSet<uint32_t> m_handledProtectionEvents;
+
     bool m_waitingForKey { false };
 #endif
 
-    enum class WebKitGstVideoDecoderPlatform { ImxVPU, Video4Linux };
+    enum class WebKitGstVideoDecoderPlatform { Video4Linux };
     Optional<WebKitGstVideoDecoderPlatform> m_videoDecoderPlatform;
 };
 
