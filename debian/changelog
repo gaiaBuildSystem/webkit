@@ -1,4 +1,4 @@
-wpewebkit (2.26.2-1) UNRELEASED; urgency=medium
+wpewebkit (2.26.2-1) experimental; urgency=medium
 
   * New upstream release.
   * Refresh all patches.
@@ -17,7 +17,7 @@ wpewebkit (2.26.2-1) UNRELEASED; urgency=medium
   * debian/rules:
     + Use -DWTF_CPU_ARM64_CORTEXA53=OFF to fix the arm64 build.
 
- -- Alberto Garcia <berto@igalia.com>  Thu, 14 Nov 2019 10:30:27 +0200
+ -- Alberto Garcia <berto@igalia.com>  Thu, 14 Nov 2019 15:09:07 +0200
 
 wpewebkit (2.24.2-1) experimental; urgency=medium
 
