@@ -1,7 +1,7 @@
-libWPEWebInspectorResources.so libwpewebkit-1.0-2 #MINVER#
+libWPEWebInspectorResources.so libwpewebkit-1.0-3 #MINVER#
 * Build-Depends-Package: libwpewebkit-1.0-dev
  InspectorGResourceBundle_get_resource@Base 2.24.2
-libWPEWebKit-1.0.so.2 libwpewebkit-1.0-2 #MINVER#
+libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
 * Build-Depends-Package: libwpewebkit-1.0-dev
  NetworkProcessMainUnix@Base 2.24.1
  WebProcessMainUnix@Base 2.24.1

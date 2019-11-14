@@ -3,6 +3,8 @@ wpewebkit (2.26.2-1) UNRELEASED; urgency=medium
   * New upstream release.
   * Refresh all patches.
   * Update copyright information of all files.
+  * The soname has been bumped from .2 to .3, so rename the packages and
+    the references to the old value.
   * debian/source/lintian-overrides:
     + Update source-is-missing override.
   * debian/control:
@@ -10,7 +12,7 @@ wpewebkit (2.26.2-1) UNRELEASED; urgency=medium
       libseccomp-dev (for ENABLE_BUBBLEWRAP_SANDBOX) and libatk1.0-dev and
       libatk-bridge2.0-dev (for ENABLE_ACCESSIBILITY).
     + Update Standards-Version to 4.4.1 (no changes).
-  * debian/libwpewebkit-1.0-2.symbols:
+  * debian/libwpewebkit-1.0-3.symbols:
     + Update symbols.
 
  -- Alberto Garcia <berto@igalia.com>  Thu, 14 Nov 2019 10:30:27 +0200

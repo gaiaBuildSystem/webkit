@@ -43,7 +43,7 @@ Package: libwpewebkit-1.0-dev
 Section: libdevel
 Architecture: linux-any
 Multi-Arch: same
-Depends: libwpewebkit-1.0-2 (= ${binary:Version}),
+Depends: libwpewebkit-1.0-3 (= ${binary:Version}),
          libglib2.0-dev,
          libsoup2.4-dev,
          ${misc:Depends}
@@ -60,7 +60,7 @@ Description: Web content engine for embedded devices - development files
  .
  This package contains the development files.
 
-Package: libwpewebkit-1.0-2
+Package: libwpewebkit-1.0-3
 Architecture: linux-any
 Multi-Arch: same
 Depends: ${shlibs:Depends}, ${misc:Depends},
@@ -83,7 +83,7 @@ Description: Web content engine for embedded devices
 Package: wpewebkit-driver
 Architecture: linux-any
 Section: web
-Depends: libwpewebkit-1.0-2 (= ${binary:Version}),
+Depends: libwpewebkit-1.0-3 (= ${binary:Version}),
          ${shlibs:Depends},
          ${misc:Depends}
 Description: WPE WebKit WebDriver support
