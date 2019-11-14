@@ -47,6 +47,7 @@
       <sub name="WebKitAutomationSession" link="WebKitAutomationSession.html"/>
       <sub name="WebKitApplicationInfo" link="WebKitApplicationInfo.html"/>
       <sub name="WebKitColor" link="WebKitColor.html"/>
+      <sub name="Geolocation manager" link="wpe-1.0-Geolocation-manager.html"/>
     </sub>
     <sub name="Utilities" link="ch02.html">
       <sub name="WebKitURIUtilities" link="wpe-1.0-WebKitURIUtilities.html"/>
@@ -55,6 +56,8 @@
     <sub name="Index of deprecated symbols" link="api-index-deprecated.html"/>
     <sub name="Index of new symbols in 2.20" link="api-index-2-20.html"/>
     <sub name="Index of new symbols in 2.22" link="api-index-2-22.html"/>
+    <sub name="Index of new symbols in 2.24" link="api-index-2-24.html"/>
+    <sub name="Index of new symbols in 2.26" link="api-index-2-26.html"/>
     <sub name="Annotation Glossary" link="annotation-glossary.html"/>
   </chapters>
   <functions>
@@ -68,12 +71,13 @@
     <keyword type="function" name="webkit_web_context_get_website_data_manager ()" link="WebKitWebContext.html#webkit-web-context-get-website-data-manager" since="2.10"/>
     <keyword type="function" name="webkit_web_context_get_cache_model ()" link="WebKitWebContext.html#webkit-web-context-get-cache-model"/>
     <keyword type="function" name="webkit_web_context_set_cache_model ()" link="WebKitWebContext.html#webkit-web-context-set-cache-model"/>
-    <keyword type="function" name="webkit_web_context_get_web_process_count_limit ()" link="WebKitWebContext.html#webkit-web-context-get-web-process-count-limit" since="2.10"/>
-    <keyword type="function" name="webkit_web_context_set_web_process_count_limit ()" link="WebKitWebContext.html#webkit-web-context-set-web-process-count-limit" since="2.10"/>
+    <keyword type="function" name="webkit_web_context_get_web_process_count_limit ()" link="WebKitWebContext.html#webkit-web-context-get-web-process-count-limit" deprecated="2.26" since="2.10"/>
+    <keyword type="function" name="webkit_web_context_set_web_process_count_limit ()" link="WebKitWebContext.html#webkit-web-context-set-web-process-count-limit" deprecated="2.26" since="2.10"/>
     <keyword type="function" name="webkit_web_context_clear_cache ()" link="WebKitWebContext.html#webkit-web-context-clear-cache"/>
     <keyword type="function" name="webkit_web_context_set_network_proxy_settings ()" link="WebKitWebContext.html#webkit-web-context-set-network-proxy-settings" since="2.16"/>
     <keyword type="function" name="webkit_web_context_download_uri ()" link="WebKitWebContext.html#webkit-web-context-download-uri"/>
     <keyword type="function" name="webkit_web_context_get_cookie_manager ()" link="WebKitWebContext.html#webkit-web-context-get-cookie-manager"/>
+    <keyword type="function" name="webkit_web_context_get_geolocation_manager ()" link="WebKitWebContext.html#webkit-web-context-get-geolocation-manager" since="2.26"/>
     <keyword type="function" name="webkit_web_context_get_favicon_database ()" link="WebKitWebContext.html#webkit-web-context-get-favicon-database"/>
     <keyword type="function" name="webkit_web_context_set_favicon_database_directory ()" link="WebKitWebContext.html#webkit-web-context-set-favicon-database-directory"/>
     <keyword type="function" name="webkit_web_context_get_favicon_database_directory ()" link="WebKitWebContext.html#webkit-web-context-get-favicon-database-directory"/>
@@ -81,6 +85,9 @@
     <keyword type="function" name="webkit_web_context_set_additional_plugins_directory ()" link="WebKitWebContext.html#webkit-web-context-set-additional-plugins-directory"/>
     <keyword type="function" name="webkit_web_context_get_plugins ()" link="WebKitWebContext.html#webkit-web-context-get-plugins"/>
     <keyword type="function" name="webkit_web_context_get_plugins_finish ()" link="WebKitWebContext.html#webkit-web-context-get-plugins-finish"/>
+    <keyword type="function" name="webkit_web_context_get_sandbox_enabled ()" link="WebKitWebContext.html#webkit-web-context-get-sandbox-enabled" since="2.26"/>
+    <keyword type="function" name="webkit_web_context_set_sandbox_enabled ()" link="WebKitWebContext.html#webkit-web-context-set-sandbox-enabled" since="2.26"/>
+    <keyword type="function" name="webkit_web_context_add_path_to_sandbox ()" link="WebKitWebContext.html#webkit-web-context-add-path-to-sandbox" since="2.26"/>
     <keyword type="function" name="webkit_web_context_get_spell_checking_enabled ()" link="WebKitWebContext.html#webkit-web-context-get-spell-checking-enabled"/>
     <keyword type="function" name="webkit_web_context_set_spell_checking_enabled ()" link="WebKitWebContext.html#webkit-web-context-set-spell-checking-enabled"/>
     <keyword type="function" name="webkit_web_context_get_spell_checking_languages ()" link="WebKitWebContext.html#webkit-web-context-get-spell-checking-languages"/>
@@ -395,6 +402,8 @@
     <keyword type="function" name="webkit_settings_set_allow_file_access_from_file_urls ()" link="WebKitSettings.html#webkit-settings-set-allow-file-access-from-file-urls" since="2.10"/>
     <keyword type="function" name="webkit_settings_get_allow_universal_access_from_file_urls ()" link="WebKitSettings.html#webkit-settings-get-allow-universal-access-from-file-urls" since="2.14"/>
     <keyword type="function" name="webkit_settings_set_allow_universal_access_from_file_urls ()" link="WebKitSettings.html#webkit-settings-set-allow-universal-access-from-file-urls" since="2.14"/>
+    <keyword type="function" name="webkit_settings_get_enable_media ()" link="WebKitSettings.html#webkit-settings-get-enable-media" since="2.26"/>
+    <keyword type="function" name="webkit_settings_set_enable_media ()" link="WebKitSettings.html#webkit-settings-set-enable-media" since="2.26"/>
     <keyword type="struct" name="struct WebKitSettings" link="WebKitSettings.html#WebKitSettings-struct"/>
     <keyword type="property" name="The “allow-file-access-from-file-urls” property" link="WebKitSettings.html#WebKitSettings--allow-file-access-from-file-urls"/>
     <keyword type="property" name="The “allow-modal-dialogs” property" link="WebKitSettings.html#WebKitSettings--allow-modal-dialogs"/>
@@ -419,6 +428,7 @@
     <keyword type="property" name="The “enable-java” property" link="WebKitSettings.html#WebKitSettings--enable-java"/>
     <keyword type="property" name="The “enable-javascript” property" link="WebKitSettings.html#WebKitSettings--enable-javascript"/>
     <keyword type="property" name="The “enable-javascript-markup” property" link="WebKitSettings.html#WebKitSettings--enable-javascript-markup"/>
+    <keyword type="property" name="The “enable-media” property" link="WebKitSettings.html#WebKitSettings--enable-media"/>
     <keyword type="property" name="The “enable-media-capabilities” property" link="WebKitSettings.html#WebKitSettings--enable-media-capabilities"/>
     <keyword type="property" name="The “enable-media-stream” property" link="WebKitSettings.html#WebKitSettings--enable-media-stream"/>
     <keyword type="property" name="The “enable-mediasource” property" link="WebKitSettings.html#WebKitSettings--enable-mediasource"/>
@@ -737,6 +747,7 @@
     <keyword type="function" name="webkit_user_content_manager_unregister_script_message_handler_in_world ()" link="WebKitUserContentManager.html#webkit-user-content-manager-unregister-script-message-handler-in-world" since="2.22"/>
     <keyword type="function" name="webkit_user_content_manager_add_filter ()" link="WebKitUserContentManager.html#webkit-user-content-manager-add-filter" since="2.24"/>
     <keyword type="function" name="webkit_user_content_manager_remove_filter ()" link="WebKitUserContentManager.html#webkit-user-content-manager-remove-filter"/>
+    <keyword type="function" name="webkit_user_content_manager_remove_filter_by_id ()" link="WebKitUserContentManager.html#webkit-user-content-manager-remove-filter-by-id" since="2.26"/>
     <keyword type="function" name="webkit_user_content_manager_remove_all_filters ()" link="WebKitUserContentManager.html#webkit-user-content-manager-remove-all-filters" since="2.24"/>
     <keyword type="struct" name="struct WebKitUserContentManager" link="WebKitUserContentManager.html#WebKitUserContentManager-struct"/>
     <keyword type="signal" name="The “script-message-received” signal" link="WebKitUserContentManager.html#WebKitUserContentManager-script-message-received"/>
@@ -790,7 +801,8 @@
     <keyword type="function" name="webkit_website_data_manager_get_disk_cache_directory ()" link="WebKitWebsiteDataManager.html#webkit-website-data-manager-get-disk-cache-directory" since="2.10"/>
     <keyword type="function" name="webkit_website_data_manager_get_offline_application_cache_directory ()" link="WebKitWebsiteDataManager.html#webkit-website-data-manager-get-offline-application-cache-directory" since="2.10"/>
     <keyword type="function" name="webkit_website_data_manager_get_indexeddb_directory ()" link="WebKitWebsiteDataManager.html#webkit-website-data-manager-get-indexeddb-directory" since="2.10"/>
-    <keyword type="function" name="webkit_website_data_manager_get_websql_directory ()" link="WebKitWebsiteDataManager.html#webkit-website-data-manager-get-websql-directory" since="2.10"/>
+    <keyword type="function" name="webkit_website_data_manager_get_websql_directory ()" link="WebKitWebsiteDataManager.html#webkit-website-data-manager-get-websql-directory" deprecated="2.24. WebSQL is no longer supported. Use IndexedDB instead." since="2.10"/>
+    <keyword type="function" name="webkit_website_data_manager_get_hsts_cache_directory ()" link="WebKitWebsiteDataManager.html#webkit-website-data-manager-get-hsts-cache-directory" since="2.26"/>
     <keyword type="function" name="webkit_website_data_manager_get_cookie_manager ()" link="WebKitWebsiteDataManager.html#webkit-website-data-manager-get-cookie-manager" since="2.16"/>
     <keyword type="function" name="webkit_website_data_manager_fetch ()" link="WebKitWebsiteDataManager.html#webkit-website-data-manager-fetch" since="2.16"/>
     <keyword type="function" name="webkit_website_data_manager_fetch_finish ()" link="WebKitWebsiteDataManager.html#webkit-website-data-manager-fetch-finish" since="2.16"/>
@@ -802,6 +814,7 @@
     <keyword type="property" name="The “base-cache-directory” property" link="WebKitWebsiteDataManager.html#WebKitWebsiteDataManager--base-cache-directory"/>
     <keyword type="property" name="The “base-data-directory” property" link="WebKitWebsiteDataManager.html#WebKitWebsiteDataManager--base-data-directory"/>
     <keyword type="property" name="The “disk-cache-directory” property" link="WebKitWebsiteDataManager.html#WebKitWebsiteDataManager--disk-cache-directory"/>
+    <keyword type="property" name="The “hsts-cache-directory” property" link="WebKitWebsiteDataManager.html#WebKitWebsiteDataManager--hsts-cache-directory"/>
     <keyword type="property" name="The “indexeddb-directory” property" link="WebKitWebsiteDataManager.html#WebKitWebsiteDataManager--indexeddb-directory"/>
     <keyword type="property" name="The “is-ephemeral” property" link="WebKitWebsiteDataManager.html#WebKitWebsiteDataManager--is-ephemeral"/>
     <keyword type="property" name="The “local-storage-directory” property" link="WebKitWebsiteDataManager.html#WebKitWebsiteDataManager--local-storage-directory"/>
@@ -836,6 +849,22 @@
     <keyword type="function" name="webkit_color_parse ()" link="WebKitColor.html#webkit-color-parse" since="2.24"/>
     <keyword type="macro" name="WEBKIT_TYPE_COLOR" link="WebKitColor.html#WEBKIT-TYPE-COLOR:CAPS"/>
     <keyword type="struct" name="WebKitColor" link="WebKitColor.html#WebKitColor-struct"/>
+    <keyword type="function" name="webkit_geolocation_manager_update_position ()" link="wpe-1.0-Geolocation-manager.html#webkit-geolocation-manager-update-position" since="2.26"/>
+    <keyword type="function" name="webkit_geolocation_manager_failed ()" link="wpe-1.0-Geolocation-manager.html#webkit-geolocation-manager-failed" since="2.26"/>
+    <keyword type="function" name="webkit_geolocation_manager_get_enable_high_accuracy ()" link="wpe-1.0-Geolocation-manager.html#webkit-geolocation-manager-get-enable-high-accuracy" since="2.26"/>
+    <keyword type="function" name="webkit_geolocation_position_new ()" link="wpe-1.0-Geolocation-manager.html#webkit-geolocation-position-new" since="2.26"/>
+    <keyword type="function" name="webkit_geolocation_position_copy ()" link="wpe-1.0-Geolocation-manager.html#webkit-geolocation-position-copy" since="2.26"/>
+    <keyword type="function" name="webkit_geolocation_position_free ()" link="wpe-1.0-Geolocation-manager.html#webkit-geolocation-position-free" since="2.26"/>
+    <keyword type="function" name="webkit_geolocation_position_set_timestamp ()" link="wpe-1.0-Geolocation-manager.html#webkit-geolocation-position-set-timestamp" since="2.26"/>
+    <keyword type="function" name="webkit_geolocation_position_set_altitude ()" link="wpe-1.0-Geolocation-manager.html#webkit-geolocation-position-set-altitude" since="2.26"/>
+    <keyword type="function" name="webkit_geolocation_position_set_altitude_accuracy ()" link="wpe-1.0-Geolocation-manager.html#webkit-geolocation-position-set-altitude-accuracy" since="2.26"/>
+    <keyword type="function" name="webkit_geolocation_position_set_heading ()" link="wpe-1.0-Geolocation-manager.html#webkit-geolocation-position-set-heading" since="2.26"/>
+    <keyword type="function" name="webkit_geolocation_position_set_speed ()" link="wpe-1.0-Geolocation-manager.html#webkit-geolocation-position-set-speed" since="2.26"/>
+    <keyword type="struct" name="struct WebKitGeolocationManager" link="wpe-1.0-Geolocation-manager.html#WebKitGeolocationManager-struct"/>
+    <keyword type="struct" name="WebKitGeolocationPosition" link="wpe-1.0-Geolocation-manager.html#WebKitGeolocationPosition-struct"/>
+    <keyword type="property" name="The “enable-high-accuracy” property" link="wpe-1.0-Geolocation-manager.html#WebKitGeolocationManager--enable-high-accuracy"/>
+    <keyword type="signal" name="The “start” signal" link="wpe-1.0-Geolocation-manager.html#WebKitGeolocationManager-start"/>
+    <keyword type="signal" name="The “stop” signal" link="wpe-1.0-Geolocation-manager.html#WebKitGeolocationManager-stop"/>
     <keyword type="function" name="webkit_uri_for_display ()" link="wpe-1.0-WebKitURIUtilities.html#webkit-uri-for-display" since="2.24"/>
     <keyword type="constant" name="WEBKIT_CACHE_MODEL_DOCUMENT_VIEWER" link="WebKitWebContext.html#WEBKIT-CACHE-MODEL-DOCUMENT-VIEWER:CAPS"/>
     <keyword type="constant" name="WEBKIT_CACHE_MODEL_WEB_BROWSER" link="WebKitWebContext.html#WEBKIT-CACHE-MODEL-WEB-BROWSER:CAPS"/>
@@ -986,6 +1015,7 @@
     <keyword type="constant" name="WEBKIT_WEBSITE_DATA_PLUGIN_DATA" link="WebKitWebsiteData.html#WEBKIT-WEBSITE-DATA-PLUGIN-DATA:CAPS"/>
     <keyword type="constant" name="WEBKIT_WEBSITE_DATA_COOKIES" link="WebKitWebsiteData.html#WEBKIT-WEBSITE-DATA-COOKIES:CAPS"/>
     <keyword type="constant" name="WEBKIT_WEBSITE_DATA_DEVICE_ID_HASH_SALT" link="WebKitWebsiteData.html#WEBKIT-WEBSITE-DATA-DEVICE-ID-HASH-SALT:CAPS"/>
+    <keyword type="constant" name="WEBKIT_WEBSITE_DATA_HSTS_CACHE" link="WebKitWebsiteData.html#WEBKIT-WEBSITE-DATA-HSTS-CACHE:CAPS"/>
     <keyword type="constant" name="WEBKIT_WEBSITE_DATA_ALL" link="WebKitWebsiteData.html#WEBKIT-WEBSITE-DATA-ALL:CAPS"/>
     <keyword type="member" name="WebKitColor-struct.red" link="WebKitColor.html#WebKitColor-struct.red"/>
     <keyword type="member" name="WebKitColor-struct.green" link="WebKitColor.html#WebKitColor-struct.green"/>

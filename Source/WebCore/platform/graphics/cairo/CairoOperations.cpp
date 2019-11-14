@@ -179,8 +179,7 @@ static void drawShadowLayerBuffer(PlatformContextCairo& platformContext, ImageBu
         return;
 
     if (auto surface = image->nativeImageForCurrentFrame()) {
-        drawNativeImage(platformContext, surface.get(), FloatRect(roundedIntPoint(layerOrigin), layerSize), FloatRect(FloatPoint(), layerSize), shadowState.globalCompositeOperator, BlendMode::Normal, ImageOrientation(),
-            InterpolationDefault, shadowState.globalAlpha, ShadowState());
+        drawNativeImage(platformContext, surface.get(), FloatRect(roundedIntPoint(layerOrigin), layerSize), FloatRect(FloatPoint(), layerSize), { shadowState.globalCompositeOperator }, shadowState.globalAlpha, ShadowState());
     }
 }
 
@@ -192,8 +191,7 @@ static void drawShadowImage(PlatformContextCairo& platformContext, ImageBuffer& 
         return;
 
     if (auto surface = image->nativeImageForCurrentFrame()) {
-        drawNativeImage(platformContext, surface.get(), destRect, srcRect, shadowState.globalCompositeOperator, BlendMode::Normal, ImageOrientation(),
-            InterpolationDefault, shadowState.globalAlpha, ShadowState());
+        drawNativeImage(platformContext, surface.get(), destRect, srcRect, { shadowState.globalCompositeOperator }, shadowState.globalAlpha, ShadowState());
     }
 }
 
@@ -878,37 +876,37 @@ void drawGlyphs(PlatformContextCairo& platformContext, const FillSource& fillSou
     cairo_restore(cr);
 }
 
-void drawNativeImage(PlatformContextCairo& platformContext, cairo_surface_t* surface, const FloatRect& destRect, const FloatRect& srcRect, CompositeOperator compositeOperator, BlendMode blendMode, ImageOrientation orientation, InterpolationQuality imageInterpolationQuality, float globalAlpha, const ShadowState& shadowState)
+void drawNativeImage(PlatformContextCairo& platformContext, cairo_surface_t* surface, const FloatRect& destRect, const FloatRect& srcRect, const ImagePaintingOptions& options, float globalAlpha, const ShadowState& shadowState)
 {
     platformContext.save();
 
     // Set the compositing operation.
-    if (compositeOperator == CompositeSourceOver && blendMode == BlendMode::Normal && !cairoSurfaceHasAlpha(surface))
+    if (options.compositeOperator() == CompositeSourceOver && options.blendMode() == BlendMode::Normal && !cairoSurfaceHasAlpha(surface))
         Cairo::State::setCompositeOperation(platformContext, CompositeCopy, BlendMode::Normal);
     else
-        Cairo::State::setCompositeOperation(platformContext, compositeOperator, blendMode);
+        Cairo::State::setCompositeOperation(platformContext, options.compositeOperator(), options.blendMode());
 
     FloatRect dst = destRect;
-    if (orientation != DefaultImageOrientation) {
+    if (options.orientation() != ImageOrientation::None) {
         // ImageOrientation expects the origin to be at (0, 0).
         Cairo::translate(platformContext, dst.x(), dst.y());
         dst.setLocation(FloatPoint());
-        Cairo::concatCTM(platformContext, orientation.transformFromDefault(dst.size()));
-        if (orientation.usesWidthAsHeight()) {
+        Cairo::concatCTM(platformContext, options.orientation().transformFromDefault(dst.size()));
+        if (options.orientation().usesWidthAsHeight()) {
             // The destination rectangle will have its width and height already reversed for the orientation of
             // the image, as it was needed for page layout, so we need to reverse it back here.
             dst = FloatRect(dst.x(), dst.y(), dst.height(), dst.width());
         }
     }
 
-    drawSurface(platformContext, surface, dst, srcRect, imageInterpolationQuality, globalAlpha, shadowState);
+    drawSurface(platformContext, surface, dst, srcRect, options.interpolationQuality(), globalAlpha, shadowState);
     platformContext.restore();
 }
 
-void drawPattern(PlatformContextCairo& platformContext, cairo_surface_t* surface, const IntSize& size, const FloatRect& destRect, const FloatRect& tileRect, const AffineTransform& patternTransform, const FloatPoint& phase, CompositeOperator compositeOperator, BlendMode blendMode)
+void drawPattern(PlatformContextCairo& platformContext, cairo_surface_t* surface, const IntSize& size, const FloatRect& destRect, const FloatRect& tileRect, const AffineTransform& patternTransform, const FloatPoint& phase, const ImagePaintingOptions& options)
 {
     // FIXME: Investigate why the size has to be passed in as an IntRect.
-    drawPatternToCairoContext(platformContext.cr(), surface, size, tileRect, patternTransform, phase, toCairoOperator(compositeOperator, blendMode), destRect);
+    drawPatternToCairoContext(platformContext.cr(), surface, size, tileRect, patternTransform, phase, toCairoOperator(options.compositeOperator(), options.blendMode()), destRect);
 }
 
 void drawSurface(PlatformContextCairo& platformContext, cairo_surface_t* surface, const FloatRect& destRect, const FloatRect& originalSrcRect, InterpolationQuality imageInterpolationQuality, float globalAlpha, const ShadowState& shadowState)
@@ -935,6 +933,7 @@ void drawSurface(PlatformContextCairo& platformContext, cairo_surface_t* surface
     if (srcRect.x() || srcRect.y() || srcRect.size() != cairoSurfaceSize(surface)) {
         // Cairo subsurfaces don't support floating point boundaries well, so we expand the rectangle.
         IntRect expandedSrcRect(enclosingIntRect(srcRect));
+        expandedSrcRect.intersect({ { }, cairoSurfaceSize(surface) });
 
         // We use a subsurface here so that we don't end up sampling outside the originalSrcRect rectangle.
         // See https://bugs.webkit.org/show_bug.cgi?id=58309
@@ -1251,6 +1250,14 @@ void endTransparencyLayer(PlatformContextCairo& platformContext)
     cairo_paint_with_alpha(cr, platformContext.layers().takeLast());
 }
 
+static void doClipWithAntialias(cairo_t* cr, cairo_antialias_t antialias)
+{
+    auto savedAntialiasRule = cairo_get_antialias(cr);
+    cairo_set_antialias(cr, antialias);
+    cairo_clip(cr);
+    cairo_set_antialias(cr, savedAntialiasRule);
+}
+
 void clip(PlatformContextCairo& platformContext, const FloatRect& rect)
 {
     cairo_t* cr = platformContext.cr();
@@ -1262,11 +1269,8 @@ void clip(PlatformContextCairo& platformContext, const FloatRect& rect)
     // edge fringe artifacts may occur at the layer edges
     // when a transformation is applied to the GraphicsContext
     // while drawing the transformed layer.
-    cairo_antialias_t savedAntialiasRule = cairo_get_antialias(cr);
-    cairo_set_antialias(cr, CAIRO_ANTIALIAS_NONE);
-    cairo_clip(cr);
+    doClipWithAntialias(cr, CAIRO_ANTIALIAS_NONE);
     cairo_set_fill_rule(cr, savedFillRule);
-    cairo_set_antialias(cr, savedAntialiasRule);
 
     if (auto* graphicsContextPrivate = platformContext.graphicsContextPrivate())
         graphicsContextPrivate->clip(rect);
@@ -1281,7 +1285,7 @@ void clipOut(PlatformContextCairo& platformContext, const FloatRect& rect)
     cairo_rectangle(cr, rect.x(), rect.y(), rect.width(), rect.height());
     cairo_fill_rule_t savedFillRule = cairo_get_fill_rule(cr);
     cairo_set_fill_rule(cr, CAIRO_FILL_RULE_EVEN_ODD);
-    cairo_clip(cr);
+    doClipWithAntialias(cr, CAIRO_ANTIALIAS_NONE);
     cairo_set_fill_rule(cr, savedFillRule);
 }
 
@@ -1295,7 +1299,8 @@ void clipOut(PlatformContextCairo& platformContext, const Path& path)
 
     cairo_fill_rule_t savedFillRule = cairo_get_fill_rule(cr);
     cairo_set_fill_rule(cr, CAIRO_FILL_RULE_EVEN_ODD);
-    cairo_clip(cr);
+    // Enforce default antialias when clipping paths, since they can contain curves.
+    doClipWithAntialias(cr, CAIRO_ANTIALIAS_DEFAULT);
     cairo_set_fill_rule(cr, savedFillRule);
 }
 
@@ -1308,7 +1313,8 @@ void clipPath(PlatformContextCairo& platformContext, const Path& path, WindRule 
 
     cairo_fill_rule_t savedFillRule = cairo_get_fill_rule(cr);
     cairo_set_fill_rule(cr, clipRule == WindRule::EvenOdd ? CAIRO_FILL_RULE_EVEN_ODD : CAIRO_FILL_RULE_WINDING);
-    cairo_clip(cr);
+    // Enforce default antialias when clipping paths, since they can contain curves.
+    doClipWithAntialias(cr, CAIRO_ANTIALIAS_DEFAULT);
     cairo_set_fill_rule(cr, savedFillRule);
 
     if (auto* graphicsContextPrivate = platformContext.graphicsContextPrivate())

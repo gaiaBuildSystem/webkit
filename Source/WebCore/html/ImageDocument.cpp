@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2006, 2007, 2008, 2010, 2014 Apple Inc. All rights reserved.
+ * Copyright (C) 2006-2019 Apple Inc. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
@@ -28,6 +28,7 @@
 #include "CachedImage.h"
 #include "Chrome.h"
 #include "ChromeClient.h"
+#include "CustomHeaderFields.h"
 #include "DOMWindow.h"
 #include "DocumentLoader.h"
 #include "EventListener.h"
@@ -197,7 +198,7 @@ void ImageDocumentParser::finish()
 }
 
 ImageDocument::ImageDocument(Frame& frame, const URL& url)
-    : HTMLDocument(&frame, url, ImageDocumentClass)
+    : HTMLDocument(frame.sessionID(), &frame, url, ImageDocumentClass)
     , m_imageElement(nullptr)
     , m_imageSizeIsKnown(false)
 #if !PLATFORM(IOS_FAMILY)
@@ -397,6 +398,9 @@ void ImageDocument::imageClicked(int x, int y)
         restoreImageSize();
 
         updateLayout();
+
+        if (!view())
+            return;
 
         float scale = this->scale();
 

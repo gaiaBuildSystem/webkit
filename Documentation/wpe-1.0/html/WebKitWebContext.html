@@ -8,7 +8,7 @@
 <link rel="up" href="ch01.html" title="Class Overview">
 <link rel="prev" href="ch01.html" title="Class Overview">
 <link rel="next" href="WebKitWebView.html" title="The main frame document title of this #WebKitWebView. If the title has not been received yet, it will be %NULL.">
-<meta name="generator" content="GTK-Doc V1.30 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.31 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -172,6 +172,14 @@
 </tr>
 <tr>
 <td class="function_type">
+<a class="link" href="wpe-1.0-Geolocation-manager.html#WebKitGeolocationManager"><span class="returnvalue">WebKitGeolocationManager</span></a> *
+</td>
+<td class="function_name">
+<a class="link" href="WebKitWebContext.html#webkit-web-context-get-geolocation-manager" title="webkit_web_context_get_geolocation_manager ()">webkit_web_context_get_geolocation_manager</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
 <a class="link" href="WebKitFaviconDatabase.html" title="WebKitFaviconDatabase"><span class="returnvalue">WebKitFaviconDatabase</span></a> *
 </td>
 <td class="function_name">
@@ -223,6 +231,30 @@
 </td>
 <td class="function_name">
 <a class="link" href="WebKitWebContext.html#webkit-web-context-get-plugins-finish" title="webkit_web_context_get_plugins_finish ()">webkit_web_context_get_plugins_finish</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="WebKitWebContext.html#webkit-web-context-get-sandbox-enabled" title="webkit_web_context_get_sandbox_enabled ()">webkit_web_context_get_sandbox_enabled</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="WebKitWebContext.html#webkit-web-context-set-sandbox-enabled" title="webkit_web_context_set_sandbox_enabled ()">webkit_web_context_set_sandbox_enabled</a> <span class="c_punctuation">()</span>
+</td>
+</tr>
+<tr>
+<td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="WebKitWebContext.html#webkit-web-context-add-path-to-sandbox" title="webkit_web_context_add_path_to_sandbox ()">webkit_web_context_add_path_to_sandbox</a> <span class="c_punctuation">()</span>
 </td>
 </tr>
 <tr>
@@ -367,7 +399,7 @@
 <td class="property_type">
 <a class="link" href="WebKitWebsiteDataManager.html" title="WebKitWebsiteDataManager"><span class="type">WebKitWebsiteDataManager</span></a> *</td>
 <td class="property_name"><a class="link" href="WebKitWebContext.html#WebKitWebContext--website-data-manager" title="The “website-data-manager” property">website-data-manager</a></td>
-<td class="property_flags">Read / Write / Construct Only</td>
+<td class="property_flags">Read / Write / Construct Only</td>
 </tr></tbody>
 </table></div>
 </div>
@@ -375,9 +407,9 @@
 <a name="WebKitWebContext.signals"></a><h2>Signals</h2>
 <div class="informaltable"><table class="informaltable" border="0">
 <colgroup>
-<col width="150px" class="signals_return">
-<col width="300px" class="signals_name">
-<col width="200px" class="signals_flags">
+<col width="150px" class="signal_proto_type">
+<col width="300px" class="signal_proto_name">
+<col width="200px" class="signal_proto_flags">
 </colgroup>
 <tbody>
 <tr>
@@ -742,8 +774,10 @@ specifying <a class="link" href="WebKitWebContext.html#WEBKIT-CACHE-MODEL-DOCUME
 <pre class="programlisting"><a href="../glib/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>
 webkit_web_context_get_web_process_count_limit
                                (<em class="parameter"><code><a class="link" href="WebKitWebContext.html" title="WebKitWebContext"><span class="type">WebKitWebContext</span></a> *context</code></em>);</pre>
+<div class="warning"><p><code class="literal">webkit_web_context_get_web_process_count_limit</code> has been deprecated since version 2.26 and should not be used in newly-written code.</p></div>
 <p>Gets the maximum number of web processes that can be created at the same time for the <em class="parameter"><code>context</code></em>
 .</p>
+<p>This function is now deprecated and always returns 0 (no limit). See also <a class="link" href="WebKitWebContext.html#webkit-web-context-set-web-process-count-limit" title="webkit_web_context_set_web_process_count_limit ()"><code class="function">webkit_web_context_set_web_process_count_limit()</code></a>.</p>
 <div class="refsect3">
 <a name="webkit-web-context-get-web-process-count-limit.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -772,12 +806,11 @@ webkit_web_context_get_web_process_count_limit
 webkit_web_context_set_web_process_count_limit
                                (<em class="parameter"><code><a class="link" href="WebKitWebContext.html" title="WebKitWebContext"><span class="type">WebKitWebContext</span></a> *context</code></em>,
                                 <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#guint"><span class="type">guint</span></a> limit</code></em>);</pre>
+<div class="warning"><p><code class="literal">webkit_web_context_set_web_process_count_limit</code> has been deprecated since version 2.26 and should not be used in newly-written code.</p></div>
 <p>Sets the maximum number of web processes that can be created at the same time for the <em class="parameter"><code>context</code></em>
 .
 The default value is 0 and means no limit.</p>
-<p>This method **must be called before any web process has been created**,
-as early as possible in your application. Calling it later will make
-your application crash.</p>
+<p>This function is now deprecated and does nothing for security reasons.</p>
 <div class="refsect3">
 <a name="webkit-web-context-set-web-process-count-limit.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -941,6 +974,37 @@ webkit_web_context_get_cookie_manager (<em class="parameter"><code><a class="lin
 . </p>
 <p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="webkit-web-context-get-geolocation-manager"></a><h3>webkit_web_context_get_geolocation_manager ()</h3>
+<pre class="programlisting"><a class="link" href="wpe-1.0-Geolocation-manager.html#WebKitGeolocationManager"><span class="returnvalue">WebKitGeolocationManager</span></a> *
+webkit_web_context_get_geolocation_manager
+                               (<em class="parameter"><code><a class="link" href="WebKitWebContext.html" title="WebKitWebContext"><span class="type">WebKitWebContext</span></a> *context</code></em>);</pre>
+<p>Get the <a class="link" href="wpe-1.0-Geolocation-manager.html#WebKitGeolocationManager"><span class="type">WebKitGeolocationManager</span></a> of <em class="parameter"><code>context</code></em>
+.</p>
+<div class="refsect3">
+<a name="webkit-web-context-get-geolocation-manager.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WebKitWebContext.html" title="WebKitWebContext"><span class="type">WebKitWebContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="webkit-web-context-get-geolocation-manager.returns"></a><h4>Returns</h4>
+<p>the <a class="link" href="wpe-1.0-Geolocation-manager.html#WebKitGeolocationManager"><span class="type">WebKitGeolocationManager</span></a> of <em class="parameter"><code>context</code></em>
+. </p>
+<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+</div>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1198,6 +1262,113 @@ webkit_web_context_get_plugins_finish (<em class="parameter"><code><a class="lin
 <a href="../glib/glib-Doubly-Linked-Lists.html#g-list-free"><code class="function">g_list_free()</code></a> and unref the <a class="link" href="WebKitPlugin.html" title="WebKitPlugin"><span class="type">WebKitPlugin</span></a>s with <a href="../gobject/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a> when you're done with them. </p>
 <p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> WebKitPlugin][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="webkit-web-context-get-sandbox-enabled"></a><h3>webkit_web_context_get_sandbox_enabled ()</h3>
+<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+webkit_web_context_get_sandbox_enabled
+                               (<em class="parameter"><code><a class="link" href="WebKitWebContext.html" title="WebKitWebContext"><span class="type">WebKitWebContext</span></a> *context</code></em>);</pre>
+<p>Get whether sandboxing is currently enabled.</p>
+<div class="refsect3">
+<a name="webkit-web-context-get-sandbox-enabled.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody><tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WebKitWebContext.html" title="WebKitWebContext"><span class="type">WebKitWebContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody>
+</table></div>
+</div>
+<div class="refsect3">
+<a name="webkit-web-context-get-sandbox-enabled.returns"></a><h4>Returns</h4>
+<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if sandboxing is enabled, or <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise.</p>
+</div>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="webkit-web-context-set-sandbox-enabled"></a><h3>webkit_web_context_set_sandbox_enabled ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+webkit_web_context_set_sandbox_enabled
+                               (<em class="parameter"><code><a class="link" href="WebKitWebContext.html" title="WebKitWebContext"><span class="type">WebKitWebContext</span></a> *context</code></em>,
+                                <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> enabled</code></em>);</pre>
+<p>Set whether WebKit subprocesses will be sandboxed, limiting access to the system.</p>
+<p>This method **must be called before any web process has been created**,
+as early as possible in your application. Calling it later is a fatal error.</p>
+<p>This is only implemented on Linux and is a no-op otherwise.</p>
+<div class="refsect3">
+<a name="webkit-web-context-set-sandbox-enabled.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WebKitWebContext.html" title="WebKitWebContext"><span class="type">WebKitWebContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>enabled</p></td>
+<td class="parameter_description"><p>if <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> enable sandboxing</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
+</div>
+<hr>
+<div class="refsect2">
+<a name="webkit-web-context-add-path-to-sandbox"></a><h3>webkit_web_context_add_path_to_sandbox ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+webkit_web_context_add_path_to_sandbox
+                               (<em class="parameter"><code><a class="link" href="WebKitWebContext.html" title="WebKitWebContext"><span class="type">WebKitWebContext</span></a> *context</code></em>,
+                                <em class="parameter"><code>const <span class="type">char</span> *path</code></em>,
+                                <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> read_only</code></em>);</pre>
+<p>Adds a path to be mounted in the sandbox. <em class="parameter"><code>path</code></em>
+ must exist before any web process
+has been created otherwise it will be silently ignored. It is a fatal error to
+add paths after a web process has been spawned.</p>
+<p>Paths in directories such as <code class="literal">/sys</code>, <code class="literal">/proc</code>, and <code class="literal">/dev</code> or all of <code class="literal">/</code>
+are not valid.</p>
+<p>See also <a class="link" href="WebKitWebContext.html#webkit-web-context-set-sandbox-enabled" title="webkit_web_context_set_sandbox_enabled ()"><code class="function">webkit_web_context_set_sandbox_enabled()</code></a></p>
+<div class="refsect3">
+<a name="webkit-web-context-add-path-to-sandbox.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
+<colgroup>
+<col width="150px" class="parameters_name">
+<col class="parameters_description">
+<col width="200px" class="parameters_annotations">
+</colgroup>
+<tbody>
+<tr>
+<td class="parameter_name"><p>context</p></td>
+<td class="parameter_description"><p>a <a class="link" href="WebKitWebContext.html" title="WebKitWebContext"><span class="type">WebKitWebContext</span></a></p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+<tr>
+<td class="parameter_name"><p>path</p></td>
+<td class="parameter_description"><p>an absolute path to mount in the sandbox. </p></td>
+<td class="parameter_annotations"><span class="annotation">[<acronym title="Override the parsed C type with given type."><span class="acronym">type</span></acronym> filename]</span></td>
+</tr>
+<tr>
+<td class="parameter_name"><p>read_only</p></td>
+<td class="parameter_description"><p>if <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> the path will be read-only</p></td>
+<td class="parameter_annotations"> </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p class="since">Since: <a class="link" href="api-index-2-26.html#api-index-2.26">2.26</a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1605,19 +1776,16 @@ see <a class="link" href="WebKitWebContext.html#webkit-web-context-set-process-m
 webkit_web_context_set_process_model (<em class="parameter"><code><a class="link" href="WebKitWebContext.html" title="WebKitWebContext"><span class="type">WebKitWebContext</span></a> *context</code></em>,
                                       <em class="parameter"><code><a class="link" href="WebKitWebContext.html#WebKitProcessModel" title="enum WebKitProcessModel"><span class="type">WebKitProcessModel</span></a> process_model</code></em>);</pre>
 <p>Specifies a process model for WebViews, which WebKit will use to
-determine how auxiliary processes are handled. The default setting
-(<a class="link" href="WebKitWebContext.html#WEBKIT-PROCESS-MODEL-SHARED-SECONDARY-PROCESS:CAPS"><code class="literal">WEBKIT_PROCESS_MODEL_SHARED_SECONDARY_PROCESS</code></a>) is suitable for most
-applications which embed a small amount of WebViews, or are used to
-display documents which are considered safe — like local files.</p>
-<p>Applications which may potentially use a large amount of WebViews
-—for example a multi-tabbed web browser— may want to use
-<a class="link" href="WebKitWebContext.html#WEBKIT-PROCESS-MODEL-MULTIPLE-SECONDARY-PROCESSES:CAPS"><code class="literal">WEBKIT_PROCESS_MODEL_MULTIPLE_SECONDARY_PROCESSES</code></a>, which will use
+determine how auxiliary processes are handled.</p>
+<p><a class="link" href="WebKitWebContext.html#WEBKIT-PROCESS-MODEL-MULTIPLE-SECONDARY-PROCESSES:CAPS"><code class="literal">WEBKIT_PROCESS_MODEL_MULTIPLE_SECONDARY_PROCESSES</code></a> will use
 one process per view most of the time, while still allowing for web
 views to share a process when needed (for example when different
 views interact with each other). Using this model, when a process
 hangs or crashes, only the WebViews using it stop working, while
 the rest of the WebViews in the application will still function
 normally.</p>
+<p><a class="link" href="WebKitWebContext.html#WEBKIT-PROCESS-MODEL-SHARED-SECONDARY-PROCESS:CAPS"><code class="literal">WEBKIT_PROCESS_MODEL_SHARED_SECONDARY_PROCESS</code></a> is deprecated since 2.26,
+using it has no effect for security reasons.</p>
 <p>This method **must be called before any web process has been created**,
 as early as possible in your application. Calling it later will make
 your application crash.</p>
@@ -1931,11 +2099,7 @@ designer. WebKit will cache a moderate number of resources.</p>
 <tr>
 <td class="enum_member_name"><p><a name="WEBKIT-PROCESS-MODEL-SHARED-SECONDARY-PROCESS:CAPS"></a>WEBKIT_PROCESS_MODEL_SHARED_SECONDARY_PROCESS</p></td>
 <td class="enum_member_description">
-<p>Use a single process to
-perform content rendering. The process is shared among all the
-<a class="link" href="WebKitWebView.html" title="The main frame document title of this #WebKitWebView. If the title has not been received yet, it will be %NULL."><span class="type">WebKitWebView</span></a> instances created by the application: if the process
-hangs or crashes all the web views in the application will be affected.
-This is the default process model, and it should suffice for most cases.</p>
+<p>Deprecated 2.26.</p>
 </td>
 <td class="enum_member_annotations"> </td>
 </tr>
@@ -2039,7 +2203,8 @@ finish the load. In case the signal is not handled,
 <a name="WebKitWebContext--website-data-manager"></a><h3>The <code class="literal">“website-data-manager”</code> property</h3>
 <pre class="programlisting">  “website-data-manager”     <a class="link" href="WebKitWebsiteDataManager.html" title="WebKitWebsiteDataManager"><span class="type">WebKitWebsiteDataManager</span></a> *</pre>
 <p>The <a class="link" href="WebKitWebsiteDataManager.html" title="WebKitWebsiteDataManager"><span class="type">WebKitWebsiteDataManager</span></a> associated with this context.</p>
-<p>Flags: Read / Write / Construct Only</p>
+<p>Owner: WebKitWebContext</p>
+<p>Flags: Read / Write / Construct Only</p>
 <p class="since">Since: 2.10</p>
 </div>
 </div>
@@ -2199,6 +2364,6 @@ and <a class="link" href="WebKitWebContext.html#webkit-web-context-set-web-exten
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.30</div>
+<hr>Generated by GTK-Doc V1.31</div>
 </body>
 </html>

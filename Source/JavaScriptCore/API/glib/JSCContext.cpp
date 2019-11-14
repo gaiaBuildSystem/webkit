@@ -107,7 +107,7 @@ static void jscContextSetVirtualMachine(JSCContext* context, GRefPtr<JSCVirtualM
             priv->jsContext = JSRetainPtr<JSGlobalContextRef>(Adopt, JSGlobalContextCreateInGroup(jscVirtualMachineGetContextGroup(priv->vm.get()), nullptr));
         auto* globalObject = toJSGlobalObject(priv->jsContext.get());
         if (!globalObject->wrapperMap())
-            globalObject->setWrapperMap(std::make_unique<JSC::WrapperMap>(priv->jsContext.get()));
+            globalObject->setWrapperMap(makeUnique<JSC::WrapperMap>(priv->jsContext.get()));
         jscVirtualMachineAddContext(priv->vm.get(), context);
     } else if (priv->vm) {
         ASSERT(priv->jsContext);
@@ -878,7 +878,7 @@ JSCValue* jsc_context_evaluate_in_object(JSCContext* context, const char* code, 
     g_return_val_if_fail(object && !*object, nullptr);
 
     JSRetainPtr<JSGlobalContextRef> objectContext(Adopt,
-        instance ? jscClassCreateContextWithJSWrapper(objectClass, instance) : JSGlobalContextCreateInGroup(jscVirtualMachineGetContextGroup(context->priv->vm.get()), nullptr));
+        instance ? jscClassCreateContextWithJSWrapper(objectClass, context, instance) : JSGlobalContextCreateInGroup(jscVirtualMachineGetContextGroup(context->priv->vm.get()), nullptr));
     JSC::ExecState* exec = toJS(objectContext.get());
     JSC::VM& vm = exec->vm();
     auto* jsObject = vm.vmEntryGlobalObject(exec);
@@ -950,11 +950,11 @@ JSCCheckSyntaxResult jsc_context_check_syntax(JSCContext* context, const char* c
     JSC::ParserError error;
     switch (mode) {
     case JSC_CHECK_SYNTAX_MODE_SCRIPT:
-        success = !!JSC::parse<JSC::ProgramNode>(&vm, source, JSC::Identifier(), JSC::JSParserBuiltinMode::NotBuiltin,
+        success = !!JSC::parse<JSC::ProgramNode>(vm, source, JSC::Identifier(), JSC::JSParserBuiltinMode::NotBuiltin,
             JSC::JSParserStrictMode::NotStrict, JSC::JSParserScriptMode::Classic, JSC::SourceParseMode::ProgramMode, JSC::SuperBinding::NotNeeded, error);
         break;
     case JSC_CHECK_SYNTAX_MODE_MODULE:
-        success = !!JSC::parse<JSC::ModuleProgramNode>(&vm, source, JSC::Identifier(), JSC::JSParserBuiltinMode::NotBuiltin,
+        success = !!JSC::parse<JSC::ModuleProgramNode>(vm, source, JSC::Identifier(), JSC::JSParserBuiltinMode::NotBuiltin,
             JSC::JSParserStrictMode::Strict, JSC::JSParserScriptMode::Module, JSC::SourceParseMode::ModuleAnalyzeMode, JSC::SuperBinding::NotNeeded, error);
         break;
     }

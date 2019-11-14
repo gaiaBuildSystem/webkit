@@ -43,9 +43,6 @@ public:
     RenderView(Document&, RenderStyle&&);
     virtual ~RenderView();
 
-    WEBCORE_EXPORT bool hitTest(const HitTestRequest&, HitTestResult&);
-    bool hitTest(const HitTestRequest&, const HitTestLocation&, HitTestResult&);
-
     const char* renderName() const override { return "RenderView"; }
 
     bool requiresLayer() const override { return true; }
@@ -71,7 +68,6 @@ public:
 
     FrameView& frameView() const { return m_frameView; }
 
-    LayoutRect visualOverflowRect() const override;
     Optional<LayoutRect> computeVisibleRectInContainer(const LayoutRect&, const RenderLayerModelObject* container, VisibleRectContext) const override;
     void repaintRootContents();
     void repaintViewRectangle(const LayoutRect&) const;
@@ -150,10 +146,14 @@ public:
     // requires walking the entire tree repeatedly and most pages don't actually use either
     // feature so we shouldn't take the performance hit when not needed. Long term we should
     // rewrite the counter code.
-    void addRenderCounter() { m_renderCounterCount++; }
-    void removeRenderCounter() { ASSERT(m_renderCounterCount > 0); m_renderCounterCount--; }
-    bool hasRenderCounters() { return m_renderCounterCount; }
-    
+    void addRenderCounter() { ++m_renderCounterCount; }
+    void removeRenderCounter() { ASSERT(m_renderCounterCount > 0); --m_renderCounterCount; }
+    bool hasRenderCounters() const { return m_renderCounterCount; }
+
+    void incrementRendersWithOutline() { ++m_renderersWithOutlineCount; }
+    void decrementRendersWithOutline() { ASSERT(m_renderersWithOutlineCount > 0); --m_renderersWithOutlineCount; }
+    bool hasRenderersWithOutline() const { return m_renderersWithOutlineCount; }
+
     ImageQualityController& imageQualityController();
 
     void setHasSoftwareFilters(bool hasSoftwareFilters) { m_hasSoftwareFilters = hasSoftwareFilters; }
@@ -166,7 +166,7 @@ public:
     void updateVisibleViewportRect(const IntRect&);
     void registerForVisibleInViewportCallback(RenderElement&);
     void unregisterForVisibleInViewportCallback(RenderElement&);
-    void resumePausedImageAnimationsIfNeeded(IntRect visibleRect);
+    void resumePausedImageAnimationsIfNeeded(const IntRect& visibleRect);
     void addRendererWithPausedImageAnimations(RenderElement&, CachedImage&);
     void removeRendererWithPausedImageAnimations(RenderElement&);
     void removeRendererWithPausedImageAnimations(RenderElement&, CachedImage&);
@@ -192,10 +192,6 @@ public:
     void registerBoxWithScrollSnapPositions(const RenderBox&);
     void unregisterBoxWithScrollSnapPositions(const RenderBox&);
     const HashSet<const RenderBox*>& boxesWithScrollSnapPositions() { return m_boxesWithScrollSnapPositions; }
-#endif
-
-#if !ASSERT_DISABLED
-    bool inHitTesting() const { return m_inHitTesting; }
 #endif
 
 protected:
@@ -249,13 +245,11 @@ private:
     bool m_hasQuotesNeedingUpdate { false };
 
     unsigned m_renderCounterCount { 0 };
+    unsigned m_renderersWithOutlineCount { 0 };
 
     bool m_hasSoftwareFilters { false };
     bool m_usesFirstLineRules { false };
     bool m_usesFirstLetterRules { false };
-#if !ASSERT_DISABLED
-    bool m_inHitTesting { false };
-#endif
 
     HashMap<RenderElement*, Vector<CachedImage*>> m_renderersWithPausedImageAnimation;
     HashSet<RenderElement*> m_visibleInViewportRenderers;
