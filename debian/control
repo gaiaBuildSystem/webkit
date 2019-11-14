@@ -10,6 +10,11 @@ Build-Depends: debhelper (>= 10),
                gperf,
                python,
                ruby,
+               libatk1.0-dev,
+               libatk-bridge2.0-dev,
+               bubblewrap,
+               xdg-dbus-proxy,
+               libseccomp-dev,
                libcairo2-dev,
                libicu-dev,
                libjpeg-dev,
@@ -58,7 +63,9 @@ Description: Web content engine for embedded devices - development files
 Package: libwpewebkit-1.0-2
 Architecture: linux-any
 Multi-Arch: same
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends},
+         bubblewrap (>= 0.3.1),
+         xdg-dbus-proxy,
 Suggests: libwpebackend-fdo-1.0-1
 Description: Web content engine for embedded devices
  WebKit is a modern web engine that is able to display content such as
