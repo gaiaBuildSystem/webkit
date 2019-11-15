@@ -4,7 +4,9 @@ Priority: optional
 Maintainer: Debian WebKit Maintainers <pkg-webkit-maintainers@lists.alioth.debian.org>
 Uploaders: Alberto Garcia <berto@igalia.com>
 Build-Depends: debhelper (>= 10),
-               bubblewrap (>= 0.3.1),
+               bubblewrap (>= 0.3.1) [!alpha !ia64 !m68k !riscv64 !sh4 !sparc64],
+               xdg-dbus-proxy [!alpha !ia64 !m68k !riscv64 !sh4 !sparc64],
+               libseccomp-dev [!alpha !ia64 !m68k !riscv64 !sh4 !sparc64],
                cmake (>= 3.3),
                gperf,
                gtk-doc-tools,
@@ -20,7 +22,6 @@ Build-Depends: debhelper (>= 10),
                libicu-dev,
                libjpeg-dev,
                libopenjp2-7-dev (>= 2.2.0),
-               libseccomp-dev,
                libsoup2.4-dev (>= 2.42.0),
                libsqlite3-dev,
                libtasn1-6-dev,
@@ -32,8 +33,7 @@ Build-Depends: debhelper (>= 10),
                ninja-build,
                python,
                ruby:native,
-               wayland-protocols,
-               xdg-dbus-proxy
+               wayland-protocols
 Standards-Version: 4.4.1
 Vcs-Browser: https://salsa.debian.org/webkit-team/webkit
 Vcs-Git: https://salsa.debian.org/webkit-team/webkit.git
@@ -64,8 +64,7 @@ Package: libwpewebkit-1.0-3
 Architecture: linux-any
 Multi-Arch: same
 Depends: ${shlibs:Depends}, ${misc:Depends},
-         bubblewrap (>= 0.3.1),
-         xdg-dbus-proxy,
+         ${bwrap:Depends}
 Suggests: libwpebackend-fdo-1.0-1
 Description: Web content engine for embedded devices
  WebKit is a modern web engine that is able to display content such as

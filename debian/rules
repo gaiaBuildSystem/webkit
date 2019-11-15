@@ -9,6 +9,7 @@ CFLAGS = $(shell dpkg-buildflags --get CFLAGS)
 LDFLAGS = $(shell dpkg-buildflags --get LDFLAGS) -Wl,--as-needed
 
 EXTRA_CMAKE_ARGUMENTS =
+DH_GENCONTROL_ARGS =
 
 # Sacrifice speed in order to make it more likely resource limits
 # won't be hit.
@@ -42,6 +43,17 @@ else
 	EXTRA_CMAKE_ARGUMENTS += -DCMAKE_BUILD_TYPE=Release
 	CPPFLAGS += -DNDEBUG -DG_DISABLE_CAST_CHECKS
 endif
+
+# Disable the bubblewrap sandbox if libseccomp-dev is not available
+ifeq ($(shell pkg-config --exists libseccomp && echo yes),yes)
+	EXTRA_CMAKE_ARGUMENTS += -DENABLE_BUBBLEWRAP_SANDBOX=ON
+	DH_GENCONTROL_ARGS += -Vbwrap:Depends="bubblewrap (>= 0.3.1), xdg-dbus-proxy"
+else
+	EXTRA_CMAKE_ARGUMENTS += -DENABLE_BUBBLEWRAP_SANDBOX=OFF
+endif
+
+override_dh_gencontrol:
+	dh_gencontrol -- $(DH_GENCONTROL_ARGS)
 
 %:
 	dh $@ --buildsystem=cmake+ninja
