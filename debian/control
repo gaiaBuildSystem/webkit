@@ -32,7 +32,6 @@ Build-Depends: debhelper (>= 10),
                libwpebackend-fdo-1.0-dev,
                libxslt1-dev (>= 1.1.7),
                ninja-build,
-               python,
                ruby:native,
                wayland-protocols
 Standards-Version: 4.4.1
