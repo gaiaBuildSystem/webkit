@@ -46,6 +46,7 @@ Multi-Arch: same
 Depends: libwpewebkit-1.0-3 (= ${binary:Version}),
          libglib2.0-dev,
          libsoup2.4-dev,
+         libwpe-1.0-dev,
          ${misc:Depends}
 Description: Web content engine for embedded devices - development files
  WebKit is a modern web engine that is able to display content such as
