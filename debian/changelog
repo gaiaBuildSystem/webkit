@@ -21,6 +21,8 @@ wpewebkit (2.26.3-1) UNRELEASED; urgency=medium
     + Add Rules-Requires-Root: no.
   * debian/copyright:
     + Update copyright years.
+  * debian/rules:
+    + Don't use the Gold linker on powerpc (see #949618).
 
  -- Alberto Garcia <berto@igalia.com>  Mon, 06 Jan 2020 14:35:18 +0100
 
