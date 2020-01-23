@@ -25,6 +25,8 @@ wpewebkit (2.26.3-1) UNRELEASED; urgency=medium
     + Don't use the Gold linker on powerpc (see #949618).
   * debian/patches/reduce-memory-overheads.patch:
     + Reduce memory usage when not using the Gold linker (see #949621).
+  * debian/patches/fix-ftbfs-m68k.patch:
+    + Fix m68k build (see #949660).
 
  -- Alberto Garcia <berto@igalia.com>  Mon, 06 Jan 2020 14:35:18 +0100
 
