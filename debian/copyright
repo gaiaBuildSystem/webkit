@@ -3,7 +3,7 @@ Upstream-Name: wpewebkit
 Source: https://wpewebkit.org/releases/
 
 Files: *
-Copyright: © 2002-2019 Apple Inc. and others
+Copyright: © 2002-2020 Apple Inc. and others
 License: BSD-2-clause
 Comment:
  The default license of WebKit is BSD 2-clause. The exceptions are
@@ -3737,7 +3737,7 @@ License: BSD-3-clause-apple-mozilla
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 Files: debian/*
-Copyright: © 2019 Alberto Garcia <berto@igalia.com>
+Copyright: © 2019-2020 Alberto Garcia <berto@igalia.com>
 License: BSD-2-clause
 
 License: BSD-2-clause
