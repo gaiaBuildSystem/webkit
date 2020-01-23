@@ -1,4 +1,4 @@
-wpewebkit (2.26.3-1) UNRELEASED; urgency=medium
+wpewebkit (2.26.3-1) unstable; urgency=high
 
   * New upstream release.
   * Build without the bubblewrap sandbox if the required dependencies are
@@ -28,7 +28,7 @@ wpewebkit (2.26.3-1) UNRELEASED; urgency=medium
   * debian/patches/fix-ftbfs-m68k.patch:
     + Fix m68k build (see #949660).
 
- -- Alberto Garcia <berto@igalia.com>  Mon, 06 Jan 2020 14:35:18 +0100
+ -- Alberto Garcia <berto@igalia.com>  Thu, 23 Jan 2020 16:46:10 +0100
 
 wpewebkit (2.26.2-1) experimental; urgency=medium
 
