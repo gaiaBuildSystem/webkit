@@ -1,0 +1,4 @@
+Bug-Database: https://bugs.webkit.org/buglist.cgi?component=WPE%20WebKit&product=WebKit&resolution=---
+Bug-Submit: https://bugs.webkit.org/enter_bug.cgi?product=WebKit&component=WPE%20WebKit
+Repository: git://git.webkit.org/WebKit-https.git
+Repository-Browse: https://trac.webkit.org/browser
