@@ -1,4 +1,5 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Contact: https://lists.webkit.org/mailman/listinfo/webkit-wpe
 Upstream-Name: wpewebkit
 Source: https://wpewebkit.org/releases/
 
