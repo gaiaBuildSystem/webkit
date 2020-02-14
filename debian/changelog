@@ -1,4 +1,4 @@
-wpewebkit (2.26.4-1) UNRELEASED; urgency=medium
+wpewebkit (2.26.4-1) unstable; urgency=high
 
   * New upstream release.
   * The WPE WebKit security advisory WSA-2020-0002 lists the following
@@ -15,7 +15,7 @@ wpewebkit (2.26.4-1) UNRELEASED; urgency=medium
     + Add Upstream-Contact.
   * Add debian/upstream/metadata.
 
- -- Alberto Garcia <berto@igalia.com>  Fri, 24 Jan 2020 18:44:03 +0100
+ -- Alberto Garcia <berto@igalia.com>  Fri, 14 Feb 2020 16:04:27 +0100
 
 wpewebkit (2.26.3-1) unstable; urgency=high
 
