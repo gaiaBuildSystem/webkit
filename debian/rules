@@ -57,11 +57,11 @@ else
 	EXTRA_CMAKE_ARGUMENTS += -DENABLE_BUBBLEWRAP_SANDBOX=OFF
 endif
 
-override_dh_gencontrol:
-	dh_gencontrol -- $(DH_GENCONTROL_ARGS)
-
 %:
 	dh $@ --buildsystem=cmake+ninja
+
+override_dh_gencontrol:
+	dh_gencontrol -- $(DH_GENCONTROL_ARGS)
 
 override_dh_auto_configure:
 	CXXFLAGS="$(CFLAGS)" \
