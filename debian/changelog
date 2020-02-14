@@ -5,6 +5,7 @@ wpewebkit (2.26.4-1) UNRELEASED; urgency=medium
     + Enable THREADS_PREFER_PTHREAD_FLAG. This fixes a FTBFS in riscv64
   * debian/control:
     + Add branch name to the Vcs-Git field.
+    + Update Standards-Version to 4.5.0 (no changes).
   * debian/copyright:
     + Add Upstream-Contact.
   * Add debian/upstream/metadata.
