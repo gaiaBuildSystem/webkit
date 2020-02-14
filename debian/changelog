@@ -6,6 +6,7 @@ wpewebkit (2.26.4-1) UNRELEASED; urgency=medium
   * debian/control:
     + Add branch name to the Vcs-Git field.
     + Update Standards-Version to 4.5.0 (no changes).
+    + Make libwpewebkit-1.0-doc Multi-Arch: foreign.
   * debian/copyright:
     + Add Upstream-Contact.
   * Add debian/upstream/metadata.

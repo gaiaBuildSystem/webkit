@@ -103,6 +103,7 @@ Description: WPE WebKit WebDriver support
 Package: libwpewebkit-1.0-doc
 Section: doc
 Architecture: all
+Multi-Arch: foreign
 Depends: ${misc:Depends}
 Suggests: devhelp
 Description: Web content engine for embedded devices - documentation
