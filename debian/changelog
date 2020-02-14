@@ -1,6 +1,10 @@
 wpewebkit (2.26.4-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * The WPE WebKit security advisory WSA-2020-0002 lists the following
+    security fixes in the latest versions of WPE WebKit:
+    + CVE-2020-3862, CVE-2020-3864, CVE-2020-3865, CVE-2020-3867,
+      CVE-2020-3868 (fixed in 2.26.4)
   * debian/patches/prefer-pthread.patch:
     + Enable THREADS_PREFER_PTHREAD_FLAG. This fixes a FTBFS in riscv64
   * debian/control:
