@@ -1,5 +1,6 @@
-wpewebkit (2.26.3-2) UNRELEASED; urgency=medium
+wpewebkit (2.26.4-1) UNRELEASED; urgency=medium
 
+  * New upstream release.
   * debian/patches/prefer-pthread.patch:
     + Enable THREADS_PREFER_PTHREAD_FLAG. This fixes a FTBFS in riscv64
   * debian/control:
