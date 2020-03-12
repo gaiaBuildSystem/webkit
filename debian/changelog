@@ -4,6 +4,8 @@ wpewebkit (2.28.0-1) UNRELEASED; urgency=medium
   * Refresh all patches.
   * debian/gbp.conf:
     + Update upstream branch name.
+  * debian/WebKitWebDriver.1:
+    + Fix grammar.
 
  -- Alberto Garcia <berto@igalia.com>  Thu, 12 Mar 2020 17:30:06 +0100
 
