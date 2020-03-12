@@ -48,6 +48,9 @@
       <sub name="WebKitApplicationInfo" link="WebKitApplicationInfo.html"/>
       <sub name="WebKitColor" link="WebKitColor.html"/>
       <sub name="Geolocation manager" link="wpe-1.0-Geolocation-manager.html"/>
+      <sub name="WebKitUserMessage" link="WebKitUserMessage.html"/>
+      <sub name="WebKitInputMethodContext" link="WebKitInputMethodContext.html"/>
+      <sub name="WebKitRectangle" link="WebKitRectangle.html"/>
     </sub>
     <sub name="Utilities" link="ch02.html">
       <sub name="WebKitURIUtilities" link="wpe-1.0-WebKitURIUtilities.html"/>
@@ -58,6 +61,7 @@
     <sub name="Index of new symbols in 2.22" link="api-index-2-22.html"/>
     <sub name="Index of new symbols in 2.24" link="api-index-2-24.html"/>
     <sub name="Index of new symbols in 2.26" link="api-index-2-26.html"/>
+    <sub name="Index of new symbols in 2.28" link="api-index-2-28.html"/>
     <sub name="Annotation Glossary" link="annotation-glossary.html"/>
   </chapters>
   <functions>
@@ -102,6 +106,7 @@
     <keyword type="function" name="webkit_web_context_get_process_model ()" link="WebKitWebContext.html#webkit-web-context-get-process-model" since="2.4"/>
     <keyword type="function" name="webkit_web_context_set_process_model ()" link="WebKitWebContext.html#webkit-web-context-set-process-model" since="2.4"/>
     <keyword type="function" name="webkit_web_context_initialize_notification_permissions ()" link="WebKitWebContext.html#webkit-web-context-initialize-notification-permissions" since="2.16"/>
+    <keyword type="function" name="webkit_web_context_send_message_to_all_extensions ()" link="WebKitWebContext.html#webkit-web-context-send-message-to-all-extensions" since="2.28"/>
     <keyword type="function" name="WebKitURISchemeRequestCallback ()" link="WebKitWebContext.html#WebKitURISchemeRequestCallback"/>
     <keyword type="function" name="webkit_web_context_register_uri_scheme ()" link="WebKitWebContext.html#webkit-web-context-register-uri-scheme"/>
     <keyword type="struct" name="struct WebKitWebContext" link="WebKitWebContext.html#WebKitWebContext-struct"/>
@@ -114,6 +119,7 @@
     <keyword type="signal" name="The “download-started” signal" link="WebKitWebContext.html#WebKitWebContext-download-started"/>
     <keyword type="signal" name="The “initialize-notification-permissions” signal" link="WebKitWebContext.html#WebKitWebContext-initialize-notification-permissions"/>
     <keyword type="signal" name="The “initialize-web-extensions” signal" link="WebKitWebContext.html#WebKitWebContext-initialize-web-extensions"/>
+    <keyword type="signal" name="The “user-message-received” signal" link="WebKitWebContext.html#WebKitWebContext-user-message-received"/>
     <keyword type="function" name="WebKitFrameDisplayedCallback ()" link="WebKitWebView.html#WebKitFrameDisplayedCallback" since="2.24"/>
     <keyword type="function" name="webkit_web_view_new ()" link="WebKitWebView.html#webkit-web-view-new"/>
     <keyword type="function" name="webkit_web_view_new_with_context ()" link="WebKitWebView.html#webkit-web-view-new-with-context"/>
@@ -123,6 +129,7 @@
     <keyword type="function" name="webkit_web_view_get_backend ()" link="WebKitWebView.html#webkit-web-view-get-backend" since="2.20"/>
     <keyword type="function" name="webkit_web_view_is_ephemeral ()" link="WebKitWebView.html#webkit-web-view-is-ephemeral" since="2.16"/>
     <keyword type="function" name="webkit_web_view_is_controlled_by_automation ()" link="WebKitWebView.html#webkit-web-view-is-controlled-by-automation" since="2.18"/>
+    <keyword type="function" name="webkit_web_view_get_automation_presentation_type ()" link="WebKitWebView.html#webkit-web-view-get-automation-presentation-type" since="2.28"/>
     <keyword type="function" name="webkit_web_view_get_context ()" link="WebKitWebView.html#webkit-web-view-get-context"/>
     <keyword type="function" name="webkit_web_view_get_user_content_manager ()" link="WebKitWebView.html#webkit-web-view-get-user-content-manager" since="2.6"/>
     <keyword type="function" name="webkit_web_view_get_website_data_manager ()" link="WebKitWebView.html#webkit-web-view-get-website-data-manager" since="2.16"/>
@@ -183,6 +190,10 @@
     <keyword type="function" name="webkit_web_view_remove_frame_displayed_callback ()" link="WebKitWebView.html#webkit-web-view-remove-frame-displayed-callback" since="2.24"/>
     <keyword type="function" name="webkit_web_view_get_background_color ()" link="WebKitWebView.html#webkit-web-view-get-background-color"/>
     <keyword type="function" name="webkit_web_view_set_background_color ()" link="WebKitWebView.html#webkit-web-view-set-background-color"/>
+    <keyword type="function" name="webkit_web_view_send_message_to_page ()" link="WebKitWebView.html#webkit-web-view-send-message-to-page" since="2.28"/>
+    <keyword type="function" name="webkit_web_view_send_message_to_page_finish ()" link="WebKitWebView.html#webkit-web-view-send-message-to-page-finish" since="2.28"/>
+    <keyword type="function" name="webkit_web_view_set_input_method_context ()" link="WebKitWebView.html#webkit-web-view-set-input-method-context" since="2.28"/>
+    <keyword type="function" name="webkit_web_view_get_input_method_context ()" link="WebKitWebView.html#webkit-web-view-get-input-method-context" since="2.28"/>
     <keyword type="function" name="webkit_javascript_result_ref ()" link="WebKitWebView.html#webkit-javascript-result-ref"/>
     <keyword type="function" name="webkit_javascript_result_unref ()" link="WebKitWebView.html#webkit-javascript-result-unref"/>
     <keyword type="function" name="webkit_javascript_result_get_js_value ()" link="WebKitWebView.html#webkit-javascript-result-get-js-value" since="2.22"/>
@@ -216,6 +227,7 @@
     <keyword type="struct" name="WebKitScriptDialog" link="WebKitWebView.html#WebKitScriptDialog-struct"/>
     <keyword type="enum" name="enum WebKitScriptDialogType" link="WebKitWebView.html#WebKitScriptDialogType"/>
     <keyword type="struct" name="WebKitWebViewSessionState" link="WebKitWebView.html#WebKitWebViewSessionState-struct"/>
+    <keyword type="property" name="The “automation-presentation-type” property" link="WebKitWebView.html#WebKitWebView--automation-presentation-type"/>
     <keyword type="property" name="The “backend” property" link="WebKitWebView.html#WebKitWebView--backend"/>
     <keyword type="property" name="The “editable” property" link="WebKitWebView.html#WebKitWebView--editable"/>
     <keyword type="property" name="The “estimated-load-progress” property" link="WebKitWebView.html#WebKitWebView--estimated-load-progress"/>
@@ -223,6 +235,7 @@
     <keyword type="property" name="The “is-ephemeral” property" link="WebKitWebView.html#WebKitWebView--is-ephemeral"/>
     <keyword type="property" name="The “is-loading” property" link="WebKitWebView.html#WebKitWebView--is-loading"/>
     <keyword type="property" name="The “is-playing-audio” property" link="WebKitWebView.html#WebKitWebView--is-playing-audio"/>
+    <keyword type="property" name="The “page-id” property" link="WebKitWebView.html#WebKitWebView--page-id"/>
     <keyword type="property" name="The “related-view” property" link="WebKitWebView.html#WebKitWebView--related-view"/>
     <keyword type="property" name="The “settings” property" link="WebKitWebView.html#WebKitWebView--settings"/>
     <keyword type="property" name="The “title” property" link="WebKitWebView.html#WebKitWebView--title"/>
@@ -250,7 +263,9 @@
     <keyword type="signal" name="The “run-file-chooser” signal" link="WebKitWebView.html#WebKitWebView-run-file-chooser"/>
     <keyword type="signal" name="The “script-dialog” signal" link="WebKitWebView.html#WebKitWebView-script-dialog"/>
     <keyword type="signal" name="The “show-notification” signal" link="WebKitWebView.html#WebKitWebView-show-notification"/>
+    <keyword type="signal" name="The “show-option-menu” signal" link="WebKitWebView.html#WebKitWebView-show-option-menu"/>
     <keyword type="signal" name="The “submit-form” signal" link="WebKitWebView.html#WebKitWebView-submit-form"/>
+    <keyword type="signal" name="The “user-message-received” signal" link="WebKitWebView.html#WebKitWebView-user-message-received"/>
     <keyword type="signal" name="The “web-process-terminated” signal" link="WebKitWebView.html#WebKitWebView-web-process-terminated"/>
     <keyword type="function" name="webkit_web_view_backend_get_wpe_backend ()" link="WebKitWebViewBackend.html#webkit-web-view-backend-get-wpe-backend" since="2.20"/>
     <keyword type="function" name="webkit_web_view_backend_new ()" link="WebKitWebViewBackend.html#webkit-web-view-backend-new" since="2.20"/>
@@ -402,11 +417,14 @@
     <keyword type="function" name="webkit_settings_set_allow_file_access_from_file_urls ()" link="WebKitSettings.html#webkit-settings-set-allow-file-access-from-file-urls" since="2.10"/>
     <keyword type="function" name="webkit_settings_get_allow_universal_access_from_file_urls ()" link="WebKitSettings.html#webkit-settings-get-allow-universal-access-from-file-urls" since="2.14"/>
     <keyword type="function" name="webkit_settings_set_allow_universal_access_from_file_urls ()" link="WebKitSettings.html#webkit-settings-set-allow-universal-access-from-file-urls" since="2.14"/>
+    <keyword type="function" name="webkit_settings_get_allow_top_navigation_to_data_urls ()" link="WebKitSettings.html#webkit-settings-get-allow-top-navigation-to-data-urls" since="2.28"/>
+    <keyword type="function" name="webkit_settings_set_allow_top_navigation_to_data_urls ()" link="WebKitSettings.html#webkit-settings-set-allow-top-navigation-to-data-urls" since="2.28"/>
     <keyword type="function" name="webkit_settings_get_enable_media ()" link="WebKitSettings.html#webkit-settings-get-enable-media" since="2.26"/>
     <keyword type="function" name="webkit_settings_set_enable_media ()" link="WebKitSettings.html#webkit-settings-set-enable-media" since="2.26"/>
     <keyword type="struct" name="struct WebKitSettings" link="WebKitSettings.html#WebKitSettings-struct"/>
     <keyword type="property" name="The “allow-file-access-from-file-urls” property" link="WebKitSettings.html#WebKitSettings--allow-file-access-from-file-urls"/>
     <keyword type="property" name="The “allow-modal-dialogs” property" link="WebKitSettings.html#WebKitSettings--allow-modal-dialogs"/>
+    <keyword type="property" name="The “allow-top-navigation-to-data-urls” property" link="WebKitSettings.html#WebKitSettings--allow-top-navigation-to-data-urls"/>
     <keyword type="property" name="The “allow-universal-access-from-file-urls” property" link="WebKitSettings.html#WebKitSettings--allow-universal-access-from-file-urls"/>
     <keyword type="property" name="The “auto-load-images” property" link="WebKitSettings.html#WebKitSettings--auto-load-images"/>
     <keyword type="property" name="The “cursive-font-family” property" link="WebKitSettings.html#WebKitSettings--cursive-font-family"/>
@@ -836,6 +854,7 @@
     <keyword type="function" name="webkit_automation_session_set_application_info ()" link="WebKitAutomationSession.html#webkit-automation-session-set-application-info" since="2.18"/>
     <keyword type="function" name="webkit_automation_session_get_application_info ()" link="WebKitAutomationSession.html#webkit-automation-session-get-application-info" since="2.18"/>
     <keyword type="struct" name="struct WebKitAutomationSession" link="WebKitAutomationSession.html#WebKitAutomationSession-struct"/>
+    <keyword type="enum" name="enum WebKitAutomationBrowsingContextPresentation" link="WebKitAutomationSession.html#WebKitAutomationBrowsingContextPresentation" since="2.28"/>
     <keyword type="property" name="The “id” property" link="WebKitAutomationSession.html#WebKitAutomationSession--id"/>
     <keyword type="signal" name="The “create-web-view” signal" link="WebKitAutomationSession.html#WebKitAutomationSession-create-web-view"/>
     <keyword type="function" name="webkit_application_info_new ()" link="WebKitApplicationInfo.html#webkit-application-info-new" since="2.18"/>
@@ -865,6 +884,48 @@
     <keyword type="property" name="The “enable-high-accuracy” property" link="wpe-1.0-Geolocation-manager.html#WebKitGeolocationManager--enable-high-accuracy"/>
     <keyword type="signal" name="The “start” signal" link="wpe-1.0-Geolocation-manager.html#WebKitGeolocationManager-start"/>
     <keyword type="signal" name="The “stop” signal" link="wpe-1.0-Geolocation-manager.html#WebKitGeolocationManager-stop"/>
+    <keyword type="function" name="webkit_user_message_new ()" link="WebKitUserMessage.html#webkit-user-message-new" since="2.28"/>
+    <keyword type="function" name="webkit_user_message_new_with_fd_list ()" link="WebKitUserMessage.html#webkit-user-message-new-with-fd-list" since="2.28"/>
+    <keyword type="function" name="webkit_user_message_get_name ()" link="WebKitUserMessage.html#webkit-user-message-get-name" since="2.28"/>
+    <keyword type="function" name="webkit_user_message_get_parameters ()" link="WebKitUserMessage.html#webkit-user-message-get-parameters" since="2.28"/>
+    <keyword type="function" name="webkit_user_message_get_fd_list ()" link="WebKitUserMessage.html#webkit-user-message-get-fd-list" since="2.28"/>
+    <keyword type="function" name="webkit_user_message_send_reply ()" link="WebKitUserMessage.html#webkit-user-message-send-reply" since="2.28"/>
+    <keyword type="function" name="webkit_user_message_error_quark ()" link="WebKitUserMessage.html#webkit-user-message-error-quark"/>
+    <keyword type="struct" name="struct WebKitUserMessage" link="WebKitUserMessage.html#WebKitUserMessage-struct"/>
+    <keyword type="macro" name="WEBKIT_USER_MESSAGE_ERROR" link="WebKitUserMessage.html#WEBKIT-USER-MESSAGE-ERROR:CAPS"/>
+    <keyword type="enum" name="enum WebKitUserMessageError" link="WebKitUserMessage.html#WebKitUserMessageError" since="2.28"/>
+    <keyword type="property" name="The “fd-list” property" link="WebKitUserMessage.html#WebKitUserMessage--fd-list"/>
+    <keyword type="property" name="The “name” property" link="WebKitUserMessage.html#WebKitUserMessage--name"/>
+    <keyword type="property" name="The “parameters” property" link="WebKitUserMessage.html#WebKitUserMessage--parameters"/>
+    <keyword type="function" name="webkit_input_method_context_set_enable_preedit ()" link="WebKitInputMethodContext.html#webkit-input-method-context-set-enable-preedit" since="2.28"/>
+    <keyword type="function" name="webkit_input_method_context_get_preedit ()" link="WebKitInputMethodContext.html#webkit-input-method-context-get-preedit" since="2.28"/>
+    <keyword type="function" name="webkit_input_method_context_filter_key_event ()" link="WebKitInputMethodContext.html#webkit-input-method-context-filter-key-event"/>
+    <keyword type="function" name="webkit_input_method_context_notify_focus_in ()" link="WebKitInputMethodContext.html#webkit-input-method-context-notify-focus-in" since="2.28"/>
+    <keyword type="function" name="webkit_input_method_context_notify_focus_out ()" link="WebKitInputMethodContext.html#webkit-input-method-context-notify-focus-out" since="2.28"/>
+    <keyword type="function" name="webkit_input_method_context_notify_cursor_area ()" link="WebKitInputMethodContext.html#webkit-input-method-context-notify-cursor-area" since="2.28"/>
+    <keyword type="function" name="webkit_input_method_context_notify_surrounding ()" link="WebKitInputMethodContext.html#webkit-input-method-context-notify-surrounding" since="2.28"/>
+    <keyword type="function" name="webkit_input_method_context_reset ()" link="WebKitInputMethodContext.html#webkit-input-method-context-reset" since="2.28"/>
+    <keyword type="function" name="webkit_input_method_context_get_input_purpose ()" link="WebKitInputMethodContext.html#webkit-input-method-context-get-input-purpose" since="2.28"/>
+    <keyword type="function" name="webkit_input_method_context_set_input_purpose ()" link="WebKitInputMethodContext.html#webkit-input-method-context-set-input-purpose" since="2.28"/>
+    <keyword type="function" name="webkit_input_method_context_get_input_hints ()" link="WebKitInputMethodContext.html#webkit-input-method-context-get-input-hints" since="2.28"/>
+    <keyword type="function" name="webkit_input_method_context_set_input_hints ()" link="WebKitInputMethodContext.html#webkit-input-method-context-set-input-hints"/>
+    <keyword type="function" name="webkit_input_method_underline_new ()" link="WebKitInputMethodContext.html#webkit-input-method-underline-new" since="2.28"/>
+    <keyword type="function" name="webkit_input_method_underline_copy ()" link="WebKitInputMethodContext.html#webkit-input-method-underline-copy" since="2.28"/>
+    <keyword type="function" name="webkit_input_method_underline_free ()" link="WebKitInputMethodContext.html#webkit-input-method-underline-free" since="2.28"/>
+    <keyword type="function" name="webkit_input_method_underline_set_color ()" link="WebKitInputMethodContext.html#webkit-input-method-underline-set-color"/>
+    <keyword type="struct" name="struct WebKitInputMethodContext" link="WebKitInputMethodContext.html#WebKitInputMethodContext-struct"/>
+    <keyword type="enum" name="enum WebKitInputPurpose" link="WebKitInputMethodContext.html#WebKitInputPurpose" since="2.28"/>
+    <keyword type="enum" name="enum WebKitInputHints" link="WebKitInputMethodContext.html#WebKitInputHints" since="2.28"/>
+    <keyword type="struct" name="WebKitInputMethodUnderline" link="WebKitInputMethodContext.html#WebKitInputMethodUnderline-struct"/>
+    <keyword type="property" name="The “input-hints” property" link="WebKitInputMethodContext.html#WebKitInputMethodContext--input-hints"/>
+    <keyword type="property" name="The “input-purpose” property" link="WebKitInputMethodContext.html#WebKitInputMethodContext--input-purpose"/>
+    <keyword type="signal" name="The “committed” signal" link="WebKitInputMethodContext.html#WebKitInputMethodContext-committed"/>
+    <keyword type="signal" name="The “delete-surrounding” signal" link="WebKitInputMethodContext.html#WebKitInputMethodContext-delete-surrounding"/>
+    <keyword type="signal" name="The “preedit-changed” signal" link="WebKitInputMethodContext.html#WebKitInputMethodContext-preedit-changed"/>
+    <keyword type="signal" name="The “preedit-finished” signal" link="WebKitInputMethodContext.html#WebKitInputMethodContext-preedit-finished"/>
+    <keyword type="signal" name="The “preedit-started” signal" link="WebKitInputMethodContext.html#WebKitInputMethodContext-preedit-started"/>
+    <keyword type="macro" name="WEBKIT_TYPE_RECTANGLE" link="WebKitRectangle.html#WEBKIT-TYPE-RECTANGLE:CAPS"/>
+    <keyword type="struct" name="WebKitRectangle" link="WebKitRectangle.html#WebKitRectangle-struct"/>
     <keyword type="function" name="webkit_uri_for_display ()" link="wpe-1.0-WebKitURIUtilities.html#webkit-uri-for-display" since="2.24"/>
     <keyword type="constant" name="WEBKIT_CACHE_MODEL_DOCUMENT_VIEWER" link="WebKitWebContext.html#WEBKIT-CACHE-MODEL-DOCUMENT-VIEWER:CAPS"/>
     <keyword type="constant" name="WEBKIT_CACHE_MODEL_WEB_BROWSER" link="WebKitWebContext.html#WEBKIT-CACHE-MODEL-WEB-BROWSER:CAPS"/>
@@ -1017,9 +1078,30 @@
     <keyword type="constant" name="WEBKIT_WEBSITE_DATA_DEVICE_ID_HASH_SALT" link="WebKitWebsiteData.html#WEBKIT-WEBSITE-DATA-DEVICE-ID-HASH-SALT:CAPS"/>
     <keyword type="constant" name="WEBKIT_WEBSITE_DATA_HSTS_CACHE" link="WebKitWebsiteData.html#WEBKIT-WEBSITE-DATA-HSTS-CACHE:CAPS"/>
     <keyword type="constant" name="WEBKIT_WEBSITE_DATA_ALL" link="WebKitWebsiteData.html#WEBKIT-WEBSITE-DATA-ALL:CAPS"/>
+    <keyword type="constant" name="WEBKIT_AUTOMATION_BROWSING_CONTEXT_PRESENTATION_WINDOW" link="WebKitAutomationSession.html#WEBKIT-AUTOMATION-BROWSING-CONTEXT-PRESENTATION-WINDOW:CAPS"/>
+    <keyword type="constant" name="WEBKIT_AUTOMATION_BROWSING_CONTEXT_PRESENTATION_TAB" link="WebKitAutomationSession.html#WEBKIT-AUTOMATION-BROWSING-CONTEXT-PRESENTATION-TAB:CAPS"/>
+    <keyword type="constant" name="WEBKIT_USER_MESSAGE_UNHANDLED_MESSAGE" link="WebKitUserMessage.html#WEBKIT-USER-MESSAGE-UNHANDLED-MESSAGE:CAPS"/>
+    <keyword type="constant" name="WEBKIT_INPUT_PURPOSE_FREE_FORM" link="WebKitInputMethodContext.html#WEBKIT-INPUT-PURPOSE-FREE-FORM:CAPS"/>
+    <keyword type="constant" name="WEBKIT_INPUT_PURPOSE_DIGITS" link="WebKitInputMethodContext.html#WEBKIT-INPUT-PURPOSE-DIGITS:CAPS"/>
+    <keyword type="constant" name="WEBKIT_INPUT_PURPOSE_NUMBER" link="WebKitInputMethodContext.html#WEBKIT-INPUT-PURPOSE-NUMBER:CAPS"/>
+    <keyword type="constant" name="WEBKIT_INPUT_PURPOSE_PHONE" link="WebKitInputMethodContext.html#WEBKIT-INPUT-PURPOSE-PHONE:CAPS"/>
+    <keyword type="constant" name="WEBKIT_INPUT_PURPOSE_URL" link="WebKitInputMethodContext.html#WEBKIT-INPUT-PURPOSE-URL:CAPS"/>
+    <keyword type="constant" name="WEBKIT_INPUT_PURPOSE_EMAIL" link="WebKitInputMethodContext.html#WEBKIT-INPUT-PURPOSE-EMAIL:CAPS"/>
+    <keyword type="constant" name="WEBKIT_INPUT_PURPOSE_PASSWORD" link="WebKitInputMethodContext.html#WEBKIT-INPUT-PURPOSE-PASSWORD:CAPS"/>
+    <keyword type="constant" name="WEBKIT_INPUT_HINT_NONE" link="WebKitInputMethodContext.html#WEBKIT-INPUT-HINT-NONE:CAPS"/>
+    <keyword type="constant" name="WEBKIT_INPUT_HINT_SPELLCHECK" link="WebKitInputMethodContext.html#WEBKIT-INPUT-HINT-SPELLCHECK:CAPS"/>
+    <keyword type="constant" name="WEBKIT_INPUT_HINT_LOWERCASE" link="WebKitInputMethodContext.html#WEBKIT-INPUT-HINT-LOWERCASE:CAPS"/>
+    <keyword type="constant" name="WEBKIT_INPUT_HINT_UPPERCASE_CHARS" link="WebKitInputMethodContext.html#WEBKIT-INPUT-HINT-UPPERCASE-CHARS:CAPS"/>
+    <keyword type="constant" name="WEBKIT_INPUT_HINT_UPPERCASE_WORDS" link="WebKitInputMethodContext.html#WEBKIT-INPUT-HINT-UPPERCASE-WORDS:CAPS"/>
+    <keyword type="constant" name="WEBKIT_INPUT_HINT_UPPERCASE_SENTENCES" link="WebKitInputMethodContext.html#WEBKIT-INPUT-HINT-UPPERCASE-SENTENCES:CAPS"/>
+    <keyword type="constant" name="WEBKIT_INPUT_HINT_INHIBIT_OSK" link="WebKitInputMethodContext.html#WEBKIT-INPUT-HINT-INHIBIT-OSK:CAPS"/>
     <keyword type="member" name="WebKitColor-struct.red" link="WebKitColor.html#WebKitColor-struct.red"/>
     <keyword type="member" name="WebKitColor-struct.green" link="WebKitColor.html#WebKitColor-struct.green"/>
     <keyword type="member" name="WebKitColor-struct.blue" link="WebKitColor.html#WebKitColor-struct.blue"/>
     <keyword type="member" name="WebKitColor-struct.alpha" link="WebKitColor.html#WebKitColor-struct.alpha"/>
+    <keyword type="member" name="WebKitRectangle-struct.x" link="WebKitRectangle.html#WebKitRectangle-struct.x"/>
+    <keyword type="member" name="WebKitRectangle-struct.y" link="WebKitRectangle.html#WebKitRectangle-struct.y"/>
+    <keyword type="member" name="WebKitRectangle-struct.width" link="WebKitRectangle.html#WebKitRectangle-struct.width"/>
+    <keyword type="member" name="WebKitRectangle-struct.height" link="WebKitRectangle.html#WebKitRectangle-struct.height"/>
   </functions>
 </book>
