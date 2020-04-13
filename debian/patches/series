@@ -4,5 +4,4 @@ fix-ftbfs-m68k.patch
 fix-ftbfs-x32.patch
 prefer-pthread.patch
 dont-detect-sse2.patch
-use-python3.patch
 reduce-memory-overheads.patch

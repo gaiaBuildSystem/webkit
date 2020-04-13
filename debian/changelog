@@ -1,6 +1,8 @@
 wpewebkit (2.28.1-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * debian/patches/use-python3.patch:
+    + Drop patch, this is now upstream.
 
  -- Alberto Garcia <berto@igalia.com>  Mon, 13 Apr 2020 16:48:45 +0200
 
