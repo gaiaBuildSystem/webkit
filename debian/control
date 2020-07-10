@@ -9,7 +9,6 @@ Build-Depends: debhelper (>= 10),
                libseccomp-dev [!alpha !ia64 !m68k !riscv64 !sh4 !sparc64],
                cmake (>= 3.3),
                gperf,
-               gtk-doc-tools,
                jdupes,
                libatk-bridge2.0-dev,
                libatk1.0-dev,
@@ -35,6 +34,7 @@ Build-Depends: debhelper (>= 10),
                ninja-build,
                ruby:native,
                wayland-protocols
+Build-Depends-Indep: gtk-doc-tools
 Standards-Version: 4.5.0
 Rules-Requires-Root: no
 Vcs-Browser: https://salsa.debian.org/webkit-team/webkit
@@ -102,6 +102,7 @@ Description: WPE WebKit WebDriver support
  This package provides the WebDriver service implementation.
 
 Package: libwpewebkit-1.0-doc
+Build-Profiles: <!nodoc>
 Section: doc
 Architecture: all
 Multi-Arch: foreign
