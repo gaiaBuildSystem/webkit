@@ -8,9 +8,9 @@ Index: webkitgtk/Source/cmake/OptionsWPE.cmake
 ===================================================================
 --- webkitgtk.orig/Source/cmake/OptionsWPE.cmake
 +++ webkitgtk/Source/cmake/OptionsWPE.cmake
-@@ -12,6 +12,8 @@ set(LIB_INSTALL_DIR "${CMAKE_INSTALL_FUL
- set(EXEC_INSTALL_DIR "${CMAKE_INSTALL_FULL_BINDIR}" CACHE PATH "Absolute path to executable installation directory")
- set(LIBEXEC_INSTALL_DIR "${CMAKE_INSTALL_FULL_LIBEXECDIR}/wpe-webkit-${WPE_API_VERSION}" CACHE PATH "Absolute path to install executables executed by the library")
+@@ -17,6 +17,8 @@ if (USER_AGENT_BRANDING)
+     add_definitions(-DUSER_AGENT_BRANDING=${USER_AGENT_BRANDING})
+ endif ()
  
 +set(THREADS_PREFER_PTHREAD_FLAG ON)
 +
