@@ -2,6 +2,8 @@ wpewebkit (2.30.0-1) UNRELEASED; urgency=medium
 
   * New upstream release.
   * Refresh all patches.
+  * debian/control:
+    + Add build dependency on libsystemd-dev.
 
  -- Alberto Garcia <berto@igalia.com>  Sat, 12 Sep 2020 23:57:09 +0200
 
