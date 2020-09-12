@@ -4,6 +4,8 @@ wpewebkit (2.30.0-1) UNRELEASED; urgency=medium
   * Refresh all patches.
   * debian/control:
     + Add build dependency on libsystemd-dev.
+  * debian/libwpewebkit-1.0-3.symbols:
+    + Update symbols.
 
  -- Alberto Garcia <berto@igalia.com>  Sat, 12 Sep 2020 23:57:09 +0200
 
