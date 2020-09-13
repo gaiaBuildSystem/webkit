@@ -6,6 +6,8 @@ wpewebkit (2.30.0-1) UNRELEASED; urgency=medium
     + Add build dependency on libsystemd-dev.
   * debian/libwpewebkit-1.0-3.symbols:
     + Update symbols.
+  * debian/gbp.conf:
+    + Update upstream branch name.
 
  -- Alberto Garcia <berto@igalia.com>  Sat, 12 Sep 2020 23:57:09 +0200
 
