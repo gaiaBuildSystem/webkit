@@ -8,6 +8,9 @@ wpewebkit (2.30.0-1) UNRELEASED; urgency=medium
     + Update symbols.
   * debian/gbp.conf:
     + Update upstream branch name.
+  * debian/source/lintian-overrides:
+    + Remove mailing-list-obsolete-in-debian-infrastructure override.
+    + Update source-is-missing overrides.
 
  -- Alberto Garcia <berto@igalia.com>  Sat, 12 Sep 2020 23:57:09 +0200
 
