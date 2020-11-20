@@ -8,7 +8,7 @@
 <link rel="up" href="ch01.html" title="Class Overview">
 <link rel="prev" href="WebKitSecurityOrigin.html" title="WebKitSecurityOrigin">
 <link rel="next" href="WebKitWebsiteData.html" title="WebKitWebsiteData">
-<meta name="generator" content="GTK-Doc V1.33.0 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
@@ -498,7 +498,7 @@ be passed as construction parameter of a <a class="link" href="WebKitWebContext.
 <div class="refsect3">
 <a name="webkit-website-data-manager-new.returns"></a><h4>Returns</h4>
 <p>the newly created <a class="link" href="WebKitWebsiteDataManager.html" title="WebKitWebsiteDataManager"><span class="type">WebKitWebsiteDataManager</span></a>. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.10</p>
 </div>
@@ -512,7 +512,7 @@ webkit_website_data_manager_new_ephemeral
 <div class="refsect3">
 <a name="webkit-website-data-manager-new-ephemeral.returns"></a><h4>Returns</h4>
 <p>a new ephemeral <a class="link" href="WebKitWebsiteDataManager.html" title="WebKitWebsiteDataManager"><span class="type">WebKitWebsiteDataManager</span></a>. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.16</p>
 </div>
@@ -907,7 +907,7 @@ webkit_website_data_manager_get_cookie_manager
 <div class="refsect3">
 <a name="webkit-website-data-manager-get-cookie-manager.returns"></a><h4>Returns</h4>
 <p>a <a class="link" href="WebKitCookieManager.html" title="WebKitCookieManager"><span class="type">WebKitCookieManager</span></a>. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.16</p>
 </div>
@@ -1130,7 +1130,7 @@ webkit_website_data_manager_fetch_finish
 <a name="webkit-website-data-manager-fetch-finish.returns"></a><h4>Returns</h4>
 <p>a <a href="../glib/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> of <a class="link" href="WebKitWebsiteData.html" title="WebKitWebsiteData"><span class="type">WebKitWebsiteData</span></a>. You must free the <a href="../glib/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> with
 <a href="../glib/glib-Doubly-Linked-Lists.html#g-list-free"><code class="function">g_list_free()</code></a> and unref the <a class="link" href="WebKitWebsiteData.html" title="WebKitWebsiteData"><span class="type">WebKitWebsiteData</span></a>s with <a class="link" href="WebKitWebsiteData.html#webkit-website-data-unref" title="webkit_website_data_unref ()"><code class="function">webkit_website_data_unref()</code></a> when you're done with them. </p>
-<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> WebKitWebsiteData][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> WebKitWebsiteData][<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>]</span></p>
 </div>
 <p class="since">Since: 2.16</p>
 </div>
@@ -1490,7 +1490,7 @@ therefore corresponds to exactly one <a class="link" href="WebKitWebsiteDataMana
 <div class="refsect3">
 <a name="webkit-itp-first-party-get-last-update-time.returns"></a><h4>Returns</h4>
 <p>the last update time as a <a href="../glib/glib-GDateTime.html#GDateTime"><span class="type">GDateTime</span></a>. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
@@ -1604,7 +1604,7 @@ webkit_itp_third_party_get_first_parties
 <div class="refsect3">
 <a name="webkit-itp-third-party-get-first-parties.returns"></a><h4>Returns</h4>
 <p>a <a href="../glib/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> of <a class="link" href="WebKitWebsiteDataManager.html#WebKitITPFirstParty"><span class="type">WebKitITPFirstParty</span></a>. </p>
-<p><span class="annotation">[<acronym title="Don't free data after the code is done."><span class="acronym">transfer none</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> WebKitITPFirstParty]</span></p>
+<p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> WebKitITPFirstParty]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
@@ -1698,7 +1698,7 @@ webkit_website_data_manager_get_itp_summary_finish
 <p>a <a href="../glib/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> of <a class="link" href="WebKitWebsiteDataManager.html#WebKitITPThirdParty"><span class="type">WebKitITPThirdParty</span></a>.
 You must free the <a href="../glib/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> with <a href="../glib/glib-Doubly-Linked-Lists.html#g-list-free"><code class="function">g_list_free()</code></a> and unref the <a class="link" href="WebKitWebsiteDataManager.html#WebKitITPThirdParty"><span class="type">WebKitITPThirdParty</span></a>s with
 <a class="link" href="WebKitWebsiteDataManager.html#webkit-itp-third-party-unref" title="webkit_itp_third_party_unref ()"><code class="function">webkit_itp_third_party_unref()</code></a> when you're done with them. </p>
-<p><span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> WebKitITPThirdParty]</span></p>
+<p><span class="annotation">[<acronym title="The caller owns the data, and is responsible for free it."><span class="acronym">transfer full</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> WebKitITPThirdParty]</span></p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-30.html#api-index-2.30">2.30</a></p>
 </div>
@@ -1857,6 +1857,6 @@ parameters to configure data directories will be ignored.</p>
 </div>
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.33.0</div>
+<hr>Generated by GTK-Doc V1.33.1</div>
 </body>
 </html>
