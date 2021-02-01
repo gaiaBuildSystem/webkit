@@ -1,6 +1,9 @@
 wpewebkit (2.30.5-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * debian/patches/fix-mips-page-size.patch:
+    + Increase the page size from 4KB to 16KB on MIPS, this fixes a crash
+      with Loongson CPUs that don't support 4KB pages (See #977779).
 
  -- Alberto Garcia <berto@igalia.com>  Fri, 12 Feb 2021 10:23:16 +0100
 
