@@ -8,6 +8,9 @@ wpewebkit (2.30.5-1) UNRELEASED; urgency=medium
     + Set version to 4 (fixes older-debian-watch-file-standard).
   * debian/control:
     + Update Standards-Version to 4.5.1 (no changes).
+  * Update the minimum required versions of some packages:
+    + cmake from 3.3 to 3.10
+    + libsoup2.4-dev from 2.42.0 to 2.54.0.
   * debian/copyright:
     + Update copyright years.
 
