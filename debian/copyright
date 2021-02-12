@@ -2762,7 +2762,7 @@ Copyright: 2010-2018 Apple Inc
 License: MPL-2.0
 
 Files: debian/*
-Copyright: 2019-2020 Alberto Garcia <berto@igalia.com>
+Copyright: 2019-2021 Alberto Garcia <berto@igalia.com>
 License: BSD-2-clause
 
 License: AFL-2.0
