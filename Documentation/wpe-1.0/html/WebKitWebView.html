@@ -1130,7 +1130,7 @@ forwarding of events. You can load any URI into the <a class="link" href="WebKit
 a data string. With <a class="link" href="WebKitSettings.html" title="WebKitSettings"><span class="type">WebKitSettings</span></a> you can control various aspects
 of the rendering and loading of the content.</p>
 <p>Note that in WebKitGTK, <a class="link" href="WebKitWebView.html" title="The main frame document title of this #WebKitWebView. If the title has not been received yet, it will be %NULL."><span class="type">WebKitWebView</span></a> is scrollable by itself, so
-you don't need to embed it in a <a href="../gtk3/GtkScrolledWindow.html#GtkScrolledWindow-struct"><span class="type">GtkScrolledWindow</span></a>.</p>
+you don't need to embed it in a <a href="../gtk4/GtkScrolledWindow.html#GtkScrolledWindow-struct"><span class="type">GtkScrolledWindow</span></a>.</p>
 </div>
 <div class="refsect1">
 <a name="WebKitWebView.functions_details"></a><h2>Functions</h2>
@@ -5063,11 +5063,11 @@ or build its own context menu.</p>
  is expected to be one of the following types:</p>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
 <li class="listitem"><p>
-a <a href="../gdk3/gdk3-Event-Structures.html#GdkEventButton"><span class="type">GdkEventButton</span></a> of type <a href="../gdk3/gdk3-Events.html#GDK-BUTTON-PRESS:CAPS"><code class="literal">GDK_BUTTON_PRESS</code></a> when the context menu
+a <a href="../gdk3/gdk3-Event-Structures.html#GdkEventButton"><span class="type">GdkEventButton</span></a> of type <a href="../gdk4/gdk4-Events.html#GDK-BUTTON-PRESS:CAPS"><code class="literal">GDK_BUTTON_PRESS</code></a> when the context menu
 was triggered with mouse.
 </p></li>
 <li class="listitem"><p>
-a <a href="../gdk3/gdk3-Event-Structures.html#GdkEventKey"><span class="type">GdkEventKey</span></a> of type <a href="../gdk3/gdk3-Events.html#GDK-KEY-PRESS:CAPS"><code class="literal">GDK_KEY_PRESS</code></a> if the keyboard was used to show
+a <a href="../gdk3/gdk3-Event-Structures.html#GdkEventKey"><span class="type">GdkEventKey</span></a> of type <a href="../gdk4/gdk4-Events.html#GDK-KEY-PRESS:CAPS"><code class="literal">GDK_KEY_PRESS</code></a> if the keyboard was used to show
 the menu.
 </p></li>
 <li class="listitem"><p>
@@ -5713,7 +5713,7 @@ on the current mouse coordinates and the result is passed in the
 <em class="parameter"><code>hit_test_result</code></em>
  argument. The <em class="parameter"><code>modifiers</code></em>
  argument is a bitmask of
-<a href="../gdk3/gdk3-Windows.html#GdkModifierType"><span class="type">GdkModifierType</span></a> flags indicating the state of modifier keys.
+<a href="../gdk4/GdkSurface.html#GdkModifierType"><span class="type">GdkModifierType</span></a> flags indicating the state of modifier keys.
 The signal is emitted again when the mouse is moved out of the
 current element with a new <em class="parameter"><code>hit_test_result</code></em>
 .</p>
@@ -5738,7 +5738,7 @@ current element with a new <em class="parameter"><code>hit_test_result</code></e
 </tr>
 <tr>
 <td class="parameter_name"><p>modifiers</p></td>
-<td class="parameter_description"><p>a bitmask of <a href="../gdk3/gdk3-Windows.html#GdkModifierType"><span class="type">GdkModifierType</span></a></p></td>
+<td class="parameter_description"><p>a bitmask of <a href="../gdk4/GdkSurface.html#GdkModifierType"><span class="type">GdkModifierType</span></a></p></td>
 <td class="parameter_annotations"> </td>
 </tr>
 <tr>
@@ -6006,7 +6006,7 @@ instance of the <a class="link" href="WebKitFileChooserRequest.html" title="WebK
 
 argument.</p>
 <p>The default signal handler will asynchronously run a regular
-<a href="../gtk3/GtkFileChooserDialog.html#GtkFileChooserDialog-struct"><span class="type">GtkFileChooserDialog</span></a> for the user to interact with.</p>
+<a href="../gtk4/GtkFileChooserDialog.html#GtkFileChooserDialog-struct"><span class="type">GtkFileChooserDialog</span></a> for the user to interact with.</p>
 <div class="refsect3">
 <a name="WebKitWebView-run-file-chooser.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
