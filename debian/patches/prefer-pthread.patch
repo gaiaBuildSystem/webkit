@@ -8,9 +8,9 @@ Index: webkitgtk/Source/cmake/OptionsWPE.cmake
 ===================================================================
 --- webkitgtk.orig/Source/cmake/OptionsWPE.cmake
 +++ webkitgtk/Source/cmake/OptionsWPE.cmake
-@@ -17,6 +17,8 @@ if (USER_AGENT_BRANDING)
-     add_definitions(-DUSER_AGENT_BRANDING=${USER_AGENT_BRANDING})
- endif ()
+@@ -5,6 +5,8 @@ SET_PROJECT_VERSION(2 32 0)
+ 
+ set(USER_AGENT_BRANDING "" CACHE STRING "Branding to add to user agent string")
  
 +set(THREADS_PREFER_PTHREAD_FLAG ON)
 +
