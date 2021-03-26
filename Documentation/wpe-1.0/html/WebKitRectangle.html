@@ -3,17 +3,21 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>WebKitRectangle: WPE Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL-NS Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="WPE Reference Manual">
 <link rel="up" href="ch01.html" title="Class Overview">
 <link rel="prev" href="WebKitInputMethodContext.html" title="WebKitInputMethodContext">
 <link rel="next" href="WebKitWebsiteDataAccessPermissionRequest.html" title="WebKitWebsiteDataAccessPermissionRequest">
-<meta name="generator" content="GTK-Doc V1.29 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.33.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
 <table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle">
-<td width="100%" align="left" class="shortcuts"></td>
+<td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#WebKitRectangle.description" class="shortcut">Description</a></span><span id="nav_hierarchy">  <span class="dim">|</span> 
+                  <a href="#WebKitRectangle.object-hierarchy" class="shortcut">Object Hierarchy</a></span>
+</td>
 <td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
 <td><a accesskey="u" href="ch01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
 <td><a accesskey="p" href="WebKitInputMethodContext.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
@@ -21,23 +25,19 @@
 </tr></table>
 <div class="refentry">
 <a name="WebKitRectangle"></a><div class="titlepage"></div>
-
-<div class="refnamediv">
+<div class="refnamediv"><table width="100%"><tr>
+<td valign="top">
 <h2><span class="refentrytitle"><a name="WebKitRectangle.top_of_page"></a>WebKitRectangle</span></h2>
-<p>
-WebKitRectangle
- — A boxed type representing a rectangle with integer coordinates
-</p>
-</div>
-
+<p>WebKitRectangle — A boxed type representing a rectangle with integer coordinates</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
 <div class="refsect1">
 <a name="WebKitRectangle.other"></a><h2>Types and Values</h2>
-
-<div class="informaltable">
-<table class="informaltable" width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
-<col width="150px" class="name">
-<col class="description">
+<col width="150px" class="other_proto_type">
+<col class="other_proto_name">
 </colgroup>
 <tbody>
 <tr>
@@ -49,43 +49,32 @@ WebKitRectangle
 <td class="function_name"><a class="link" href="WebKitRectangle.html#WebKitRectangle-struct" title="WebKitRectangle">WebKitRectangle</a></td>
 </tr>
 </tbody>
-</table>
-</div>
+</table></div>
 </div>
 <div class="refsect1">
 <a name="WebKitRectangle.object-hierarchy"></a><h2>Object Hierarchy</h2>
-
-<pre class="screen">    <a class="link" href="">GBoxed</a>
+<pre class="screen">    GBoxed
     <span class="lineart">╰──</span> WebKitRectangle
 </pre>
 </div>
-
-
 <div class="refsect1">
 <a name="WebKitRectangle.description"></a><h2>Description</h2>
-
 <p>A WebKitRectangle is a boxed type representing a rectangle with integer coordiantes.</p>
-
 </div>
 <div class="refsect1">
 <a name="WebKitRectangle.functions_details"></a><h2>Functions</h2>
-
 <p></p>
 </div>
 <div class="refsect1">
 <a name="WebKitRectangle.other_details"></a><h2>Types and Values</h2>
-
 <div class="refsect2">
 <a name="WEBKIT-TYPE-RECTANGLE:CAPS"></a><h3>WEBKIT_TYPE_RECTANGLE</h3>
-
-<a class="indexterm" name="id-1.2.50.7.2.2"></a>
 <pre class="programlisting">#define WEBKIT_TYPE_RECTANGLE (webkit_rectangle_get_type())
 </pre>
 </div>
+<hr>
 <div class="refsect2">
 <a name="WebKitRectangle-struct"></a><h3>WebKitRectangle</h3>
-
-<a class="indexterm" name="id-1.2.50.7.3.2"></a>
 <pre class="programlisting">typedef struct {
     gint x;
     gint y;
@@ -96,9 +85,7 @@ WebKitRectangle
 <p>A WebKitRectangle is a boxed type representing a rectangle with integer coordinates.</p>
 <div class="refsect3">
 <a name="WebKitRectangle.members"></a><h4>Members</h4>
-
-<div class="informaltable">
-<table class="informaltable" width="100%" border="0">
+<div class="informaltable"><table class="informaltable" width="100%" border="0">
 <colgroup>
 <col width="300px" class="struct_members_name">
 <col class="struct_members_description">
@@ -106,42 +93,37 @@ WebKitRectangle
 </colgroup>
 <tbody>
 <tr>
-<td class="struct_member_name"><p><a class="link" href=""><span class="type">gint</span></a> <em class="structfield"><code><a name="WebKitRectangle-struct.x"></a>x</code></em>;</p></td>
+<td class="struct_member_name"><p><span class="type">gint</span> <em class="structfield"><code><a name="WebKitRectangle-struct.x"></a>x</code></em>;</p></td>
 <td class="struct_member_description"><p>The X coordinate of the top-left corner of the rectangle.</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p><a class="link" href=""><span class="type">gint</span></a> <em class="structfield"><code><a name="WebKitRectangle-struct.y"></a>y</code></em>;</p></td>
+<td class="struct_member_name"><p><span class="type">gint</span> <em class="structfield"><code><a name="WebKitRectangle-struct.y"></a>y</code></em>;</p></td>
 <td class="struct_member_description"><p>The Y coordinate of the top-left corner of the rectangle.</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p><a class="link" href=""><span class="type">gint</span></a> <em class="structfield"><code><a name="WebKitRectangle-struct.width"></a>width</code></em>;</p></td>
+<td class="struct_member_name"><p><span class="type">gint</span> <em class="structfield"><code><a name="WebKitRectangle-struct.width"></a>width</code></em>;</p></td>
 <td class="struct_member_description"><p>The width of the rectangle.</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 <tr>
-<td class="struct_member_name"><p><a class="link" href=""><span class="type">gint</span></a> <em class="structfield"><code><a name="WebKitRectangle-struct.height"></a>height</code></em>;</p></td>
+<td class="struct_member_name"><p><span class="type">gint</span> <em class="structfield"><code><a name="WebKitRectangle-struct.height"></a>height</code></em>;</p></td>
 <td class="struct_member_description"><p>The height of the rectangle.</p></td>
 <td class="struct_member_annotations"> </td>
 </tr>
 </tbody>
-</table>
-</div>
+</table></div>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-28.html#api-index-2.28">2.28</a></p>
 </div>
-
 </div>
 <div class="refsect1">
 <a name="WebKitRectangle.see-also"></a><h2>See Also</h2>
-
-<p><a class="link" href="WebKitWebView.html" title="WebKitWebView"><span class="type">WebKitWebView</span></a>.</p>
-
+<p><a class="link" href="WebKitWebView.html" title="The main frame document title of this #WebKitWebView. If the title has not been received yet, it will be %NULL."><span class="type">WebKitWebView</span></a>.</p>
 </div>
-
 </div>
 <div class="footer">
-<hr>Generated by GTK-Doc V1.29</div>
+<hr>Generated by GTK-Doc V1.33.1</div>
 </body>
 </html>
