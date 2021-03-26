@@ -1,5 +1,6 @@
-wpewebkit (2.30.6-2) UNRELEASED; urgency=medium
+wpewebkit (2.32.0-1) UNRELEASED; urgency=medium
 
+  * New upstream release.
   * debian/gbp.conf:
     + Update upstream branch name.
 
