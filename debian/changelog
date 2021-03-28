@@ -9,6 +9,8 @@ wpewebkit (2.32.0-1) UNRELEASED; urgency=medium
   * Update copyright information of all files.
   * debian/control:
     + Add build dependencies on libglib2.0-doc and libsoup2.4-doc.
+  * debian/libwpewebkit-1.0-3.symbols:
+    + Update symbols.
 
  -- Alberto Garcia <berto@igalia.com>  Sat, 27 Mar 2021 00:16:16 +0100
 

@@ -116,6 +116,7 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_application_info_set_name@Base 2.24.1
  webkit_application_info_set_version@Base 2.24.1
  webkit_application_info_unref@Base 2.24.1
+ webkit_audio_sink_get_type@Base 2.32.0
  webkit_authentication_request_authenticate@Base 2.24.1
  webkit_authentication_request_can_save_credentials@Base 2.24.1
  webkit_authentication_request_cancel@Base 2.24.1
@@ -299,6 +300,7 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_get_micro_version@Base 2.24.1
  webkit_get_minor_version@Base 2.24.1
  webkit_gl_video_sink_get_type@Base 2.28.0
+ webkit_gst_common_debug@Base 2.32.0
  webkit_hit_test_result_context_get_type@Base 2.24.1
  webkit_hit_test_result_context_is_editable@Base 2.24.1
  webkit_hit_test_result_context_is_image@Base 2.24.1
@@ -354,6 +356,8 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_javascript_result_ref@Base 2.24.1
  webkit_javascript_result_unref@Base 2.24.1
  webkit_load_event_get_type@Base 2.24.1
+ webkit_media_key_system_permission_get_name@Base 2.32.0
+ webkit_media_key_system_permission_request_get_type@Base 2.32.0
  webkit_media_player_debug@Base 2.24.1
  webkit_media_src_get_type@Base 2.24.1
  webkit_mime_info_get_description@Base 2.24.1
@@ -378,6 +382,7 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_navigation_type_get_type@Base 2.24.1
  webkit_network_error_get_type@Base 2.24.1
  webkit_network_error_quark@Base 2.24.1
+ webkit_text_sink_get_type@Base 2.32.0
  webkit_network_proxy_mode_get_type@Base 2.24.1
  webkit_network_proxy_settings_add_proxy_for_scheme@Base 2.24.1
  webkit_network_proxy_settings_copy@Base 2.24.1
@@ -642,6 +647,8 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_user_content_manager_remove_all_style_sheets@Base 2.24.1
  webkit_user_content_manager_remove_filter@Base 2.24.1
  webkit_user_content_manager_remove_filter_by_id@Base 2.26.2
+ webkit_user_content_manager_remove_script@Base 2.32.0
+ webkit_user_content_manager_remove_style_sheet@Base 2.32.0
  webkit_user_content_manager_unregister_script_message_handler@Base 2.24.1
  webkit_user_content_manager_unregister_script_message_handler_in_world@Base 2.24.1
  webkit_user_media_permission_is_for_audio_device@Base 2.24.1
@@ -848,6 +855,7 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_website_data_manager_get_offline_application_cache_directory@Base 2.24.1
  webkit_website_data_manager_get_persistent_credential_storage_enabled@Base 2.30.0
  webkit_website_data_manager_get_service_worker_registrations_directory@Base 2.30.0
+ webkit_website_data_manager_get_tls_errors_policy@Base 2.32.0
  webkit_website_data_manager_get_type@Base 2.24.1
  webkit_website_data_manager_get_websql_directory@Base 2.24.1
  webkit_website_data_manager_is_ephemeral@Base 2.24.1
@@ -856,7 +864,9 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_website_data_manager_remove@Base 2.24.1
  webkit_website_data_manager_remove_finish@Base 2.24.1
  webkit_website_data_manager_set_itp_enabled@Base 2.30.0
+ webkit_website_data_manager_set_network_proxy_settings@Base 2.32.0
  webkit_website_data_manager_set_persistent_credential_storage_enabled@Base 2.30.0
+ webkit_website_data_manager_set_tls_errors_policy@Base 2.32.0
  webkit_website_data_ref@Base 2.24.1
  webkit_website_data_types_get_type@Base 2.24.1
  webkit_website_data_unref@Base 2.24.1
