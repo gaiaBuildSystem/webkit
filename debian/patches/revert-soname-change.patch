@@ -1,0 +1,18 @@
+From: Alberto Garcia <berto@igalia.com>
+Description: Revert soname change
+ Upstream accidentally increased the soname version from 3 to 4 on
+ commit r274371 (git cb7c008cfa11). This patch reverts that change.
+Forwarded: no
+Index: webkitgtk/Source/cmake/OptionsWPE.cmake
+===================================================================
+--- webkitgtk.orig/Source/cmake/OptionsWPE.cmake
++++ webkitgtk/Source/cmake/OptionsWPE.cmake
+@@ -132,7 +132,7 @@ endif ()
+ find_package(LibSoup ${SOUP_MINIMUM_VERSION} REQUIRED)
+ 
+ if (WPE_API_VERSION VERSION_EQUAL "1.0")
+-    CALCULATE_LIBRARY_VERSIONS_FROM_LIBTOOL_TRIPLE(WEBKIT 18 1 14)
++    CALCULATE_LIBRARY_VERSIONS_FROM_LIBTOOL_TRIPLE(WEBKIT 17 1 14)
+ else ()
+     CALCULATE_LIBRARY_VERSIONS_FROM_LIBTOOL_TRIPLE(WEBKIT 0 0 0)
+ endif ()

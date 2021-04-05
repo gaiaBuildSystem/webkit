@@ -11,6 +11,8 @@ wpewebkit (2.32.0-1) UNRELEASED; urgency=medium
     + Add build dependencies on libglib2.0-doc and libsoup2.4-doc.
   * debian/libwpewebkit-1.0-3.symbols:
     + Update symbols.
+  * debian/patches/revert-soname-change.patch:
+    + Revert upstream soname change.
 
  -- Alberto Garcia <berto@igalia.com>  Sat, 27 Mar 2021 00:16:16 +0100
 
