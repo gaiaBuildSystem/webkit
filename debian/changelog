@@ -1,4 +1,4 @@
-wpewebkit (2.32.0-1) UNRELEASED; urgency=medium
+wpewebkit (2.32.0-1) experimental; urgency=medium
 
   * New upstream release.
   * debian/gbp.conf:
@@ -14,7 +14,7 @@ wpewebkit (2.32.0-1) UNRELEASED; urgency=medium
   * debian/patches/revert-soname-change.patch:
     + Revert upstream soname change.
 
- -- Alberto Garcia <berto@igalia.com>  Sat, 27 Mar 2021 00:16:16 +0100
+ -- Alberto Garcia <berto@igalia.com>  Tue, 06 Apr 2021 11:20:35 +0200
 
 wpewebkit (2.30.6-1) unstable; urgency=high
 
