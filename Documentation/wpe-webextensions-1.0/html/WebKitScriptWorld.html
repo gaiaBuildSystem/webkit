@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>WebKitScriptWorld: WPE WebExtensions and DOM Reference Manual</title>
-<meta name="generator" content="DocBook XSL-NS Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="WPE WebExtensions and DOM Reference Manual">
 <link rel="up" href="ch01.html" title="Web Extensions">
 <link rel="prev" href="WebKitFrame.html" title="WebKitFrame">
@@ -86,7 +86,7 @@
 <tbody><tr>
 <td class="signal_type"><span class="returnvalue">void</span></td>
 <td class="signal_name"><a class="link" href="WebKitScriptWorld.html#WebKitScriptWorld-window-object-cleared" title="The “window-object-cleared” signal">window-object-cleared</a></td>
-<td class="signal_flags">Run Last</td>
+<td class="signal_flags"><a href="../gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></td>
 </tr></tbody>
 </table></div>
 </div>
@@ -105,7 +105,7 @@
 </div>
 <div class="refsect1">
 <a name="WebKitScriptWorld.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GObject
+<pre class="screen">    <a href="../gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
     <span class="lineart">╰──</span> WebKitScriptWorld
 </pre>
 </div>
@@ -121,7 +121,7 @@ webkit_script_world_get_default (<em class="parameter"><code><span class="type">
 <p>Get the default <a class="link" href="WebKitScriptWorld.html" title="WebKitScriptWorld"><span class="type">WebKitScriptWorld</span></a>. This is the normal script world
 where all scripts are executed by default.
 You can get the JavaScript execution context of a <a class="link" href="WebKitScriptWorld.html" title="WebKitScriptWorld"><span class="type">WebKitScriptWorld</span></a>
-for a given <a class="link" href="WebKitFrame.html" title="WebKitFrame"><span class="type">WebKitFrame</span></a> with <code class="function">webkit_frame_get_javascript_context_for_script_world()</code>.</p>
+for a given <a class="link" href="WebKitFrame.html" title="WebKitFrame"><span class="type">WebKitFrame</span></a> with <a href="../webkit2gtk-4.0/WebKitFrame.html#webkit-frame-get-javascript-context-for-script-world"><code class="function">webkit_frame_get_javascript_context_for_script_world()</code></a>.</p>
 <div class="refsect3">
 <a name="webkit-script-world-get-default.returns"></a><h4>Returns</h4>
 <p>the default <a class="link" href="WebKitScriptWorld.html" title="WebKitScriptWorld"><span class="type">WebKitScriptWorld</span></a>. </p>
@@ -141,7 +141,7 @@ The <a class="link" href="WebKitScriptWorld.html" title="WebKitScriptWorld"><spa
 <a class="link" href="WebKitScriptWorld.html#webkit-script-world-new-with-name" title="webkit_script_world_new_with_name ()"><code class="function">webkit_script_world_new_with_name()</code></a> if you want to create it with a
 custom name.
 You can get the JavaScript execution context of a <a class="link" href="WebKitScriptWorld.html" title="WebKitScriptWorld"><span class="type">WebKitScriptWorld</span></a>
-for a given <a class="link" href="WebKitFrame.html" title="WebKitFrame"><span class="type">WebKitFrame</span></a> with <code class="function">webkit_frame_get_javascript_context_for_script_world()</code>.</p>
+for a given <a class="link" href="WebKitFrame.html" title="WebKitFrame"><span class="type">WebKitFrame</span></a> with <a href="../webkit2gtk-4.0/WebKitFrame.html#webkit-frame-get-javascript-context-for-script-world"><code class="function">webkit_frame_get_javascript_context_for_script_world()</code></a>.</p>
 <div class="refsect3">
 <a name="webkit-script-world-new.returns"></a><h4>Returns</h4>
 <p>a new isolated <a class="link" href="WebKitScriptWorld.html" title="WebKitScriptWorld"><span class="type">WebKitScriptWorld</span></a>. </p>
@@ -158,7 +158,7 @@ webkit_script_world_new_with_name (<em class="parameter"><code>const <span class
 isolated worlds have access to the DOM but not to other variable
 or functions created by the page.
 You can get the JavaScript execution context of a <a class="link" href="WebKitScriptWorld.html" title="WebKitScriptWorld"><span class="type">WebKitScriptWorld</span></a>
-for a given <a class="link" href="WebKitFrame.html" title="WebKitFrame"><span class="type">WebKitFrame</span></a> with <code class="function">webkit_frame_get_javascript_context_for_script_world()</code>.</p>
+for a given <a class="link" href="WebKitFrame.html" title="WebKitFrame"><span class="type">WebKitFrame</span></a> with <a href="../webkit2gtk-4.0/WebKitFrame.html#webkit-frame-get-javascript-context-for-script-world"><code class="function">webkit_frame_get_javascript_context_for_script_world()</code></a>.</p>
 <div class="refsect3">
 <a name="webkit-script-world-new-with-name.parameters"></a><h4>Parameters</h4>
 <div class="informaltable"><table class="informaltable" width="100%" border="0">
@@ -225,7 +225,7 @@ webkit_script_world_get_name (<em class="parameter"><code><a class="link" href="
 user_function (<a class="link" href="WebKitScriptWorld.html" title="WebKitScriptWorld"><span class="type">WebKitScriptWorld</span></a> *world,
                <a class="link" href="WebKitWebPage.html" title="WebKitWebPage"><span class="type">WebKitWebPage</span></a>     *page,
                <a class="link" href="WebKitFrame.html" title="WebKitFrame"><span class="type">WebKitFrame</span></a>       *frame,
-               <span class="type">gpointer</span>           user_data)</pre>
+               <a href="../glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>           user_data)</pre>
 <p>Emitted when the JavaScript window object in a <a class="link" href="WebKitScriptWorld.html" title="WebKitScriptWorld"><span class="type">WebKitScriptWorld</span></a> has been
 cleared. This is the preferred place to set custom properties on the window
 object using the JavaScriptCore API. You can get the window object of <em class="parameter"><code>frame</code></em>
@@ -266,7 +266,7 @@ belongs</p></td>
 </tbody>
 </table></div>
 </div>
-<p>Flags: Run Last</p>
+<p>Flags: <a href="../gobject/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS">Run Last</a></p>
 <p class="since">Since: 2.2</p>
 </div>
 </div>
