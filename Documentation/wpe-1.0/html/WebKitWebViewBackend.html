@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>WebKitWebViewBackend: WPE Reference Manual</title>
-<meta name="generator" content="DocBook XSL-NS Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="WPE Reference Manual">
 <link rel="up" href="ch01.html" title="Class Overview">
 <link rel="prev" href="WebKitWebView.html" title="The main frame document title of this #WebKitWebView. If the title has not been received yet, it will be %NULL.">
@@ -79,7 +79,7 @@
 </div>
 <div class="refsect1">
 <a name="WebKitWebViewBackend.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    GBoxed
+<pre class="screen">    <a href="/usr/share/gtk-doc/html/gobject/gobject-Boxed-Types.html">GBoxed</a>
     <span class="lineart">╰──</span> WebKitWebViewBackend
 </pre>
 </div>
@@ -125,14 +125,14 @@ webkit_web_view_backend_get_wpe_backend
 <a name="webkit-web-view-backend-new"></a><h3>webkit_web_view_backend_new ()</h3>
 <pre class="programlisting"><a class="link" href="WebKitWebViewBackend.html" title="WebKitWebViewBackend"><span class="returnvalue">WebKitWebViewBackend</span></a> *
 webkit_web_view_backend_new (<em class="parameter"><code><span class="type">struct wpe_view_backend</span> *backend</code></em>,
-                             <em class="parameter"><code><span class="type">GDestroyNotify</span> notify</code></em>,
-                             <em class="parameter"><code><span class="type">gpointer</span> user_data</code></em>);</pre>
+                             <em class="parameter"><code><a href="../glib/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a> notify</code></em>,
+                             <em class="parameter"><code><a href="../glib/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>Create a new <a class="link" href="WebKitWebViewBackend.html" title="WebKitWebViewBackend"><span class="type">WebKitWebViewBackend</span></a> for the given WPE <em class="parameter"><code>backend</code></em>
-. You can pass a <span class="type">GDestroyNotify</span>
+. You can pass a <a href="../glib/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a>
 that will be called when the object is destroyed passing <em class="parameter"><code>user_data</code></em>
  as the argument. If <em class="parameter"><code>notify</code></em>
 
-is <code class="literal">NULL</code>, <code class="function">wpe_view_backend_destroy()</code> will be used with <em class="parameter"><code>backend</code></em>
+is <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, <code class="function">wpe_view_backend_destroy()</code> will be used with <em class="parameter"><code>backend</code></em>
  as argument.
 The returned <a class="link" href="WebKitWebViewBackend.html" title="WebKitWebViewBackend"><span class="type">WebKitWebViewBackend</span></a> should never be freed by the user; it must be passed to a
 <a class="link" href="WebKitWebView.html" title="The main frame document title of this #WebKitWebView. If the title has not been received yet, it will be %NULL."><span class="type">WebKitWebView</span></a> constructor that will take the ownership.</p>
@@ -152,7 +152,7 @@ The returned <a class="link" href="WebKitWebViewBackend.html" title="WebKitWebVi
 </tr>
 <tr>
 <td class="parameter_name"><p>notify</p></td>
-<td class="parameter_description"><p>a <span class="type">GDestroyNotify</span>, or <code class="literal">NULL</code>. </p></td>
+<td class="parameter_description"><p>a <a href="../glib/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>. </p></td>
 <td class="parameter_annotations"><span class="annotation">[<acronym title="NULL may be passed as the value in, out, in-out; or as a return value."><span class="acronym">nullable</span></acronym>]</span></td>
 </tr>
 <tr>
