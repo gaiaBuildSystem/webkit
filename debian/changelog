@@ -1,6 +1,8 @@
 wpewebkit (2.32.1-1) UNRELEASED; urgency=medium
 
   * New upstream release.
+  * debian/patches/revert-soname-change.patch:
+    + Drop this patch, this is now upstream.
 
  -- Alberto Garcia <berto@igalia.com>  Sat, 08 May 2021 16:53:58 +0200
 
