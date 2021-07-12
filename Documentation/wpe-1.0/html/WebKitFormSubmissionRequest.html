@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>WebKitFormSubmissionRequest: WPE Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL-NS Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="WPE Reference Manual">
 <link rel="up" href="ch01.html" title="Class Overview">
 <link rel="prev" href="WebKitContextMenuItem.html" title="WebKitContextMenuItem">
@@ -42,7 +42,7 @@
 <tbody>
 <tr>
 <td class="function_type">
-<a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<span class="returnvalue">gboolean</span>
 </td>
 <td class="function_name">
 <a class="link" href="WebKitFormSubmissionRequest.html#webkit-form-submission-request-list-text-fields" title="webkit_form_submission_request_list_text_fields ()">webkit_form_submission_request_list_text_fields</a> <span class="c_punctuation">()</span>
@@ -74,7 +74,7 @@
 </div>
 <div class="refsect1">
 <a name="WebKitFormSubmissionRequest.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    <a href="../gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+<pre class="screen">    GObject
     <span class="lineart">╰──</span> WebKitFormSubmissionRequest
 </pre>
 </div>
@@ -91,16 +91,16 @@ form with <a class="link" href="WebKitFormSubmissionRequest.html#webkit-form-sub
 <a name="WebKitFormSubmissionRequest.functions_details"></a><h2>Functions</h2>
 <div class="refsect2">
 <a name="webkit-form-submission-request-list-text-fields"></a><h3>webkit_form_submission_request_list_text_fields ()</h3>
-<pre class="programlisting"><a href="../glib/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
 webkit_form_submission_request_list_text_fields
                                (<em class="parameter"><code><a class="link" href="WebKitFormSubmissionRequest.html" title="WebKitFormSubmissionRequest"><span class="type">WebKitFormSubmissionRequest</span></a> *request</code></em>,
-                                <em class="parameter"><code><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a> **field_names</code></em>,
-                                <em class="parameter"><code><a href="../glib/glib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a> **field_values</code></em>);</pre>
+                                <em class="parameter"><code><span class="type">GPtrArray</span> **field_names</code></em>,
+                                <em class="parameter"><code><span class="type">GPtrArray</span> **field_values</code></em>);</pre>
 <p>Get lists with the names and values of the text fields contained in
 the form associated to <em class="parameter"><code>request</code></em>
 . Note that names and values may be
-<a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
-<p>If this function returns <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, then both <em class="parameter"><code>field_names</code></em>
+<code class="literal">NULL</code>.</p>
+<p>If this function returns <code class="literal">FALSE</code>, then both <em class="parameter"><code>field_names</code></em>
  and
 <em class="parameter"><code>field_values</code></em>
  will be empty.</p>
@@ -133,7 +133,7 @@ the form associated to <em class="parameter"><code>request</code></em>
 </div>
 <div class="refsect3">
 <a name="webkit-form-submission-request-list-text-fields.returns"></a><h4>Returns</h4>
-<p> <a href="../glib/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> if the form contains text fields, or <a href="../glib/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> otherwise</p>
+<p> <code class="literal">TRUE</code> if the form contains text fields, or <code class="literal">FALSE</code> otherwise</p>
 </div>
 <p class="since">Since: <a class="link" href="api-index-2-20.html#api-index-2.20">2.20</a></p>
 </div>

@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>WebKitDOMNode: WPE WebExtensions and DOM Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL-NS Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="WPE WebExtensions and DOM Reference Manual">
 <link rel="up" href="ch02.html" title="WebKitDOM">
 <link rel="prev" href="WebKitDOMElement.html" title="WebKitDOMElement">
@@ -64,7 +64,7 @@
 </div>
 <div class="refsect1">
 <a name="WebKitDOMNode.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    <a href="../gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+<pre class="screen">    GObject
     <span class="lineart">╰──</span> <a class="link" href="WebKitDOMObject.html" title="WebKitDOMObject">WebKitDOMObject</a>
         <span class="lineart">╰──</span> WebKitDOMNode
             <span class="lineart">├──</span> <a class="link" href="WebKitDOMDocument.html" title="WebKitDOMDocument">WebKitDOMDocument</a>
@@ -79,7 +79,7 @@
 <div class="refsect2">
 <a name="webkit-dom-node-for-js-value"></a><h3>webkit_dom_node_for_js_value ()</h3>
 <pre class="programlisting"><a class="link" href="WebKitDOMNode.html" title="WebKitDOMNode"><span class="returnvalue">WebKitDOMNode</span></a> *
-webkit_dom_node_for_js_value (<em class="parameter"><code><a href="../jsc-glib-4.0/JSCValue.html#JSCValue-struct"><span class="type">JSCValue</span></a> *value</code></em>);</pre>
+webkit_dom_node_for_js_value (<em class="parameter"><code><span class="type">JSCValue</span> *value</code></em>);</pre>
 <p>Get the <a class="link" href="WebKitDOMNode.html" title="WebKitDOMNode"><span class="type">WebKitDOMNode</span></a> for the DOM node referenced by <em class="parameter"><code>value</code></em>
 .</p>
 <div class="refsect3">
@@ -92,14 +92,14 @@ webkit_dom_node_for_js_value (<em class="parameter"><code><a href="../jsc-glib-4
 </colgroup>
 <tbody><tr>
 <td class="parameter_name"><p>value</p></td>
-<td class="parameter_description"><p>a <a href="../jsc-glib-4.0/JSCValue.html#JSCValue-struct"><span class="type">JSCValue</span></a></p></td>
+<td class="parameter_description"><p>a <span class="type">JSCValue</span></p></td>
 <td class="parameter_annotations"> </td>
 </tr></tbody>
 </table></div>
 </div>
 <div class="refsect3">
 <a name="webkit-dom-node-for-js-value.returns"></a><h4>Returns</h4>
-<p>a <a class="link" href="WebKitDOMNode.html" title="WebKitDOMNode"><span class="type">WebKitDOMNode</span></a>, or <a href="../glib/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if <em class="parameter"><code>value</code></em>
+<p>a <a class="link" href="WebKitDOMNode.html" title="WebKitDOMNode"><span class="type">WebKitDOMNode</span></a>, or <code class="literal">NULL</code> if <em class="parameter"><code>value</code></em>
 doesn't reference a DOM node. </p>
 <p><span class="annotation">[<acronym title="The data is owned by the callee, which is responsible of freeing it."><span class="acronym">transfer none</span></acronym>]</span></p>
 </div>

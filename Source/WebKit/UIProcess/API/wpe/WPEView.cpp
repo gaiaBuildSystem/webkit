@@ -35,7 +35,7 @@
 #include "NativeWebMouseEvent.h"
 #include "NativeWebTouchEvent.h"
 #include "NativeWebWheelEvent.h"
-#include "ScrollGestureController.h"
+#include "TouchGestureController.h"
 #include "WebPageGroup.h"
 #include "WebProcessPool.h"
 #include <WebCore/CompositionUnderline.h>
@@ -47,7 +47,7 @@ namespace WKWPE {
 
 View::View(struct wpe_view_backend* backend, const API::PageConfiguration& baseConfiguration)
     : m_client(makeUnique<API::ViewClient>())
-    , m_scrollGestureController(makeUnique<ScrollGestureController>())
+    , m_touchGestureController(makeUnique<TouchGestureController>())
     , m_pageClient(makeUnique<PageClientImpl>(*this))
     , m_size { 800, 600 }
     , m_viewStateFlags { WebCore::ActivityState::WindowIsActive, WebCore::ActivityState::IsFocused, WebCore::ActivityState::IsVisible, WebCore::ActivityState::IsInWindow }
@@ -167,6 +167,27 @@ View::View(struct wpe_view_backend* backend, const API::PageConfiguration& baseC
                 Horizontal
             };
 
+            // We treat an axis motion event with a value of zero to be equivalent
+            // to a 'stop' event. Motion events with zero motion don't exist naturally,
+            // so this allows a backend to express 'stop' events without changing API.
+            // The wheel event phase is adjusted accordingly.
+            WebWheelEvent::Phase phase = WebWheelEvent::Phase::PhaseChanged;
+            WebWheelEvent::Phase momentumPhase = WebWheelEvent::Phase::PhaseNone;
+
+#if WPE_CHECK_VERSION(1, 5, 0)
+            if (event->type & wpe_input_axis_event_type_mask_2d) {
+                auto* event2D = reinterpret_cast<struct wpe_input_axis_2d_event*>(event);
+                view.m_horizontalScrollActive = !!event2D->x_axis;
+                view.m_verticalScrollActive = !!event2D->y_axis;
+                if (!view.m_horizontalScrollActive && !view.m_verticalScrollActive)
+                    phase = WebWheelEvent::Phase::PhaseEnded;
+
+                auto& page = view.page();
+                page.handleWheelEvent(WebKit::NativeWebWheelEvent(event, page.deviceScaleFactor(), phase, momentumPhase));
+                return;
+            }
+#endif
+
             switch (event->axis) {
             case Vertical:
                 view.m_horizontalScrollActive = !!event->value;
@@ -176,14 +197,16 @@ View::View(struct wpe_view_backend* backend, const API::PageConfiguration& baseC
                 break;
             }
 
-            // We treat an axis motion event with a value of zero to be equivalent
-            // to a 'stop' event. Motion events with zero motion don't exist naturally,
-            // so this allows a backend to express 'stop' events without changing API.
-            auto& page = view.page();
-            if (event->value)
-                page.handleWheelEvent(WebKit::NativeWebWheelEvent(event, page.deviceScaleFactor(), WebWheelEvent::Phase::PhaseChanged, WebWheelEvent::Phase::PhaseNone));
-            else if (!view.m_horizontalScrollActive && !view.m_verticalScrollActive)
-                page.handleWheelEvent(WebKit::NativeWebWheelEvent(event, page.deviceScaleFactor(), WebWheelEvent::Phase::PhaseEnded, WebWheelEvent::Phase::PhaseNone));
+            bool shouldDispatch = !!event->value;
+            if (!view.m_horizontalScrollActive && !view.m_verticalScrollActive) {
+                shouldDispatch = true;
+                phase = WebWheelEvent::Phase::PhaseEnded;
+            }
+
+            if (shouldDispatch) {
+                auto& page = view.page();
+                page.handleWheelEvent(WebKit::NativeWebWheelEvent(event, page.deviceScaleFactor(), phase, momentumPhase));
+            }
         },
         // handle_touch_event
         [](void* data, struct wpe_input_touch_event* event)
@@ -193,13 +216,35 @@ View::View(struct wpe_view_backend* backend, const API::PageConfiguration& baseC
 
             WebKit::NativeWebTouchEvent touchEvent(event, page.deviceScaleFactor());
 
-            auto& scrollGestureController = *view.m_scrollGestureController;
-            if (scrollGestureController.isHandling()) {
-                const struct wpe_input_touch_event_raw* touchPoint = touchEvent.nativeFallbackTouchPoint();
-                if (touchPoint->type != wpe_input_touch_event_type_null && scrollGestureController.handleEvent(touchPoint)) {
-                    page.handleWheelEvent(WebKit::NativeWebWheelEvent(scrollGestureController.axisEvent(), page.deviceScaleFactor(), scrollGestureController.phase(), WebWheelEvent::Phase::PhaseNone));
+            // If already gesturing axis events, short-cut directly to the controller,
+            // avoiding the usual roundtrip.
+            auto& touchGestureController = *view.m_touchGestureController;
+            if (touchGestureController.gesturedEvent() == TouchGestureController::GesturedEvent::Axis) {
+                bool handledThroughGestureController = false;
+
+                auto generatedEvent = touchGestureController.handleEvent(touchEvent.nativeFallbackTouchPoint());
+                WTF::switchOn(generatedEvent,
+                    [](TouchGestureController::NoEvent&) { },
+                    [](TouchGestureController::ClickEvent&) { },
+                    [&](TouchGestureController::AxisEvent& axisEvent)
+                    {
+#if WPE_CHECK_VERSION(1, 5, 0)
+                        auto* event = &axisEvent.event.base;
+#else
+                        auto* event = &axisEvent.event;
+#endif
+                        if (event->type != wpe_input_axis_event_type_null) {
+                            page.handleWheelEvent(WebKit::NativeWebWheelEvent(event, page.deviceScaleFactor(),
+                                axisEvent.phase, WebWheelEvent::Phase::PhaseNone));
+                            handledThroughGestureController = true;
+                        }
+                    });
+
+                // In case of the axis event gesturing, the generic touch event handling should be skipped.
+                // Exception to this are touch-up events that should still be handled just like the corresponding
+                // touch-down events were.
+                if (handledThroughGestureController && event->type != wpe_input_touch_event_type_up)
                     return;
-                }
             }
 
             page.handleTouchEvent(touchEvent);
