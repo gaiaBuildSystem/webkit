@@ -1,4 +1,4 @@
-wpewebkit (2.32.3-2) UNRELEASED; urgency=high
+wpewebkit (2.32.3-2) unstable; urgency=high
 
   * disable-external-audio-rendering.patch:
     + Build without USE_WPEBACKEND_FDO_AUDIO_EXTENSION so the binary works
