@@ -1,0 +1,17 @@
+From: Alberto Garcia <berto@igalia.com>
+Subject: Disable wpebackend-fdo features not available in bullseye
+Bug-Debian: https://bugs.debian.org/991555
+Index: webkitgtk/Source/cmake/GStreamerChecks.cmake
+===================================================================
+--- webkitgtk.orig/Source/cmake/GStreamerChecks.cmake
++++ webkitgtk/Source/cmake/GStreamerChecks.cmake
+@@ -6,7 +6,8 @@ if (ENABLE_VIDEO OR ENABLE_WEB_AUDIO)
+             message(WARNING "WPEBackend-fdo audio extension not found. Disabling external audio rendering support")
+             SET_AND_EXPOSE_TO_BUILD(USE_WPEBACKEND_FDO_AUDIO_EXTENSION FALSE)
+         else ()
+-            SET_AND_EXPOSE_TO_BUILD(USE_WPEBACKEND_FDO_AUDIO_EXTENSION TRUE)
++            message(WARNING "Disabling external audio rendering support for the bullseye build")
++            SET_AND_EXPOSE_TO_BUILD(USE_WPEBACKEND_FDO_AUDIO_EXTENSION FALSE)
+         endif ()
+     endif ()
+ 

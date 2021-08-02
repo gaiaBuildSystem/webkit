@@ -1,3 +1,11 @@
+wpewebkit (2.32.3-2) UNRELEASED; urgency=high
+
+  * disable-external-audio-rendering.patch:
+    + Build without USE_WPEBACKEND_FDO_AUDIO_EXTENSION so the binary works
+      with the wpebackend-fdo version in bullseye (see #991555).
+
+ -- Alberto Garcia <berto@igalia.com>  Tue, 03 Aug 2021 01:09:44 +0200
+
 wpewebkit (2.32.3-1) unstable; urgency=high
 
   * New upstream release.
