@@ -1,3 +1,10 @@
+wpewebkit (2.32.3-3) UNRELEASED; urgency=medium
+
+  * disable-external-audio-rendering.patch:
+    + Drop this patch now for bookworm.
+
+ -- Alberto Garcia <berto@igalia.com>  Tue, 24 Aug 2021 16:52:18 +0200
+
 wpewebkit (2.32.3-2) unstable; urgency=high
 
   * disable-external-audio-rendering.patch:
