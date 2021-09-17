@@ -3,6 +3,8 @@ wpewebkit (2.32.4-1) UNRELEASED; urgency=high
   * New upstream release.
   * disable-external-audio-rendering.patch:
     + Drop this patch now for bookworm.
+  * debian/source/lintian-overrides:
+    + Update source-is-missing overrides.
 
  -- Alberto Garcia <berto@igalia.com>  Tue, 24 Aug 2021 16:52:18 +0200
 
