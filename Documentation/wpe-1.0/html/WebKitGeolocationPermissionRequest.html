@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>WebKitGeolocationPermissionRequest: WPE Reference Manual</title>
-<meta name="generator" content="DocBook XSL Stylesheets Vsnapshot">
+<meta name="generator" content="DocBook XSL-NS Stylesheets Vsnapshot">
 <link rel="home" href="index.html" title="WPE Reference Manual">
 <link rel="up" href="ch01.html" title="Class Overview">
 <link rel="prev" href="WebKitPermissionRequest.html" title="WebKitPermissionRequest">
@@ -48,7 +48,7 @@
 </div>
 <div class="refsect1">
 <a name="WebKitGeolocationPermissionRequest.object-hierarchy"></a><h2>Object Hierarchy</h2>
-<pre class="screen">    <a href="../gobject/gobject-The-Base-Object-Type.html#GObject-struct">GObject</a>
+<pre class="screen">    GObject
     <span class="lineart">╰──</span> WebKitGeolocationPermissionRequest
 </pre>
 </div>
@@ -69,13 +69,13 @@ it is denied by default.</p>
 application identifier to allow web content to use geolocation services.
 The identifier *must* match the name of the <code class="literal">.desktop</code> file which describes
 the application, sans the suffix.</p>
-<p>If your application uses <a href="../gio/GApplication.html#GApplication-struct"><span class="type">GApplication</span></a> (or any subclass like
+<p>If your application uses <span class="type">GApplication</span> (or any subclass like
 <span class="type">GtkApplication</span>), WebKit will automatically use the identifier returned by
-<a href="../gio/GApplication.html#g-application-get-application-id"><code class="function">g_application_get_application_id()</code></a>. This is the recommended approach for
+<code class="function">g_application_get_application_id()</code>. This is the recommended approach for
 enabling geolocation in applications.</p>
-<p>If an identifier cannot be obtained through <a href="../gio/GApplication.html#GApplication-struct"><span class="type">GApplication</span></a>, the value
-returned by <a href="../glib/glib-Miscellaneous-Utility-Functions.html#g-get-prgname"><code class="function">g_get_prgname()</code></a> will be used instead as a fallback. For
-programs which cannot use <a href="../gio/GApplication.html#GApplication-struct"><span class="type">GApplication</span></a>, calling <a href="../glib/glib-Miscellaneous-Utility-Functions.html#g-set-prgname"><code class="function">g_set_prgname()</code></a> early
+<p>If an identifier cannot be obtained through <span class="type">GApplication</span>, the value
+returned by <code class="function">g_get_prgname()</code> will be used instead as a fallback. For
+programs which cannot use <span class="type">GApplication</span>, calling <code class="function">g_set_prgname()</code> early
 during initialization is needed when the name of the executable on disk
 does not match the name of a valid <code class="literal">.desktop</code> file.</p>
 </div>
