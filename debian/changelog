@@ -1,5 +1,6 @@
-wpewebkit (2.32.3-3) UNRELEASED; urgency=medium
+wpewebkit (2.32.4-1) UNRELEASED; urgency=high
 
+  * New upstream release.
   * disable-external-audio-rendering.patch:
     + Drop this patch now for bookworm.
 
