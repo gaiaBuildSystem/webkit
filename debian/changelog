@@ -1,4 +1,4 @@
-wpewebkit (2.32.4-1) UNRELEASED; urgency=high
+wpewebkit (2.32.4-1) unstable; urgency=high
 
   * New upstream release.
   * disable-external-audio-rendering.patch:
@@ -6,7 +6,7 @@ wpewebkit (2.32.4-1) UNRELEASED; urgency=high
   * debian/source/lintian-overrides:
     + Update source-is-missing overrides.
 
- -- Alberto Garcia <berto@igalia.com>  Tue, 24 Aug 2021 16:52:18 +0200
+ -- Alberto Garcia <berto@igalia.com>  Sat, 18 Sep 2021 12:32:31 +0200
 
 wpewebkit (2.32.3-2) unstable; urgency=high
 
