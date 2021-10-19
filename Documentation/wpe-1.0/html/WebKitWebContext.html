@@ -403,12 +403,20 @@
 <col width="300px" class="properties_name">
 <col width="200px" class="properties_flags">
 </colgroup>
-<tbody><tr>
+<tbody>
+<tr>
+<td class="property_type">
+<span class="type">WebKitMemoryPressureSettings</span> *</td>
+<td class="property_name"><a class="link" href="WebKitWebContext.html#WebKitWebContext--memory-pressure-settings" title="The “memory-pressure-settings” property">memory-pressure-settings</a></td>
+<td class="property_flags">Write / Construct Only</td>
+</tr>
+<tr>
 <td class="property_type">
 <a class="link" href="WebKitWebsiteDataManager.html" title="WebKitWebsiteDataManager"><span class="type">WebKitWebsiteDataManager</span></a> *</td>
 <td class="property_name"><a class="link" href="WebKitWebContext.html#WebKitWebContext--website-data-manager" title="The “website-data-manager” property">website-data-manager</a></td>
 <td class="property_flags">Read / Write / Construct Only</td>
-</tr></tbody>
+</tr>
+</tbody>
 </table></div>
 </div>
 <div class="refsect1">
@@ -2178,6 +2186,15 @@ multiple tabs.</p>
 </div>
 <div class="refsect1">
 <a name="WebKitWebContext.property-details"></a><h2>Property Details</h2>
+<div class="refsect2">
+<a name="WebKitWebContext--memory-pressure-settings"></a><h3>The <code class="literal">“memory-pressure-settings”</code> property</h3>
+<pre class="programlisting">  “memory-pressure-settings” <span class="type">WebKitMemoryPressureSettings</span> *</pre>
+<p>The <span class="type">WebKitMemoryPressureSettings</span> applied to the web processes created by this context.</p>
+<p>Owner: WebKitWebContext</p>
+<p>Flags: Write / Construct Only</p>
+<p class="since">Since: 2.34</p>
+</div>
+<hr>
 <div class="refsect2">
 <a name="WebKitWebContext--website-data-manager"></a><h3>The <code class="literal">“website-data-manager”</code> property</h3>
 <pre class="programlisting">  “website-data-manager”     <a class="link" href="WebKitWebsiteDataManager.html" title="WebKitWebsiteDataManager"><span class="type">WebKitWebsiteDataManager</span></a> *</pre>
