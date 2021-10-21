@@ -10,6 +10,7 @@ wpewebkit (2.34.1-1) UNRELEASED; urgency=medium
     + Build with -DUSE_SOUP2=ON.
   * debian/control:
     + Add build dependency on liblcms2-dev (see #880697).
+    + Update Standards-Version to 4.6.0.1 (no changes).
   * debian/libwpewebkit-1.0-3.symbols:
     + Update symbols.
   * debian/libwpewebkit-1.0-3.lintian-overrides:
