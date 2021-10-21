@@ -14,6 +14,8 @@ wpewebkit (2.34.1-1) UNRELEASED; urgency=medium
     + Update symbols.
   * debian/libwpewebkit-1.0-3.lintian-overrides:
     + Override library-not-linked-against-libc.
+  * debian/source/lintian-overrides:
+    + Update source-is-missing overrides.
 
  -- Alberto Garcia <berto@igalia.com>  Tue, 19 Oct 2021 23:50:53 +0200
 
