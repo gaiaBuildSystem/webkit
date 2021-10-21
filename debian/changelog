@@ -10,6 +10,8 @@ wpewebkit (2.34.1-1) UNRELEASED; urgency=medium
     + Build with -DUSE_SOUP2=ON.
   * debian/control:
     + Add build dependency on liblcms2-dev (see #880697).
+  * debian/libwpewebkit-1.0-3.symbols:
+    + Update symbols.
 
  -- Alberto Garcia <berto@igalia.com>  Tue, 19 Oct 2021 23:50:53 +0200
 
