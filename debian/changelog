@@ -5,6 +5,8 @@ wpewebkit (2.34.1-1) UNRELEASED; urgency=medium
     + Update upstream branch name.
   * Update copyright information of all files.
   * Refresh all patches.
+  * debian/rules:
+    + Build with -O1 in sh3 and sh4 (see #995717).
 
  -- Alberto Garcia <berto@igalia.com>  Tue, 19 Oct 2021 23:50:53 +0200
 
