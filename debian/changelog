@@ -1,4 +1,4 @@
-wpewebkit (2.34.1-1) UNRELEASED; urgency=medium
+wpewebkit (2.34.1-1) unstable; urgency=high
 
   * New upstream release.
   * debian/gbp.conf:
@@ -18,7 +18,7 @@ wpewebkit (2.34.1-1) UNRELEASED; urgency=medium
   * debian/source/lintian-overrides:
     + Update source-is-missing overrides.
 
- -- Alberto Garcia <berto@igalia.com>  Tue, 19 Oct 2021 23:50:53 +0200
+ -- Alberto Garcia <berto@igalia.com>  Thu, 21 Oct 2021 12:38:01 +0200
 
 wpewebkit (2.32.4-1) unstable; urgency=high
 
