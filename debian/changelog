@@ -1,10 +1,10 @@
-wpewebkit (2.34.2-1) UNRELEASED; urgency=medium
+wpewebkit (2.34.2-1) unstable; urgency=medium
 
   * New upstream release.
   * debian/patches/fix-ftbfs-m68k.patch:
     + Update patch.
 
- -- Alberto Garcia <berto@igalia.com>  Mon, 25 Oct 2021 02:39:31 +0200
+ -- Alberto Garcia <berto@igalia.com>  Wed, 24 Nov 2021 16:41:46 +0100
 
 wpewebkit (2.34.1-1) unstable; urgency=high
 
