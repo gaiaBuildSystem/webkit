@@ -1,4 +1,4 @@
-wpewebkit (2.34.4-1) UNRELEASED; urgency=high
+wpewebkit (2.34.4-1) unstable; urgency=high
 
   * New upstream release.
   * Set the debhelper compatibility level to 12:
