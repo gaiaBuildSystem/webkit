@@ -2795,7 +2795,7 @@ License: public-domain
  disclaims all copyright to their code.
 
 Files: debian/*
-Copyright: 2019-2021 Alberto Garcia <berto@igalia.com>
+Copyright: 2019-2022 Alberto Garcia <berto@igalia.com>
 License: BSD-2-clause
 
 License: AFL-2.0
