@@ -1,7 +1,7 @@
 include(GNUInstallDirs)
 include(VersioningUtils)
 
-SET_PROJECT_VERSION(2 34 4)
+SET_PROJECT_VERSION(2 34 5)
 
 set(USER_AGENT_BRANDING "" CACHE STRING "Branding to add to user agent string")
 
@@ -10,7 +10,7 @@ find_package(Fontconfig 2.8.0 REQUIRED)
 find_package(Freetype 2.4.2 REQUIRED)
 find_package(GLIB 2.44.0 REQUIRED COMPONENTS gio gio-unix gobject gthread gmodule)
 find_package(HarfBuzz 0.9.18 REQUIRED COMPONENTS ICU)
-find_package(ICU 61.2 REQUIRED COMPONENTS data i18n uc)
+find_package(ICU 60.2 REQUIRED COMPONENTS data i18n uc)
 find_package(JPEG REQUIRED)
 find_package(LibEpoxy 1.4.0 REQUIRED)
 find_package(LibGcrypt 1.6.0 REQUIRED)
@@ -143,9 +143,9 @@ endif ()
 endif ()
 
 if (WPE_API_VERSION VERSION_EQUAL "1.0")
-    CALCULATE_LIBRARY_VERSIONS_FROM_LIBTOOL_TRIPLE(WEBKIT 19 6 16)
+    CALCULATE_LIBRARY_VERSIONS_FROM_LIBTOOL_TRIPLE(WEBKIT 19 7 16)
 else ()
-    CALCULATE_LIBRARY_VERSIONS_FROM_LIBTOOL_TRIPLE(WEBKIT 0 4 0)
+    CALCULATE_LIBRARY_VERSIONS_FROM_LIBTOOL_TRIPLE(WEBKIT 0 5 0)
 endif ()
 
 # These are shared variables, but we special case their definition so that we can use the
