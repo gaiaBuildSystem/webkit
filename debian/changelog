@@ -1,4 +1,4 @@
-wpewebkit (2.34.6-1) UNRELEASED; urgency=high
+wpewebkit (2.34.6-1) unstable; urgency=high
 
   * New upstream release.
     + Fixes CVE-2022-22620.
