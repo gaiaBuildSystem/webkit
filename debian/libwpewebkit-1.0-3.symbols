@@ -7,9 +7,6 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  _ZN6WebKit18NetworkProcessMainEiPPc@Base 2.28.0
  (optional)_ZN6WebKit22WebKitExtensionManager10initializeEPNS_14InjectedBundleEPN3API6ObjectE@Base 2.24.1
  (optional)_ZN6WebKit22WebKitExtensionManager9singletonEv@Base 2.24.1
- (optional|arch=amd64 arm64 armhf mips mipsel)_ZN7bmalloc16PerThreadStorageINS_11PerHeapKindINS_5CacheEEEE15s_didInitializeE@Base 2.24.1
- (optional|arch=amd64 arm64 armhf mips mipsel)_ZN7bmalloc16PerThreadStorageINS_11PerHeapKindINS_5CacheEEEE5s_keyE@Base 2.24.1
- (optional|arch=amd64 arm64 armhf mips mipsel)_ZZN7bmalloc10vmPageSizeEvE6cached@Base 2.24.1
  jsc_class_add_constructor@Base 2.24.1
  jsc_class_add_constructor_variadic@Base 2.24.1
  jsc_class_add_constructorv@Base 2.24.1
@@ -57,6 +54,25 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  jsc_exception_new_with_name_vprintf@Base 2.24.1
  jsc_exception_report@Base 2.24.1
  jsc_exception_to_string@Base 2.24.1
+ jsc_get_major_version@Base 2.36.0
+ jsc_get_micro_version@Base 2.36.0
+ jsc_get_minor_version@Base 2.36.0
+ jsc_options_foreach@Base 2.36.0
+ jsc_options_get_boolean@Base 2.36.0
+ jsc_options_get_double@Base 2.36.0
+ jsc_options_get_int@Base 2.36.0
+ jsc_options_get_option_group@Base 2.36.0
+ jsc_options_get_range_string@Base 2.36.0
+ jsc_options_get_size@Base 2.36.0
+ jsc_options_get_string@Base 2.36.0
+ jsc_options_get_uint@Base 2.36.0
+ jsc_options_set_boolean@Base 2.36.0
+ jsc_options_set_double@Base 2.36.0
+ jsc_options_set_int@Base 2.36.0
+ jsc_options_set_range_string@Base 2.36.0
+ jsc_options_set_size@Base 2.36.0
+ jsc_options_set_string@Base 2.36.0
+ jsc_options_set_uint@Base 2.36.0
  jsc_value_constructor_call@Base 2.24.1
  jsc_value_constructor_callv@Base 2.24.1
  jsc_value_function_call@Base 2.24.1
@@ -106,8 +122,9 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  jsc_value_to_string_as_bytes@Base 2.24.1
  jsc_virtual_machine_get_type@Base 2.24.1
  jsc_virtual_machine_new@Base 2.24.1
- webkit_accessible_get_type@Base 2.26.2
- webkit_accessible_hyperlink_get_type@Base 2.26.2
+ jsc_weak_value_get_type@Base 2.36.0
+ jsc_weak_value_get_value@Base 2.36.0
+ jsc_weak_value_new@Base 2.36.0
  webkit_application_info_get_name@Base 2.24.1
  webkit_application_info_get_type@Base 2.24.1
  webkit_application_info_get_version@Base 2.24.1
@@ -116,7 +133,6 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_application_info_set_name@Base 2.24.1
  webkit_application_info_set_version@Base 2.24.1
  webkit_application_info_unref@Base 2.24.1
- webkit_audio_sink_get_type@Base 2.32.0
  webkit_authentication_request_authenticate@Base 2.24.1
  webkit_authentication_request_can_save_credentials@Base 2.24.1
  webkit_authentication_request_cancel@Base 2.24.1
@@ -154,7 +170,6 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_back_forward_list_item_get_type@Base 2.24.1
  webkit_back_forward_list_item_get_uri@Base 2.24.1
  webkit_cache_model_get_type@Base 2.24.1
- webkit_cached_resolver_get_type@Base 2.26.2
  webkit_color_get_type@Base 2.24.1
  webkit_color_parse@Base 2.24.1
  webkit_console_message_copy@Base 2.24.1
@@ -303,8 +318,6 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_get_major_version@Base 2.24.1
  webkit_get_micro_version@Base 2.24.1
  webkit_get_minor_version@Base 2.24.1
- webkit_gl_video_sink_get_type@Base 2.28.0
- webkit_gst_common_debug@Base 2.32.0
  webkit_hit_test_result_context_get_type@Base 2.24.1
  webkit_hit_test_result_context_is_editable@Base 2.24.1
  webkit_hit_test_result_context_is_image@Base 2.24.1
@@ -363,8 +376,6 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_media_capture_state_get_type@Base 2.34.0
  webkit_media_key_system_permission_get_name@Base 2.32.0
  webkit_media_key_system_permission_request_get_type@Base 2.32.0
- webkit_media_player_debug@Base 2.24.1
- webkit_media_src_get_type@Base 2.24.1
  webkit_memory_pressure_settings_copy@Base 2.34.0
  webkit_memory_pressure_settings_free@Base 2.34.0
  webkit_memory_pressure_settings_get_conservative_threshold@Base 2.34.0
@@ -385,7 +396,6 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_mime_info_get_type@Base 2.24.1
  webkit_mime_info_ref@Base 2.24.1
  webkit_mime_info_unref@Base 2.24.1
- webkit_mse_debug@Base 2.24.1
  webkit_navigation_action_copy@Base 2.24.1
  webkit_navigation_action_free@Base 2.24.1
  webkit_navigation_action_get_modifiers@Base 2.24.1
@@ -401,7 +411,6 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_navigation_type_get_type@Base 2.24.1
  webkit_network_error_get_type@Base 2.24.1
  webkit_network_error_quark@Base 2.24.1
- webkit_text_sink_get_type@Base 2.32.0
  webkit_network_proxy_mode_get_type@Base 2.24.1
  webkit_network_proxy_settings_add_proxy_for_scheme@Base 2.24.1
  webkit_network_proxy_settings_copy@Base 2.24.1
@@ -629,11 +638,19 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_uri_response_get_uri@Base 2.24.1
  webkit_uri_scheme_request_finish@Base 2.24.1
  webkit_uri_scheme_request_finish_error@Base 2.24.1
+ webkit_uri_scheme_request_finish_with_response@Base 2.36.0
+ webkit_uri_scheme_request_get_http_headers@Base 2.36.0
+ webkit_uri_scheme_request_get_http_method@Base 2.36.0
  webkit_uri_scheme_request_get_path@Base 2.24.1
  webkit_uri_scheme_request_get_scheme@Base 2.24.1
  webkit_uri_scheme_request_get_type@Base 2.24.1
  webkit_uri_scheme_request_get_uri@Base 2.24.1
  webkit_uri_scheme_request_get_web_view@Base 2.24.1
+ webkit_uri_scheme_response_get_type@Base 2.36.0
+ webkit_uri_scheme_response_new@Base 2.36.0
+ webkit_uri_scheme_response_set_content_type@Base 2.36.0
+ webkit_uri_scheme_response_set_http_headers@Base 2.36.0
+ webkit_uri_scheme_response_set_status@Base 2.36.0
  webkit_user_content_filter_error_get_type@Base 2.24.1
  webkit_user_content_filter_error_quark@Base 2.24.1
  webkit_user_content_filter_get_identifier@Base 2.24.1
@@ -747,7 +764,6 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_web_extension_send_message_to_context_finish@Base 2.28.0
  webkit_web_hit_test_result_get_node@Base 2.24.1
  webkit_web_hit_test_result_get_type@Base 2.24.1
- webkit_web_page_accessibility_object_get_type@Base 2.26.2
  webkit_web_page_get_dom_document@Base 2.24.1
  webkit_web_page_get_editor@Base 2.24.1
  webkit_web_page_get_id@Base 2.24.1
@@ -762,8 +778,6 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_web_resource_get_response@Base 2.24.1
  webkit_web_resource_get_type@Base 2.24.1
  webkit_web_resource_get_uri@Base 2.24.1
- webkit_web_src_get_type@Base 2.24.1
- webkit_web_view_accessible_get_type@Base 2.26.2
  webkit_web_view_add_frame_displayed_callback@Base 2.24.1
  webkit_web_view_backend_get_type@Base 2.24.1
  webkit_web_view_backend_get_wpe_backend@Base 2.24.1

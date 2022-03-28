@@ -5,6 +5,8 @@ wpewebkit (2.36.0-1) UNRELEASED; urgency=medium
     + Update upstream branch name.
   * Refresh all patches.
   * Update copyright information of all files.
+  * debian/libwpewebkit-1.0-3.symbols:
+    + Update symbols.
 
  -- Alberto Garcia <berto@igalia.com>  Mon, 28 Mar 2022 12:05:41 +0200
 
