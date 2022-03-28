@@ -3,6 +3,7 @@ wpewebkit (2.36.0-1) UNRELEASED; urgency=medium
   * New upstream release.
   * debian/gbp.conf:
     + Update upstream branch name.
+  * Refresh all patches.
 
  -- Alberto Garcia <berto@igalia.com>  Mon, 28 Mar 2022 12:05:41 +0200
 
