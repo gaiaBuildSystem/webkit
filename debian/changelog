@@ -7,6 +7,9 @@ wpewebkit (2.36.0-1) UNRELEASED; urgency=medium
   * Update copyright information of all files.
   * debian/libwpewebkit-1.0-3.symbols:
     + Update symbols.
+  * debian/rules:
+    + Build with CMAKE_BUILD_WITH_INSTALL_RPATH=ON, otherwise builds are
+      not reproducible if they happen in different directories.
 
  -- Alberto Garcia <berto@igalia.com>  Mon, 28 Mar 2022 12:05:41 +0200
 
