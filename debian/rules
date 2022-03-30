@@ -84,6 +84,11 @@ override_dh_auto_configure:
 	   -DUSE_SOUP2=ON \
 	   $(EXTRA_CMAKE_ARGUMENTS)
 
+override_dh_auto_clean:
+	dh_auto_clean
+	find Source Tools -type f -name "*.pyc" -exec rm {} \;
+	find Source Tools -depth -type d -name __pycache__ -exec rmdir {} \;
+
 # Create dummy doc directories in case the "nodoc" build option is set
 override_dh_install:
 	mkdir -p $(CURDIR)/debian/tmp/usr/share/gtk-doc/html/wpe-1.0
