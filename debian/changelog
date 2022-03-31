@@ -13,6 +13,13 @@ wpewebkit (2.36.0-1) UNRELEASED; urgency=medium
     + Override the dh_auto_clean rule to remove all python cache files.
     + Disable unified builds in Debian/mipsel and reduce the number of
       parallel jobs in order to prevent running out of memory.
+  * Build the 1.1 API version of the packages. These use libsoup 3 instead
+    of libsoup 2 but are otherwise identical to the 1.0 API packages.
+    + debian/control:
+      - Add build dependency on libsoup-3.0-dev.
+      - Add entries for the new packages.
+    + debian/rules:
+      - Add commands to build both sets of packages.
 
  -- Alberto Garcia <berto@igalia.com>  Mon, 28 Mar 2022 12:05:41 +0200
 

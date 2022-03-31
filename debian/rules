@@ -5,8 +5,26 @@ export DEB_BUILD_MAINT_OPTIONS = hardening=+all
 include /usr/share/dpkg/architecture.mk
 include /usr/share/dpkg/buildflags.mk
 
+# soup2 build -> 1.0 API packages, soup3 build -> 1.1 API packages
+USE_SOUP_VERSION=3
+
+EXTRA_DH_ARGUMENTS =
 EXTRA_CMAKE_ARGUMENTS =
 DH_GENCONTROL_ARGS =
+
+ifeq ($(USE_SOUP_VERSION),2)
+	EXTRA_CMAKE_ARGUMENTS += -DUSE_SOUP2=ON
+	EXTRA_DH_ARGUMENTS += \
+		-Nlibwpewebkit-1.1-0 \
+		-Nlibwpewebkit-1.1-dev
+	DH_GENCONTROL_ARGS += -Vdriver:Depends="libwpewebkit-1.0-3 (= \$${binary:Version})"
+else
+	EXTRA_CMAKE_ARGUMENTS += -DUSE_SOUP2=OFF
+	EXTRA_DH_ARGUMENTS += \
+		-Nlibwpewebkit-1.0-3 \
+		-Nlibwpewebkit-1.0-dev
+	DH_GENCONTROL_ARGS += -Vdriver:Depends="libwpewebkit-1.1-0 (= \$${binary:Version})"
+endif
 
 # Sacrifice speed in order to make it more likely resource limits
 # won't be hit.
@@ -69,14 +87,37 @@ ifeq ($(shell dpkg-vendor --is Debian && echo yes) $(DEB_HOST_ARCH), yes mipsel)
 	EXTRA_CMAKE_ARGUMENTS += -DENABLE_UNIFIED_BUILDS=OFF
 endif
 
+CXXFLAGS=$(CFLAGS)
+
+# The debhelper files for the soup2 and soup3 builds are identical
+# (apart from the API version) so we generate the latter from the former.
+WEBKIT_DH_FILES = \
+	libwpewebkit-1.0-3.docs \
+	libwpewebkit-1.0-3.install \
+	libwpewebkit-1.0-3.lintian-overrides \
+	libwpewebkit-1.0-3.symbols \
+	libwpewebkit-1.0-dev.install
+
+# This converts debhelper file names and contents to the soup3 versions
+WEBKIT_DH_RENAME = sed -e 's/1\.0-3/1.1-0/g' \
+		       -e 's/1\.0\.so\.3/1.1.so.0/g' \
+		       -e 's/1\.0/1.1/g'
+
 %:
-	dh $@ --buildsystem=cmake+ninja
+	dh $@ --buildsystem=cmake+ninja $(EXTRA_DH_ARGUMENTS)
 
 override_dh_gencontrol:
 	dh_gencontrol -- $(DH_GENCONTROL_ARGS)
 
 override_dh_auto_configure:
-	CXXFLAGS="$(CFLAGS)" \
+	if [ "$(USE_SOUP_VERSION)" = "3" ]; then \
+		echo debian/clean > debian/clean ; \
+		for src in $(WEBKIT_DH_FILES); do \
+			dst=`echo $$src | $(WEBKIT_DH_RENAME)` ; \
+			$(WEBKIT_DH_RENAME) debian/$$src > debian/$$dst ; \
+			echo debian/$$dst >> debian/clean ; \
+		done ; \
+	fi
 	dh_auto_configure -- \
 	   -DPORT=WPE \
 	   -DCMAKE_INSTALL_LIBEXECDIR=lib/$(DEB_HOST_MULTIARCH) \
@@ -87,7 +128,6 @@ override_dh_auto_configure:
 	   -DENABLE_MINIBROWSER=ON \
 	   -DCMAKE_BUILD_WITH_INSTALL_RPATH=ON \
 	   -DENABLE_WPE_QT_API=OFF \
-	   -DUSE_SOUP2=ON \
 	   $(EXTRA_CMAKE_ARGUMENTS)
 
 override_dh_auto_clean:
