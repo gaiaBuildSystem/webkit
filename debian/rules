@@ -63,6 +63,12 @@ else
 	EXTRA_CMAKE_ARGUMENTS += -DENABLE_BUBBLEWRAP_SANDBOX=OFF
 endif
 
+# Lower memory requirements on Debian's mipsel builder
+ifeq ($(shell dpkg-vendor --is Debian && echo yes) $(DEB_HOST_ARCH), yes mipsel)
+	EXTRA_BUILD_ARGUMENTS += --max-parallel=2
+	EXTRA_CMAKE_ARGUMENTS += -DENABLE_UNIFIED_BUILDS=OFF
+endif
+
 %:
 	dh $@ --buildsystem=cmake+ninja
 
