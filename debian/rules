@@ -94,6 +94,13 @@ ifeq ($(shell dpkg-vendor --is Debian && echo yes) $(DEB_HOST_ARCH), yes mipsel)
 	EXTRA_CMAKE_ARGUMENTS += -DENABLE_UNIFIED_BUILDS=OFF
 endif
 
+# Lower max parallel jobs on some of Ubuntu's builders
+ifeq ($(shell dpkg-vendor --is Ubuntu && echo yes),yes)
+ifneq (,$(filter $(DEB_HOST_ARCH),arm64))
+	EXTRA_DH_ARGUMENTS += --max-parallel=2
+endif
+endif
+
 CXXFLAGS=$(CFLAGS)
 
 # The debhelper files for the soup2 and soup3 builds are identical
