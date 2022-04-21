@@ -3,6 +3,8 @@ wpewebkit (2.36.0-3) UNRELEASED; urgency=medium
   * debian/rules:
     - Reduce the number of parallel build jobs on Ubuntu's amd64 (thanks,
       Jeremy Bicha).
+    - Re-enable unified builds in Debian/mipsel, the changes from Adrian
+      Bunk should be enough to make this build again.
 
  -- Alberto Garcia <berto@igalia.com>  Fri, 22 Apr 2022 01:04:27 +0200
 
