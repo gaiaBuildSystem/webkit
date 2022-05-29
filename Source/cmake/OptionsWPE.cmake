@@ -1,7 +1,7 @@
 include(GNUInstallDirs)
 include(VersioningUtils)
 
-SET_PROJECT_VERSION(2 36 1)
+SET_PROJECT_VERSION(2 36 3)
 
 set(USER_AGENT_BRANDING "" CACHE STRING "Branding to add to user agent string")
 
@@ -145,9 +145,9 @@ endif ()
 endif ()
 
 if (WPE_API_VERSION VERSION_EQUAL "1.0")
-    CALCULATE_LIBRARY_VERSIONS_FROM_LIBTOOL_TRIPLE(WEBKIT 20 3 17)
+    CALCULATE_LIBRARY_VERSIONS_FROM_LIBTOOL_TRIPLE(WEBKIT 20 5 17)
 else ()
-    CALCULATE_LIBRARY_VERSIONS_FROM_LIBTOOL_TRIPLE(WEBKIT 1 3 1)
+    CALCULATE_LIBRARY_VERSIONS_FROM_LIBTOOL_TRIPLE(WEBKIT 1 5 1)
 endif ()
 
 set(CMAKE_C_VISIBILITY_PRESET hidden)
@@ -156,6 +156,7 @@ set(CMAKE_VISIBILITY_INLINES_HIDDEN ON)
 set(bmalloc_LIBRARY_TYPE OBJECT)
 set(WTF_LIBRARY_TYPE OBJECT)
 set(JavaScriptCore_LIBRARY_TYPE OBJECT)
+set(WebCore_LIBRARY_TYPE OBJECT)
 
 # These are shared variables, but we special case their definition so that we can use the
 # CMAKE_INSTALL_* variables that are populated by the GNUInstallDirs macro.
