@@ -55,6 +55,7 @@ Depends: libwpewebkit-1.1-0 (= ${binary:Version}),
          libsoup-3.0-dev,
          libwpe-1.0-dev,
          ${misc:Depends}
+Suggests: libwpewebkit-1.0-doc
 Description: Web content engine for embedded devices - development files
  WebKit is a modern web engine that is able to display content such as
  HTML, SVG, XML, and others. It also supports DOM, XMLHttpRequest,

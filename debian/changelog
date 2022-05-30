@@ -5,6 +5,8 @@ wpewebkit (2.36.3-1) UNRELEASED; urgency=high
   * Generate debian/control from debian/control.in depending on whether
     we're making the soup2 (1.0 API) or soup3 (1.1 API) build.
     - debian/rules: Add new target to generate debian/control.
+  * debian/control.in:
+    - Make the -dev package suggest libwpewebkit-1.0-doc
 
  -- Alberto Garcia <berto@igalia.com>  Sun, 29 May 2022 13:53:19 +0200
 
