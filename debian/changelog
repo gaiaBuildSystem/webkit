@@ -1,4 +1,4 @@
-wpewebkit (2.36.3-1) UNRELEASED; urgency=high
+wpewebkit (2.36.3-1) unstable; urgency=high
 
   * New upstream release.
   * debian/rules: lower memory requirements on sh4.
@@ -8,7 +8,7 @@ wpewebkit (2.36.3-1) UNRELEASED; urgency=high
   * debian/control.in:
     - Make the -dev package suggest libwpewebkit-1.0-doc
 
- -- Alberto Garcia <berto@igalia.com>  Sun, 29 May 2022 13:53:19 +0200
+ -- Alberto Garcia <berto@igalia.com>  Mon, 30 May 2022 14:57:19 +0200
 
 wpewebkit (2.36.1-1) unstable; urgency=medium
 
