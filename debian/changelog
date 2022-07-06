@@ -5,6 +5,7 @@ wpewebkit (2.36.4-1) UNRELEASED; urgency=high
     security fixes in the latest versions of WPE WebKit:
     - CVE-2022-22662 (fixed in 2.36.0).
     - CVE-2022-22677 and CVE-2022-26710 (fixed in 2.36.4).
+  * Update format of lintian overrides (see #1007002).
   * debian/control.in:
     - Update Standards-Version to 4.6.1.0 (no changes).
 
