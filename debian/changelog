@@ -1,4 +1,4 @@
-wpewebkit (2.36.4-1) UNRELEASED; urgency=high
+wpewebkit (2.36.4-1) unstable; urgency=high
 
   * New upstream release.
   * The WPE WebKit security advisory WSA-2022-0006 lists the following
@@ -9,7 +9,7 @@ wpewebkit (2.36.4-1) UNRELEASED; urgency=high
   * debian/control.in:
     - Update Standards-Version to 4.6.1.0 (no changes).
 
- -- Alberto Garcia <berto@igalia.com>  Wed, 06 Jul 2022 12:02:39 +0200
+ -- Alberto Garcia <berto@igalia.com>  Wed, 06 Jul 2022 15:56:08 +0200
 
 wpewebkit (2.36.3-1) unstable; urgency=high
 
