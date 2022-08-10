@@ -1,4 +1,4 @@
-wpewebkit (2.36.6-1) UNRELEASED; urgency=high
+wpewebkit (2.36.6-1) unstable; urgency=high
 
   * New upstream release.
   * The WPE WebKit security advisory WSA-2022-0007 lists the following
@@ -6,7 +6,7 @@ wpewebkit (2.36.6-1) UNRELEASED; urgency=high
     - CVE identifiers: CVE-2022-32792, CVE-2022-32816 and CVE-2022-2294
       (fixed in 2.36.5).
 
- -- Alberto Garcia <berto@igalia.com>  Wed, 10 Aug 2022 16:22:18 +0200
+ -- Alberto Garcia <berto@igalia.com>  Wed, 10 Aug 2022 17:08:54 +0200
 
 wpewebkit (2.36.4-1) unstable; urgency=high
 
