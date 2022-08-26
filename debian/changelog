@@ -3,7 +3,7 @@ wpewebkit (2.36.7-1) unstable; urgency=high
   * New upstream release.
   * The WPE WebKit security advisory WSA-2022-0008 lists the following
     security fixes in the latest versions of WPE WebKit
-    - CVE identifiers: CVE-2022-32792 (fixed in 2.36.7).
+    - CVE identifiers: CVE-2022-32893 (fixed in 2.36.7).
 
  -- Alberto Garcia <berto@igalia.com>  Thu, 25 Aug 2022 14:57:57 +0200
 
