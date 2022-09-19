@@ -73,6 +73,8 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  jsc_options_set_size@Base 2.36.0
  jsc_options_set_string@Base 2.36.0
  jsc_options_set_uint@Base 2.36.0
+ jsc_value_array_buffer_get_data@Base 2.38.0
+ jsc_value_array_buffer_get_size@Base 2.38.0
  jsc_value_constructor_call@Base 2.24.1
  jsc_value_constructor_callv@Base 2.24.1
  jsc_value_function_call@Base 2.24.1
@@ -80,6 +82,7 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  jsc_value_get_context@Base 2.24.1
  jsc_value_get_type@Base 2.24.1
  jsc_value_is_array@Base 2.24.1
+ jsc_value_is_array_buffer@Base 2.38.0
  jsc_value_is_boolean@Base 2.24.1
  jsc_value_is_constructor@Base 2.24.1
  jsc_value_is_function@Base 2.24.1
@@ -87,8 +90,10 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  jsc_value_is_number@Base 2.24.1
  jsc_value_is_object@Base 2.24.1
  jsc_value_is_string@Base 2.24.1
+ jsc_value_is_typed_array@Base 2.38.0
  jsc_value_is_undefined@Base 2.24.1
  jsc_value_new_array@Base 2.24.1
+ jsc_value_new_array_buffer@Base 2.38.0
  jsc_value_new_array_from_garray@Base 2.24.1
  jsc_value_new_array_from_strv@Base 2.24.1
  jsc_value_new_boolean@Base 2.24.1
@@ -101,6 +106,8 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  jsc_value_new_object@Base 2.24.1
  jsc_value_new_string@Base 2.24.1
  jsc_value_new_string_from_bytes@Base 2.24.1
+ jsc_value_new_typed_array@Base 2.38.0
+ jsc_value_new_typed_array_with_buffer@Base 2.38.0
  jsc_value_new_undefined@Base 2.24.1
  jsc_value_object_define_property_accessor@Base 2.24.1
  jsc_value_object_define_property_data@Base 2.24.1
@@ -120,6 +127,12 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  jsc_value_to_json@Base 2.28.0
  jsc_value_to_string@Base 2.24.1
  jsc_value_to_string_as_bytes@Base 2.24.1
+ jsc_value_typed_array_get_buffer@Base 2.38.0
+ jsc_value_typed_array_get_data@Base 2.38.0
+ jsc_value_typed_array_get_length@Base 2.38.0
+ jsc_value_typed_array_get_offset@Base 2.38.0
+ jsc_value_typed_array_get_size@Base 2.38.0
+ jsc_value_typed_array_get_type@Base 2.38.0
  jsc_virtual_machine_get_type@Base 2.24.1
  jsc_virtual_machine_new@Base 2.24.1
  jsc_weak_value_get_type@Base 2.36.0
@@ -542,6 +555,7 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_settings_get_enable_tabs_to_links@Base 2.24.1
  webkit_settings_get_enable_webaudio@Base 2.24.1
  webkit_settings_get_enable_webgl@Base 2.24.1
+ webkit_settings_get_enable_webrtc@Base 2.38.0
  webkit_settings_get_enable_write_console_messages_to_stdout@Base 2.24.1
  webkit_settings_get_enable_xss_auditor@Base 2.24.1
  webkit_settings_get_fantasy_font_family@Base 2.24.1
@@ -601,6 +615,7 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_settings_set_enable_tabs_to_links@Base 2.24.1
  webkit_settings_set_enable_webaudio@Base 2.24.1
  webkit_settings_set_enable_webgl@Base 2.24.1
+ webkit_settings_set_enable_webrtc@Base 2.38.0
  webkit_settings_set_enable_write_console_messages_to_stdout@Base 2.24.1
  webkit_settings_set_enable_xss_auditor@Base 2.24.1
  webkit_settings_set_fantasy_font_family@Base 2.24.1
@@ -729,6 +744,7 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_web_context_get_security_manager@Base 2.24.1
  webkit_web_context_get_spell_checking_enabled@Base 2.24.1
  webkit_web_context_get_spell_checking_languages@Base 2.24.1
+ webkit_web_context_get_time_zone_override@Base 2.38.0
  webkit_web_context_get_tls_errors_policy@Base 2.24.1
  webkit_web_context_get_type@Base 2.24.1
  webkit_web_context_get_web_process_count_limit@Base 2.24.1
@@ -760,6 +776,7 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_web_editor_get_type@Base 2.24.1
  webkit_web_extension_get_page@Base 2.24.1
  webkit_web_extension_get_type@Base 2.24.1
+ webkit_web_extension_mode_get_type@Base 2.38.0
  webkit_web_extension_send_message_to_context@Base 2.28.0
  webkit_web_extension_send_message_to_context_finish@Base 2.28.0
  webkit_web_hit_test_result_get_node@Base 2.24.1
@@ -797,6 +814,7 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_web_view_get_camera_capture_state@Base 2.34.0
  webkit_web_view_get_context@Base 2.24.1
  webkit_web_view_get_custom_charset@Base 2.24.1
+ webkit_web_view_get_default_content_security_policy@Base 2.38.0
  webkit_web_view_get_display_capture_state@Base 2.34.0
  webkit_web_view_get_editor_state@Base 2.24.1
  webkit_web_view_get_estimated_load_progress@Base 2.24.1
@@ -814,6 +832,7 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_web_view_get_type@Base 2.24.1
  webkit_web_view_get_uri@Base 2.24.1
  webkit_web_view_get_user_content_manager@Base 2.24.1
+ webkit_web_view_get_web_extension_mode@Base 2.38.0
  webkit_web_view_get_website_data_manager@Base 2.24.1
  webkit_web_view_get_website_policies@Base 2.30.0
  webkit_web_view_get_window_properties@Base 2.24.1
@@ -841,6 +860,7 @@ libWPEWebKit-1.0.so.3 libwpewebkit-1.0-3 #MINVER#
  webkit_web_view_reload_bypass_cache@Base 2.24.1
  webkit_web_view_remove_frame_displayed_callback@Base 2.24.1
  webkit_web_view_restore_session_state@Base 2.24.1
+ webkit_web_view_run_async_javascript_function_in_world@Base 2.38.0
  webkit_web_view_run_javascript@Base 2.24.1
  webkit_web_view_run_javascript_finish@Base 2.24.1
  webkit_web_view_run_javascript_from_gresource@Base 2.24.1
