@@ -1,6 +1,10 @@
-wpewebkit (2.38.0-1) UNRELEASED; urgency=high
+wpewebkit (2.38.0-1) unstable; urgency=high
 
   * New upstream release.
+  * The WPE WebKit security advisory WSA-2022-0009 lists the following
+    security fixes in the latest versions of WPE WebKit:
+    - CVE-2022-32891 (fixed in 2.36.5).
+    - CVE-2022-32886 and CVE-2022-32912 (fixed in 2.36.8).
   * Refresh all patches.
   * Update copyright information of all files.
   * debian/gbp.conf:
@@ -26,7 +30,7 @@ wpewebkit (2.38.0-1) UNRELEASED; urgency=high
       documentation included in the upstream tarball when gi-docgen is
       missing.
 
- -- Alberto Garcia <berto@igalia.com>  Mon, 19 Sep 2022 14:15:07 +0200
+ -- Alberto Garcia <berto@igalia.com>  Mon, 19 Sep 2022 22:16:34 +0200
 
 wpewebkit (2.36.7-1) unstable; urgency=high
 
