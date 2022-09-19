@@ -1,4 +1,4 @@
-Document: wpewebkit
+Document: wpe-webkit
 Title: WPE WebKit reference manual
 Author: WPE WebKit development team
 Abstract: This manual contains the developer documentation of
@@ -11,5 +11,5 @@ Abstract: This manual contains the developer documentation of
 Section: Programming
 
 Format: HTML
-Index: /usr/share/doc/libwpewebkit-1.0-doc/html/wpe-1.0/index.html
-Files: /usr/share/doc/libwpewebkit-1.0-doc/html/wpe-1.0/*.html
+Index: /usr/share/doc/libwpewebkit-1.0-doc/html/wpe-webkit-1.1/index.html
+Files: /usr/share/doc/libwpewebkit-1.0-doc/html/wpe-webkit-1.1/*.html

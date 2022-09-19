@@ -7,8 +7,24 @@ wpewebkit (2.38.0-1) UNRELEASED; urgency=high
     - Update upstream branch name.
   * debian/source/lintian-overrides:
     - Update source-is-missing overrides.
-  * debian/libwpewebkit-1.0-3.symbols:
-    - Update symbols.
+  * debian/control.in:
+    - Replace build dependency on gtk-doc-tools with gi-docgen,
+      gobject-introspection and libgirepository1.0-dev.
+  * debian/not-installed:
+    - Don't install the generated g-i files, at the moment we're only
+      using them to build the documentation.
+  * debian/libwpewebkit-1.0-doc.doc-base.*:
+    - Replace the old doc-base files with wpe-webkit, wpe-javascriptcore
+      and wpe-web-extension. Note that we are always shipping the 1.1 API
+      docs now, but the package name is still named 1.0-doc to make
+      backports easier.
+  * debian/libwpewebkit-1.0-doc.{install,links}:
+    - Install the docs in /usr/share/gtk-doc and link them from
+      /usr/share/doc.
+  * debian/rules:
+    - Add USE_PREBUILT_DOCS variable to allow using the prebuilt
+      documentation included in the upstream tarball when gi-docgen is
+      missing.
 
  -- Alberto Garcia <berto@igalia.com>  Mon, 19 Sep 2022 14:15:07 +0200
 
