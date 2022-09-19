@@ -5,6 +5,8 @@ wpewebkit (2.38.0-1) UNRELEASED; urgency=high
   * Update copyright information of all files.
   * debian/gbp.conf:
     - Update upstream branch name.
+  * debian/source/lintian-overrides:
+    - Update source-is-missing overrides.
 
  -- Alberto Garcia <berto@igalia.com>  Mon, 19 Sep 2022 14:15:07 +0200
 
