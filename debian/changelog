@@ -2,6 +2,7 @@ wpewebkit (2.38.0-1) UNRELEASED; urgency=high
 
   * New upstream release.
   * Refresh all patches.
+  * Update copyright information of all files.
 
  -- Alberto Garcia <berto@igalia.com>  Mon, 19 Sep 2022 14:15:07 +0200
 
