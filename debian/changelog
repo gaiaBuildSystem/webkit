@@ -5,6 +5,7 @@ wpewebkit (2.38.2-1) UNRELEASED; urgency=high
     security fixes in the latest versions of WPE WebKit:
     - CVE-2022-32888 and CVE-2022-32923 (fixed in 2.38.0).
     - CVE-2022-42799, CVE-2022-42823 and CVE-2022-42824 (fixed in 2.38.2).
+  * Refresh all patches.
   * debian/rules:
     - Build with -DENABLE_UNIFIED_BUILDS=OFF on mips, mipsel and sh4, we
       are having problems to build webkit due to lack of memory (#1020642).
