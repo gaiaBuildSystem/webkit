@@ -1,4 +1,4 @@
-wpewebkit (2.38.2-1) UNRELEASED; urgency=high
+wpewebkit (2.38.2-1) unstable; urgency=high
 
   * New upstream release.
   * The WPE WebKit security advisory WSA-2022-0010 lists the following
@@ -10,7 +10,7 @@ wpewebkit (2.38.2-1) UNRELEASED; urgency=high
     - Build with -DENABLE_UNIFIED_BUILDS=OFF on mips, mipsel and sh4, we
       are having problems to build webkit due to lack of memory (#1020642).
 
- -- Alberto Garcia <berto@igalia.com>  Sat, 29 Oct 2022 16:30:28 +0200
+ -- Alberto Garcia <berto@igalia.com>  Fri, 04 Nov 2022 21:21:54 +0100
 
 wpewebkit (2.38.1-1) unstable; urgency=medium
 
