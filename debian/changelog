@@ -4,6 +4,10 @@ wpewebkit (2.38.4-1) UNRELEASED; urgency=high
   * Update copyright information of all files.
   * debian/control.in:
     - Update Standards-Version to 4.6.2 (no changes).
+  * debian/rules:
+    - Build with -DENABLE_JIT=OFF -DENABLE_C_LOOP=ON. This uses the CLoop
+      Javascript interpreter in i386 for compatibility with old (non-SSE2)
+      CPUs.
 
  -- Alberto Garcia <berto@igalia.com>  Thu, 02 Feb 2023 15:28:53 +0100
 
