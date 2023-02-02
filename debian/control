@@ -38,7 +38,7 @@ Build-Depends: debhelper-compat (= 12),
                ruby:native,
                wayland-protocols
 Build-Depends-Indep: gi-docgen, gobject-introspection, libgirepository1.0-dev, libglib2.0-doc, libsoup-3.0-doc
-Standards-Version: 4.6.1.0
+Standards-Version: 4.6.2
 Rules-Requires-Root: no
 Vcs-Browser: https://salsa.debian.org/webkit-team/webkit
 Vcs-Git: https://salsa.debian.org/webkit-team/webkit.git -b wpe/unstable

@@ -2,6 +2,8 @@ wpewebkit (2.38.4-1) UNRELEASED; urgency=high
 
   * New upstream release.
   * Update copyright information of all files.
+  * debian/control.in:
+    - Update Standards-Version to 4.6.2 (no changes).
 
  -- Alberto Garcia <berto@igalia.com>  Thu, 02 Feb 2023 15:28:53 +0100
 
