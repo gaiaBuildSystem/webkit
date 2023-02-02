@@ -8,12 +8,12 @@ Copyright: 1999 Antti Koivisto <koivisto@kde.org>
            1999-2000 Lars Knoll <knoll@kde.org>
            1999-2001 Harri Porten <porten@kde.org>
            2001 Dirk Mueller <mueller@kde.org>
-           2003-2022 Apple Inc
+           2003-2023 Apple Inc
            2004-2006 Rob Buis <buis@kde.org>
            2004-2008 Nikolas Zimmermann <zimmermann@kde.org>
            2005 Frerich Raabe <raabe@kde.org>
            2005 Maksim Orlovich <maksim@kde.org>
-           2005, 2007-2013, 2015, 2017-2021 Google Inc
+           2005, 2007-2022 Google Inc
            2005, 2008-2013 Nokia
            2005-2006 Alexey Proskuryakov
            2005-2006 Kimmo Kinnunen <kimmo.t.kinnunen@nokia.com>
@@ -1686,6 +1686,8 @@ Files: Source/JavaScriptCore/API/JSAPIValueWrapper.cpp
        Source/WebCore/platform/graphics/freetype/RefPtrFontconfig.cpp
        Source/WebCore/platform/graphics/freetype/RefPtrFontconfig.h
        Source/WebCore/platform/graphics/glx/*
+       Source/WebCore/platform/graphics/gstreamer/AppSinkWorkaround.cpp
+       Source/WebCore/platform/graphics/gstreamer/AppSinkWorkaround.h
        Source/WebCore/platform/graphics/gstreamer/DMABufVideoSinkGStreamer.cpp
        Source/WebCore/platform/graphics/gstreamer/DMABufVideoSinkGStreamer.h
        Source/WebCore/platform/graphics/gstreamer/GLVideoSinkGStreamer.cpp
@@ -1743,6 +1745,7 @@ Files: Source/JavaScriptCore/API/JSAPIValueWrapper.cpp
        Source/WebCore/platform/graphics/nicosia/*
        Source/WebCore/platform/graphics/texmap/*
        Source/WebCore/platform/graphics/transforms/*
+       Source/WebCore/platform/gstreamer/*
        Source/WebCore/platform/image-decoders/ScalableImageDecoder.cpp
        Source/WebCore/platform/mediarecorder/*
        Source/WebCore/platform/mediastream/gstreamer/*
@@ -2603,7 +2606,7 @@ Copyright: 1997 Martin Jones <mjones@kde.org>
            2000-2003 Dirk Mueller <mueller@kde.org>
            2001 Tobias Anton <anton@stud.fbi.fh-darmstadt.de>
            2002-2003 The Karbon Developers
-           2002-2022 Apple Inc
+           2002-2023 Apple Inc
            2003-2017 Inc
            2004 Zack Rusin <zack@kde.org>
            2004, 2015, 2022 Red Hat Inc
@@ -2833,7 +2836,7 @@ License: public-domain
  disclaims all copyright to their code.
 
 Files: debian/*
-Copyright: 2019-2022 Alberto Garcia <berto@igalia.com>
+Copyright: 2019-2023 Alberto Garcia <berto@igalia.com>
 License: BSD-2-clause
 
 License: AFL-2.0
