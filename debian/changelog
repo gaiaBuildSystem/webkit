@@ -1,4 +1,4 @@
-wpewebkit (2.38.4-1) UNRELEASED; urgency=high
+wpewebkit (2.38.4-1) unstable; urgency=high
 
   * New upstream release.
   * Update copyright information of all files.
