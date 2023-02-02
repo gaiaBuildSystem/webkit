@@ -8,6 +8,8 @@ wpewebkit (2.38.4-1) UNRELEASED; urgency=high
     - Build with -DENABLE_JIT=OFF -DENABLE_C_LOOP=ON. This uses the CLoop
       Javascript interpreter in i386 for compatibility with old (non-SSE2)
       CPUs.
+    - Explicitly disable lto. This is known to have caused problems in
+      WebKitGTK, although it's not a problem for Debian at the moment.
 
  -- Alberto Garcia <berto@igalia.com>  Thu, 02 Feb 2023 15:28:53 +0100
 
