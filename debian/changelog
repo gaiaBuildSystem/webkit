@@ -1,3 +1,13 @@
+wpewebkit (2.38.6-1) UNRELEASED; urgency=high
+
+  * New upstream release.
+  * The WPE WebKit security advisory WSA-2023-0003 lists the following
+    security fixes in the latest versions of WPE WebKit:
+    - CVE-2022-0108, CVE-2022-32885, CVE-2023-27932, CVE-2023-27954,
+      CVE-2023-28205 (fixed in 2.38.6 and 2.40.1).
+
+ -- Alberto Garcia <berto@igalia.com>  Tue, 25 Apr 2023 09:17:43 +0200
+
 wpewebkit (2.38.5-1) unstable; urgency=high
 
   * New upstream release.
