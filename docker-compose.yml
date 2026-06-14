@@ -1,0 +1,9 @@
+services:
+  webkit:
+    image: dev-webkit-build-deb:latest
+    build:
+      context: .
+      dockerfile: Containerfile
+    volumes:
+      - .:/webkit
+    working_dir: /webkit
